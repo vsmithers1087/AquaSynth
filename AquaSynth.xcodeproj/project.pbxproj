@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B226B5A1F71ECD900954EBC /* SupportingFiles in Resources */ = {isa = PBXBuildFile; fileRef = 0B226B591F71ECD900954EBC /* SupportingFiles */; };
 		0B74053E1F71E71700BE2D20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B74053D1F71E71700BE2D20 /* AppDelegate.swift */; };
 		0B7405401F71E71700BE2D20 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B74053F1F71E71700BE2D20 /* ViewController.swift */; };
 		0B7405431F71E71700BE2D20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B7405411F71E71700BE2D20 /* Main.storyboard */; };
-		0B7405451F71E71700BE2D20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B7405441F71E71700BE2D20 /* Assets.xcassets */; };
 		0B7405481F71E71700BE2D20 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B7405461F71E71700BE2D20 /* LaunchScreen.storyboard */; };
 		0B7405531F71E71700BE2D20 /* AquaSynthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7405521F71E71700BE2D20 /* AquaSynthTests.swift */; };
+		0B7405721F71E9F500BE2D20 /* AsynthPlayground.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B7405701F71E9F500BE2D20 /* AsynthPlayground.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0B7405751F71E9F500BE2D20 /* AsynthPlayground.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B74056E1F71E9F500BE2D20 /* AsynthPlayground.framework */; };
+		0B7405761F71E9F500BE2D20 /* AsynthPlayground.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0B74056E1F71E9F500BE2D20 /* AsynthPlayground.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,19 +26,42 @@
 			remoteGlobalIDString = 0B7405391F71E71600BE2D20;
 			remoteInfo = AquaSynth;
 		};
+		0B7405731F71E9F500BE2D20 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0B7405321F71E71600BE2D20 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0B74056D1F71E9F500BE2D20;
+			remoteInfo = AsynthPlayground;
+		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		0B74057A1F71E9F500BE2D20 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0B7405761F71E9F500BE2D20 /* AsynthPlayground.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		0B226B591F71ECD900954EBC /* SupportingFiles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SupportingFiles; sourceTree = "<group>"; };
 		0B74053A1F71E71600BE2D20 /* AquaSynth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AquaSynth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B74053D1F71E71700BE2D20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0B74053F1F71E71700BE2D20 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0B7405421F71E71700BE2D20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		0B7405441F71E71700BE2D20 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0B7405471F71E71700BE2D20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		0B7405491F71E71700BE2D20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B74054E1F71E71700BE2D20 /* AquaSynthTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AquaSynthTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B7405521F71E71700BE2D20 /* AquaSynthTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AquaSynthTests.swift; sourceTree = "<group>"; };
 		0B7405541F71E71700BE2D20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0B74056E1F71E9F500BE2D20 /* AsynthPlayground.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AsynthPlayground.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B7405701F71E9F500BE2D20 /* AsynthPlayground.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AsynthPlayground.h; sourceTree = "<group>"; };
+		0B7405711F71E9F500BE2D20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,10 +69,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B7405751F71E9F500BE2D20 /* AsynthPlayground.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		0B74054B1F71E71700BE2D20 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0B74056A1F71E9F500BE2D20 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -61,6 +95,7 @@
 			children = (
 				0B74053C1F71E71600BE2D20 /* AquaSynth */,
 				0B7405511F71E71700BE2D20 /* AquaSynthTests */,
+				0B74056F1F71E9F500BE2D20 /* AsynthPlayground */,
 				0B74053B1F71E71600BE2D20 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -70,6 +105,7 @@
 			children = (
 				0B74053A1F71E71600BE2D20 /* AquaSynth.app */,
 				0B74054E1F71E71700BE2D20 /* AquaSynthTests.xctest */,
+				0B74056E1F71E9F500BE2D20 /* AsynthPlayground.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -78,9 +114,10 @@
 			isa = PBXGroup;
 			children = (
 				0B74055D1F71E7D400BE2D20 /* Global */,
+				0B7405611F71E83900BE2D20 /* Model */,
 				0B74055E1F71E7DE00BE2D20 /* Controller */,
 				0B74055F1F71E7ED00BE2D20 /* Storyboard */,
-				0B7405601F71E80500BE2D20 /* Supporting Files */,
+				0B226B591F71ECD900954EBC /* SupportingFiles */,
 			);
 			path = AquaSynth;
 			sourceTree = "<group>";
@@ -119,16 +156,34 @@
 			path = Storyboard;
 			sourceTree = "<group>";
 		};
-		0B7405601F71E80500BE2D20 /* Supporting Files */ = {
+		0B7405611F71E83900BE2D20 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				0B7405441F71E71700BE2D20 /* Assets.xcassets */,
-				0B7405491F71E71700BE2D20 /* Info.plist */,
 			);
-			path = "Supporting Files";
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0B74056F1F71E9F500BE2D20 /* AsynthPlayground */ = {
+			isa = PBXGroup;
+			children = (
+				0B7405701F71E9F500BE2D20 /* AsynthPlayground.h */,
+				0B7405711F71E9F500BE2D20 /* Info.plist */,
+			);
+			path = AsynthPlayground;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		0B74056B1F71E9F500BE2D20 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B7405721F71E9F500BE2D20 /* AsynthPlayground.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		0B7405391F71E71600BE2D20 /* AquaSynth */ = {
@@ -138,10 +193,12 @@
 				0B7405361F71E71600BE2D20 /* Sources */,
 				0B7405371F71E71600BE2D20 /* Frameworks */,
 				0B7405381F71E71600BE2D20 /* Resources */,
+				0B74057A1F71E9F500BE2D20 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				0B7405741F71E9F500BE2D20 /* PBXTargetDependency */,
 			);
 			name = AquaSynth;
 			productName = AquaSynth;
@@ -166,6 +223,24 @@
 			productReference = 0B74054E1F71E71700BE2D20 /* AquaSynthTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		0B74056D1F71E9F500BE2D20 /* AsynthPlayground */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0B7405771F71E9F500BE2D20 /* Build configuration list for PBXNativeTarget "AsynthPlayground" */;
+			buildPhases = (
+				0B7405691F71E9F500BE2D20 /* Sources */,
+				0B74056A1F71E9F500BE2D20 /* Frameworks */,
+				0B74056B1F71E9F500BE2D20 /* Headers */,
+				0B74056C1F71E9F500BE2D20 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AsynthPlayground;
+			productName = AsynthPlayground;
+			productReference = 0B74056E1F71E9F500BE2D20 /* AsynthPlayground.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -185,6 +260,10 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = 0B7405391F71E71600BE2D20;
 					};
+					0B74056D1F71E9F500BE2D20 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 0B7405351F71E71600BE2D20 /* Build configuration list for PBXProject "AquaSynth" */;
@@ -202,6 +281,7 @@
 			targets = (
 				0B7405391F71E71600BE2D20 /* AquaSynth */,
 				0B74054D1F71E71700BE2D20 /* AquaSynthTests */,
+				0B74056D1F71E9F500BE2D20 /* AsynthPlayground */,
 			);
 		};
 /* End PBXProject section */
@@ -212,12 +292,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B7405481F71E71700BE2D20 /* LaunchScreen.storyboard in Resources */,
-				0B7405451F71E71700BE2D20 /* Assets.xcassets in Resources */,
+				0B226B5A1F71ECD900954EBC /* SupportingFiles in Resources */,
 				0B7405431F71E71700BE2D20 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		0B74054C1F71E71700BE2D20 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0B74056C1F71E9F500BE2D20 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -244,6 +331,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0B7405691F71E9F500BE2D20 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -251,6 +345,11 @@
 			isa = PBXTargetDependency;
 			target = 0B7405391F71E71600BE2D20 /* AquaSynth */;
 			targetProxy = 0B74054F1F71E71700BE2D20 /* PBXContainerItemProxy */;
+		};
+		0B7405741F71E9F500BE2D20 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0B74056D1F71E9F500BE2D20 /* AsynthPlayground */;
+			targetProxy = 0B7405731F71E9F500BE2D20 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -387,7 +486,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z9GGFL7AD3;
-				INFOPLIST_FILE = AquaSynth/Info.plist;
+				INFOPLIST_FILE = AquaSynth/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = VincentSmithers.AquaSynth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -402,7 +501,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z9GGFL7AD3;
-				INFOPLIST_FILE = AquaSynth/Info.plist;
+				INFOPLIST_FILE = AquaSynth/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = VincentSmithers.AquaSynth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -418,7 +517,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z9GGFL7AD3;
-				INFOPLIST_FILE = AquaSynthTests/Info.plist;
+				INFOPLIST_FILE = AquaSynthTests/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = VincentSmithers.AquaSynthTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -435,13 +534,61 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z9GGFL7AD3;
-				INFOPLIST_FILE = AquaSynthTests/Info.plist;
+				INFOPLIST_FILE = AquaSynthTests/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = VincentSmithers.AquaSynthTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AquaSynth.app/AquaSynth";
+			};
+			name = Release;
+		};
+		0B7405781F71E9F500BE2D20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = Z9GGFL7AD3;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = AsynthPlayground/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = VincentSmithers.AsynthPlayground;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		0B7405791F71E9F500BE2D20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = Z9GGFL7AD3;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = AsynthPlayground/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = VincentSmithers.AsynthPlayground;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -471,6 +618,15 @@
 			buildConfigurations = (
 				0B74055B1F71E71700BE2D20 /* Debug */,
 				0B74055C1F71E71700BE2D20 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0B7405771F71E9F500BE2D20 /* Build configuration list for PBXNativeTarget "AsynthPlayground" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0B7405781F71E9F500BE2D20 /* Debug */,
+				0B7405791F71E9F500BE2D20 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

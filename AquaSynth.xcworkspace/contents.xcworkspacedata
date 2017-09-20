@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:AquaSynth.playground">
+   </FileRef>
+   <FileRef
       location = "container:AquaSynth.xcodeproj">
    </FileRef>
 </Workspace>
