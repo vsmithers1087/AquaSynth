@@ -1,24 +1,160 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13165.3"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Damascus.ttc">
+            <string>DamascusSemiBold</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="AquaSynth" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dNE-cq-886">
+                                <rect key="frame" x="138" y="283.5" width="100" height="100"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="EpK-Rn-7OF"/>
+                                    <constraint firstAttribute="width" constant="100" id="sHP-1G-kF1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                <state key="normal" title="⌲">
+                                    <color key="titleColor" red="0.2134724855" green="0.81707257030000002" blue="0.81949323419999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Uww-FD-Ddw" kind="presentation" modalPresentationStyle="fullScreen" id="JxC-Yn-ugt"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AquaSynth" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gcP-0f-hXJ">
+                                <rect key="frame" x="103.5" y="108.5" width="169" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="a2b-aQ-DfM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="DamascusSemiBold" family="Damascus" pointSize="32"/>
+                                <color key="textColor" red="0.2134724855" green="0.81707257030000002" blue="0.81949323419999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bAh-is-DYw">
+                                <rect key="frame" x="325" y="30" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="3so-Qz-vXf"/>
+                                    <constraint firstAttribute="width" constant="30" id="FFi-HU-WhN"/>
+                                </constraints>
+                                <state key="normal" title="ℹ︎">
+                                    <color key="titleColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="ZT9-Mn-Wat" kind="presentation" id="lTg-TJ-mZz"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="bAh-is-DYw" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-20" id="CaU-Yu-x4Y"/>
+                            <constraint firstItem="gcP-0f-hXJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DUT-Cf-QrM"/>
+                            <constraint firstItem="bAh-is-DYw" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="30" id="QHf-dw-RHk"/>
+                            <constraint firstItem="dNE-cq-886" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="YBu-YJ-xqO"/>
+                            <constraint firstItem="gcP-0f-hXJ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-200" id="ajo-fC-ONg"/>
+                            <constraint firstItem="dNE-cq-886" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cmf-Ez-h5d"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="infoButton" destination="bAh-is-DYw" id="c7i-EJ-ofM"/>
+                        <outlet property="playButton" destination="dNE-cq-886" id="6Re-QE-mcO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-335" y="78"/>
+        </scene>
+        <!--Info View Controller-->
+        <scene sceneID="Wfq-ZO-pAc">
+            <objects>
+                <viewController id="ZT9-Mn-Wat" customClass="InfoViewController" customModule="AquaSynth" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="j4B-Mx-b9f">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6EJ-uU-9gD">
+                                <rect key="frame" x="20" y="30" width="30" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="6WQ-jx-35b"/>
+                                    <constraint firstAttribute="height" constant="30" id="MFi-g9-xEL"/>
+                                </constraints>
+                                <state key="normal" title="X">
+                                    <color key="titleColor" red="0.2134724855" green="0.81707257030000002" blue="0.81949323419999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismiss:" destination="ZT9-Mn-Wat" eventType="touchUpInside" id="HXw-bu-udy"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6EJ-uU-9gD" firstAttribute="top" secondItem="j4B-Mx-b9f" secondAttribute="top" constant="30" id="1jP-Wv-um2"/>
+                            <constraint firstItem="6EJ-uU-9gD" firstAttribute="leading" secondItem="qlA-es-I3Q" secondAttribute="leading" constant="20" id="cAb-Ty-vOT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qlA-es-I3Q"/>
+                    </view>
+                    <connections>
+                        <outlet property="dismissButton" destination="6EJ-uU-9gD" id="ndf-Gq-0DZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KgH-kQ-5xz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-335" y="-748"/>
+        </scene>
+        <!--Synth Session View Controller-->
+        <scene sceneID="icz-p9-A7P">
+            <objects>
+                <viewController id="Uww-FD-Ddw" customClass="SynthSessionViewController" customModule="AquaSynth" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="N3R-HD-DqN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J90-fB-28K">
+                                <rect key="frame" x="20" y="30" width="30" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="FPY-oV-LdX"/>
+                                    <constraint firstAttribute="width" constant="30" id="zzh-wN-mNT"/>
+                                </constraints>
+                                <state key="normal" title="X">
+                                    <color key="titleColor" red="0.2134724855" green="0.81707257030000002" blue="0.81949323419999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismiss:" destination="Uww-FD-Ddw" eventType="touchUpInside" id="vH5-2u-557"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="J90-fB-28K" firstAttribute="leading" secondItem="uI2-Z5-5mP" secondAttribute="leading" constant="20" id="8V8-6t-ERZ"/>
+                            <constraint firstItem="J90-fB-28K" firstAttribute="top" secondItem="N3R-HD-DqN" secondAttribute="top" constant="30" id="X5Z-L0-8Yu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="uI2-Z5-5mP"/>
+                    </view>
+                    <connections>
+                        <outlet property="dismissButton" destination="J90-fB-28K" id="Rdh-8S-K6u"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZJK-Qe-B11" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="460" y="78"/>
         </scene>
     </scenes>
 </document>

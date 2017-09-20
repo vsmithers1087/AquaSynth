@@ -8,8 +8,6 @@
 import Foundation
 
 public protocol NotePlayable {
-    /// freq
-    /// Returns the frequency of the playable item
     var freq: Float { get }
 }
 
