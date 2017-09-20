@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B222B591F71EF8C0072EF0B /* Synth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B222B571F71EF8C0072EF0B /* Synth.swift */; };
+		0B222B5A1F71EF8C0072EF0B /* Effect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B222B581F71EF8C0072EF0B /* Effect.swift */; };
+		0B222B5C1F71EF980072EF0B /* NotePlayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B222B5B1F71EF980072EF0B /* NotePlayable.swift */; };
+		0B222B601F71EFAD0072EF0B /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B222B5D1F71EFAD0072EF0B /* Note.swift */; };
+		0B222B611F71EFAD0072EF0B /* WaveFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B222B5E1F71EFAD0072EF0B /* WaveFunctions.swift */; };
+		0B222B621F71EFAD0072EF0B /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B222B5F1F71EFAD0072EF0B /* Sound.swift */; };
 		0B226B5A1F71ECD900954EBC /* SupportingFiles in Resources */ = {isa = PBXBuildFile; fileRef = 0B226B591F71ECD900954EBC /* SupportingFiles */; };
 		0B74053E1F71E71700BE2D20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B74053D1F71E71700BE2D20 /* AppDelegate.swift */; };
 		0B7405401F71E71700BE2D20 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B74053F1F71E71700BE2D20 /* ViewController.swift */; };
@@ -50,6 +56,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0B222B571F71EF8C0072EF0B /* Synth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Synth.swift; path = AquaSynth/Synth/Synth.swift; sourceTree = SOURCE_ROOT; };
+		0B222B581F71EF8C0072EF0B /* Effect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Effect.swift; path = AquaSynth/Synth/Effect.swift; sourceTree = SOURCE_ROOT; };
+		0B222B5B1F71EF980072EF0B /* NotePlayable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotePlayable.swift; path = AquaSynth/Protocol/NotePlayable.swift; sourceTree = SOURCE_ROOT; };
+		0B222B5D1F71EFAD0072EF0B /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Note.swift; path = AquaSynth/Sound/Note.swift; sourceTree = SOURCE_ROOT; };
+		0B222B5E1F71EFAD0072EF0B /* WaveFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WaveFunctions.swift; path = AquaSynth/Sound/WaveFunctions.swift; sourceTree = SOURCE_ROOT; };
+		0B222B5F1F71EFAD0072EF0B /* Sound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Sound.swift; path = AquaSynth/Sound/Sound.swift; sourceTree = SOURCE_ROOT; };
 		0B226B591F71ECD900954EBC /* SupportingFiles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SupportingFiles; sourceTree = "<group>"; };
 		0B74053A1F71E71600BE2D20 /* AquaSynth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AquaSynth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B74053D1F71E71700BE2D20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +102,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B222B541F71EF3F0072EF0B /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				0B222B5D1F71EFAD0072EF0B /* Note.swift */,
+				0B222B5F1F71EFAD0072EF0B /* Sound.swift */,
+				0B222B5E1F71EFAD0072EF0B /* WaveFunctions.swift */,
+			);
+			name = Sound;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		0B222B551F71EF5C0072EF0B /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				0B222B5B1F71EF980072EF0B /* NotePlayable.swift */,
+			);
+			name = Protocol;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		0B222B561F71EF660072EF0B /* Synth */ = {
+			isa = PBXGroup;
+			children = (
+				0B222B581F71EF8C0072EF0B /* Effect.swift */,
+				0B222B571F71EF8C0072EF0B /* Synth.swift */,
+			);
+			name = Synth;
+			path = "New Group1";
+			sourceTree = "<group>";
+		};
 		0B7405311F71E71600BE2D20 = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +158,9 @@
 				0B74055D1F71E7D400BE2D20 /* Global */,
 				0B7405611F71E83900BE2D20 /* Model */,
 				0B74055E1F71E7DE00BE2D20 /* Controller */,
+				0B222B561F71EF660072EF0B /* Synth */,
+				0B222B541F71EF3F0072EF0B /* Sound */,
+				0B222B551F71EF5C0072EF0B /* Protocol */,
 				0B74055F1F71E7ED00BE2D20 /* Storyboard */,
 				0B226B591F71ECD900954EBC /* SupportingFiles */,
 			);
@@ -318,8 +363,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B222B5A1F71EF8C0072EF0B /* Effect.swift in Sources */,
+				0B222B591F71EF8C0072EF0B /* Synth.swift in Sources */,
 				0B7405401F71E71700BE2D20 /* ViewController.swift in Sources */,
 				0B74053E1F71E71700BE2D20 /* AppDelegate.swift in Sources */,
+				0B222B5C1F71EF980072EF0B /* NotePlayable.swift in Sources */,
+				0B222B611F71EFAD0072EF0B /* WaveFunctions.swift in Sources */,
+				0B222B601F71EFAD0072EF0B /* Note.swift in Sources */,
+				0B222B621F71EFAD0072EF0B /* Sound.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
