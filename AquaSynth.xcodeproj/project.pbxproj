@@ -77,12 +77,10 @@
 		0B74053C1F71E71600BE2D20 /* AquaSynth */ = {
 			isa = PBXGroup;
 			children = (
-				0B74053D1F71E71700BE2D20 /* AppDelegate.swift */,
-				0B74053F1F71E71700BE2D20 /* ViewController.swift */,
-				0B7405411F71E71700BE2D20 /* Main.storyboard */,
-				0B7405441F71E71700BE2D20 /* Assets.xcassets */,
-				0B7405461F71E71700BE2D20 /* LaunchScreen.storyboard */,
-				0B7405491F71E71700BE2D20 /* Info.plist */,
+				0B74055D1F71E7D400BE2D20 /* Global */,
+				0B74055E1F71E7DE00BE2D20 /* Controller */,
+				0B74055F1F71E7ED00BE2D20 /* Storyboard */,
+				0B7405601F71E80500BE2D20 /* Supporting Files */,
 			);
 			path = AquaSynth;
 			sourceTree = "<group>";
@@ -94,6 +92,40 @@
 				0B7405541F71E71700BE2D20 /* Info.plist */,
 			);
 			path = AquaSynthTests;
+			sourceTree = "<group>";
+		};
+		0B74055D1F71E7D400BE2D20 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				0B74053D1F71E71700BE2D20 /* AppDelegate.swift */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		0B74055E1F71E7DE00BE2D20 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0B74053F1F71E71700BE2D20 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0B74055F1F71E7ED00BE2D20 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				0B7405411F71E71700BE2D20 /* Main.storyboard */,
+				0B7405461F71E71700BE2D20 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		0B7405601F71E80500BE2D20 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0B7405441F71E71700BE2D20 /* Assets.xcassets */,
+				0B7405491F71E71700BE2D20 /* Info.plist */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
