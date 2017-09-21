@@ -34,10 +34,9 @@ class HomeViewController: UIViewController {
         playButton.layer.borderColor = UIColor.purple.cgColor
         
         infoButton.layer.cornerRadius = infoButton.frame.width / 2
-        infoButton.layer.borderWidth = 0.25
+        infoButton.layer.borderWidth = 1.5
         infoButton.layer.borderColor = UIColor.orange.cgColor
     }
-    
     
 }
 

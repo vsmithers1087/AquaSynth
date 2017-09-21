@@ -16,6 +16,8 @@ class SynthSessionViewController: UIViewController {
     @IBOutlet weak var frameImageView: UIImageView!
     @IBOutlet weak var frameImageViewTop: NSLayoutConstraint!
     @IBOutlet weak var frameImageViewLeading: NSLayoutConstraint!
+    @IBOutlet weak var frequencyResultHeight: NSLayoutConstraint!
+    @IBOutlet weak var frequencyResultWidth: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,9 +49,13 @@ class SynthSessionViewController: UIViewController {
         if deviceOrientation == .iPhoneLandscape {
             frameImageViewLeading.constant = view.frame.width / 2
             frameImageViewTop.constant = 0
+            frequencyResultWidth.constant = view.frame.width / 2
+            frequencyResultHeight.constant = view.frame.height - 80
         } else {
             frameImageViewLeading.constant = 0
             frameImageViewTop.constant = view.frame.height / 2
+            frequencyResultWidth.constant = view.frame.width
+            frequencyResultHeight.constant = view.frame.height / 2
         }
         view.layoutSubviews()
     }
