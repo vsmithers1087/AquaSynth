@@ -7,12 +7,12 @@
 
 import Foundation
 import AVFoundation
-import AudioToolBox
+import AudioToolbox
 
 public class Synth {
     
     ///The current sound that is playing
-    public private(set) var playable: Playable?
+    public private(set) var playable: NotePlayable?
     
     public var effects = [Effect]() {
         didSet {
@@ -55,9 +55,9 @@ public class Synth {
     
     public let sampleRate: Float
     
-    fileprivate var envTime: UInt64 = 0
+    public var envTime: UInt64 = 0
     //Used for transitioning from attack/decay -> release
-    fileprivate var sustainedLevel: Float = 0
+    public var sustainedLevel: Float = 0
     
     public struct Envelope {
         public var attack, decay, sustain, release: Float
@@ -68,7 +68,7 @@ public class Synth {
     public var freqMod: (Float) -> Float = { _ in 1 }
     public var freqModAmount: Float = 1
     
-    fileprivate var isPlaying = false
+    public var isPlaying = false
     
     let outputUnit, mixerUnit: AudioUnit
     var outputNode = AUNode(), mixerNode = AUNode()
@@ -86,7 +86,7 @@ public class Synth {
         graph = newGraph!
         
         var outputDescription = AudioComponentDescription(componentType: kAudioUnitType_Output,
-                                                          componentSubType: kAudioUnitSubType_DefaultOutput,
+                                                          componentSubType: kAudioUnitSubType_GenericOutput,
                                                           componentManufacturer: kAudioUnitManufacturer_Apple,
                                                           componentFlags: 0, componentFlagsMask: 0)
         
@@ -166,7 +166,7 @@ public class Synth {
     }
     
     /// Begins playing the specified item
-    public func play(_ playable: Playable) {
+    public func play(_ playable: NotePlayable) {
         self.playable = playable
         isPlaying = true
         envTime = mach_absolute_time()

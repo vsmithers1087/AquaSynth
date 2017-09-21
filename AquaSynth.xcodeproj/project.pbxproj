@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0B226B5A1F71ECD900954EBC /* SupportingFiles in Resources */ = {isa = PBXBuildFile; fileRef = 0B226B591F71ECD900954EBC /* SupportingFiles */; };
 		0B74053E1F71E71700BE2D20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B74053D1F71E71700BE2D20 /* AppDelegate.swift */; };
 		0B7405401F71E71700BE2D20 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B74053F1F71E71700BE2D20 /* HomeViewController.swift */; };
 		0B7405431F71E71700BE2D20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B7405411F71E71700BE2D20 /* Main.storyboard */; };
@@ -16,11 +15,24 @@
 		0B7405721F71E9F500BE2D20 /* AsynthPlayground.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B7405701F71E9F500BE2D20 /* AsynthPlayground.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0B7405751F71E9F500BE2D20 /* AsynthPlayground.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B74056E1F71E9F500BE2D20 /* AsynthPlayground.framework */; };
 		0B7405761F71E9F500BE2D20 /* AsynthPlayground.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0B74056E1F71E9F500BE2D20 /* AsynthPlayground.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		0B92C0961F728FD000A7A151 /* Sound in Resources */ = {isa = PBXBuildFile; fileRef = 0B92C0951F728FD000A7A151 /* Sound */; };
-		0B92C0981F728FD900A7A151 /* Synth in Resources */ = {isa = PBXBuildFile; fileRef = 0B92C0971F728FD900A7A151 /* Synth */; };
-		0B92C09A1F728FE000A7A151 /* Protocol in Resources */ = {isa = PBXBuildFile; fileRef = 0B92C0991F728FE000A7A151 /* Protocol */; };
+		0B7B052A1F7358010088DFAB /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0B7B05291F7358010088DFAB /* Info.plist */; };
+		0B836F0C1F735F09009FF459 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B836F0B1F735F09009FF459 /* Assets.xcassets */; };
 		0B92C09C1F72952E00A7A151 /* SynthSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B92C09B1F72952E00A7A151 /* SynthSessionViewController.swift */; };
 		0B92C09E1F72953A00A7A151 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B92C09D1F72953A00A7A151 /* InfoViewController.swift */; };
+		0BFD433A1F735B1A007A90D7 /* WaveFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFD43341F735B19007A90D7 /* WaveFunctions.swift */; };
+		0BFD433B1F735B1A007A90D7 /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFD43351F735B19007A90D7 /* Sound.swift */; };
+		0BFD433C1F735B1A007A90D7 /* NotePlayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFD43361F735B1A007A90D7 /* NotePlayable.swift */; };
+		0BFD433D1F735B1A007A90D7 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFD43371F735B1A007A90D7 /* Note.swift */; };
+		0BFD433E1F735B1A007A90D7 /* Effect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFD43381F735B1A007A90D7 /* Effect.swift */; };
+		0BFD433F1F735B1A007A90D7 /* Synth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFD43391F735B1A007A90D7 /* Synth.swift */; };
+		0BFD43441F735B5E007A90D7 /* Effect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFD43381F735B1A007A90D7 /* Effect.swift */; };
+		0BFD43451F735B5E007A90D7 /* Synth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFD43391F735B1A007A90D7 /* Synth.swift */; };
+		0BFD43461F735B63007A90D7 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFD43371F735B1A007A90D7 /* Note.swift */; };
+		0BFD43471F735B63007A90D7 /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFD43351F735B19007A90D7 /* Sound.swift */; };
+		0BFD43481F735B63007A90D7 /* WaveFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFD43341F735B19007A90D7 /* WaveFunctions.swift */; };
+		0BFD43491F735B67007A90D7 /* NotePlayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFD43361F735B1A007A90D7 /* NotePlayable.swift */; };
+		0BFD434C1F735BCA007A90D7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BFD434B1F735BCA007A90D7 /* AudioToolbox.framework */; };
+		0BFD434D1F735BF4007A90D7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BFD434B1F735BCA007A90D7 /* AudioToolbox.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,7 +67,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0B226B591F71ECD900954EBC /* SupportingFiles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SupportingFiles; sourceTree = "<group>"; };
 		0B74053A1F71E71600BE2D20 /* AquaSynth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AquaSynth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B74053D1F71E71700BE2D20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0B74053F1F71E71700BE2D20 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -67,11 +78,17 @@
 		0B74056E1F71E9F500BE2D20 /* AsynthPlayground.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AsynthPlayground.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B7405701F71E9F500BE2D20 /* AsynthPlayground.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AsynthPlayground.h; sourceTree = "<group>"; };
 		0B7405711F71E9F500BE2D20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0B92C0951F728FD000A7A151 /* Sound */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sound; sourceTree = "<group>"; };
-		0B92C0971F728FD900A7A151 /* Synth */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Synth; sourceTree = "<group>"; };
-		0B92C0991F728FE000A7A151 /* Protocol */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Protocol; sourceTree = "<group>"; };
+		0B7B05291F7358010088DFAB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0B836F0B1F735F09009FF459 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0B92C09B1F72952E00A7A151 /* SynthSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynthSessionViewController.swift; sourceTree = "<group>"; };
 		0B92C09D1F72953A00A7A151 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		0BFD43341F735B19007A90D7 /* WaveFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveFunctions.swift; sourceTree = "<group>"; };
+		0BFD43351F735B19007A90D7 /* Sound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
+		0BFD43361F735B1A007A90D7 /* NotePlayable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotePlayable.swift; sourceTree = "<group>"; };
+		0BFD43371F735B1A007A90D7 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		0BFD43381F735B1A007A90D7 /* Effect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Effect.swift; sourceTree = "<group>"; };
+		0BFD43391F735B1A007A90D7 /* Synth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Synth.swift; sourceTree = "<group>"; };
+		0BFD434B1F735BCA007A90D7 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BFD434D1F735BF4007A90D7 /* AudioToolbox.framework in Frameworks */,
 				0B7405751F71E9F500BE2D20 /* AsynthPlayground.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -94,6 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BFD434C1F735BCA007A90D7 /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,6 +126,7 @@
 				0B7405511F71E71700BE2D20 /* AquaSynthTests */,
 				0B74056F1F71E9F500BE2D20 /* AsynthPlayground */,
 				0B74053B1F71E71600BE2D20 /* Products */,
+				0BFD434A1F735BCA007A90D7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -123,14 +143,15 @@
 		0B74053C1F71E71600BE2D20 /* AquaSynth */ = {
 			isa = PBXGroup;
 			children = (
+				0B836F0B1F735F09009FF459 /* Assets.xcassets */,
+				0B7B05291F7358010088DFAB /* Info.plist */,
+				0BFD43431F735B54007A90D7 /* Synth */,
+				0BFD43421F735B4B007A90D7 /* Sound */,
+				0BFD43401F735B27007A90D7 /* Protocol */,
 				0B74055D1F71E7D400BE2D20 /* Global */,
 				0B7405611F71E83900BE2D20 /* Model */,
 				0B74055E1F71E7DE00BE2D20 /* Controller */,
 				0B74055F1F71E7ED00BE2D20 /* Storyboard */,
-				0B92C0991F728FE000A7A151 /* Protocol */,
-				0B92C0971F728FD900A7A151 /* Synth */,
-				0B92C0951F728FD000A7A151 /* Sound */,
-				0B226B591F71ECD900954EBC /* SupportingFiles */,
 			);
 			path = AquaSynth;
 			sourceTree = "<group>";
@@ -185,6 +206,41 @@
 				0B7405711F71E9F500BE2D20 /* Info.plist */,
 			);
 			path = AsynthPlayground;
+			sourceTree = "<group>";
+		};
+		0BFD43401F735B27007A90D7 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				0BFD43361F735B1A007A90D7 /* NotePlayable.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		0BFD43421F735B4B007A90D7 /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				0BFD43371F735B1A007A90D7 /* Note.swift */,
+				0BFD43351F735B19007A90D7 /* Sound.swift */,
+				0BFD43341F735B19007A90D7 /* WaveFunctions.swift */,
+			);
+			path = Sound;
+			sourceTree = "<group>";
+		};
+		0BFD43431F735B54007A90D7 /* Synth */ = {
+			isa = PBXGroup;
+			children = (
+				0BFD43381F735B1A007A90D7 /* Effect.swift */,
+				0BFD43391F735B1A007A90D7 /* Synth.swift */,
+			);
+			path = Synth;
+			sourceTree = "<group>";
+		};
+		0BFD434A1F735BCA007A90D7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0BFD434B1F735BCA007A90D7 /* AudioToolbox.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,11 +363,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B7405481F71E71700BE2D20 /* LaunchScreen.storyboard in Resources */,
-				0B92C0981F728FD900A7A151 /* Synth in Resources */,
-				0B92C09A1F728FE000A7A151 /* Protocol in Resources */,
-				0B226B5A1F71ECD900954EBC /* SupportingFiles in Resources */,
-				0B92C0961F728FD000A7A151 /* Sound in Resources */,
 				0B7405431F71E71700BE2D20 /* Main.storyboard in Resources */,
+				0B836F0C1F735F09009FF459 /* Assets.xcassets in Resources */,
+				0B7B052A1F7358010088DFAB /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,8 +391,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B92C09C1F72952E00A7A151 /* SynthSessionViewController.swift in Sources */,
+				0BFD433B1F735B1A007A90D7 /* Sound.swift in Sources */,
+				0BFD433C1F735B1A007A90D7 /* NotePlayable.swift in Sources */,
+				0BFD433E1F735B1A007A90D7 /* Effect.swift in Sources */,
+				0BFD433D1F735B1A007A90D7 /* Note.swift in Sources */,
 				0B7405401F71E71700BE2D20 /* HomeViewController.swift in Sources */,
 				0B92C09E1F72953A00A7A151 /* InfoViewController.swift in Sources */,
+				0BFD433A1F735B1A007A90D7 /* WaveFunctions.swift in Sources */,
+				0BFD433F1F735B1A007A90D7 /* Synth.swift in Sources */,
 				0B74053E1F71E71700BE2D20 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -355,6 +415,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BFD43451F735B5E007A90D7 /* Synth.swift in Sources */,
+				0BFD43441F735B5E007A90D7 /* Effect.swift in Sources */,
+				0BFD43461F735B63007A90D7 /* Note.swift in Sources */,
+				0BFD43491F735B67007A90D7 /* NotePlayable.swift in Sources */,
+				0BFD43481F735B63007A90D7 /* WaveFunctions.swift in Sources */,
+				0BFD43471F735B63007A90D7 /* Sound.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,9 +569,10 @@
 		0B7405581F71E71700BE2D20 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z9GGFL7AD3;
-				INFOPLIST_FILE = AquaSynth/SupportingFiles/Info.plist;
+				INFOPLIST_FILE = AquaSynth/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = VincentSmithers.AquaSynth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -517,9 +584,10 @@
 		0B7405591F71E71700BE2D20 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z9GGFL7AD3;
-				INFOPLIST_FILE = AquaSynth/SupportingFiles/Info.plist;
+				INFOPLIST_FILE = AquaSynth/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = VincentSmithers.AquaSynth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -535,7 +603,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z9GGFL7AD3;
-				INFOPLIST_FILE = AquaSynthTests/SupportingFiles/Info.plist;
+				INFOPLIST_FILE = AquaSynthTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = VincentSmithers.AquaSynthTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -552,7 +620,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z9GGFL7AD3;
-				INFOPLIST_FILE = AquaSynthTests/SupportingFiles/Info.plist;
+				INFOPLIST_FILE = AquaSynthTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = VincentSmithers.AquaSynthTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -575,7 +643,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = AsynthPlayground/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = VincentSmithers.AsynthPlayground;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -599,7 +667,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = AsynthPlayground/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = VincentSmithers.AsynthPlayground;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;

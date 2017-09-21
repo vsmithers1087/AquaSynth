@@ -11,19 +11,19 @@ public protocol NotePlayable {
     var freq: Float { get }
 }
 
-extension Float: Playable {
+extension Float: NotePlayable {
     public var freq: Float {
         return self
     }
 }
 
-extension Double: Playable {
+extension Double: NotePlayable {
     public var freq: Float {
         return Float(self)
     }
 }
 
-extension Int: Playable {
+extension Int: NotePlayable {
     public var freq: Float {
         return Float(self)
     }

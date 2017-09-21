@@ -13,7 +13,7 @@ public class Sound {
     public var wave: (Float) -> Float
     public var volume: Float
     private var currentPhase: Float = 0
-    internal var synth: Synthesizer?
+    internal var synth: Synth?
     
     public init(wave: @escaping (Float) -> Float, volume: Float) {
         self.wave = wave

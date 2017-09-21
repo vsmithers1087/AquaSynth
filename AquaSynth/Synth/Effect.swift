@@ -58,7 +58,7 @@ public enum Effect {
                                              componentFlags: 0, componentFlagsMask: 0)
         case .reverb:
             return AudioComponentDescription(componentType: kAudioUnitType_Effect,
-                                             componentSubType: kAudioUnitSubType_MatrixReverb,
+                                             componentSubType: kAudioUnitSubType_MatrixMixer,
                                              componentManufacturer: kAudioUnitManufacturer_Apple,
                                              componentFlags: 0, componentFlagsMask: 0)
         case .distortion:
@@ -79,10 +79,8 @@ public enum Effect {
             AudioUnitSetParameter(unit, kDelayParam_DelayTime, kAudioUnitScope_Global, 0, delayTime, 0)
             AudioUnitSetParameter(unit, kDelayParam_WetDryMix, kAudioUnitScope_Global, 0, wetDryMix, 0)
             AudioUnitSetParameter(unit, kDelayParam_Feedback, kAudioUnitScope_Global, 0, feedback, 0)
-        case .reverb(let smallLargeMix, let dryWetMix, let preDelay):
-            AudioUnitSetParameter(unit, kReverbParam_SmallLargeMix, kAudioUnitScope_Global, 0, smallLargeMix, 0)
-            AudioUnitSetParameter(unit, kReverbParam_DryWetMix, kAudioUnitScope_Global, 0, dryWetMix, 0)
-            AudioUnitSetParameter(unit, kReverbParam_PreDelay, kAudioUnitScope_Global, 0, preDelay, 0)
+        case .reverb(let _, let dryWetMix, let _): 
+            AudioUnitSetParameter(unit, kReverb2Param_DryWetMix, kAudioUnitScope_Global, 0, dryWetMix, 0)
         case .distortion(let decimation, let decimationMix, let ringModMix, let finalMix):
             AudioUnitSetParameter(unit, kDistortionParam_Decimation, kAudioUnitScope_Global, 0, decimation, 0)
             AudioUnitSetParameter(unit, kDistortionParam_DecimationMix, kAudioUnitScope_Global, 0, decimationMix, 0)
