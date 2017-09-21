@@ -9,7 +9,13 @@
 import UIKit
 
 class SynthSessionViewController: UIViewController {
+    
+    var deviceOrientation = DeviceTypeOrientation.none
+    
     @IBOutlet weak var dismissButton: UIButton!
+    @IBOutlet weak var frameImageView: UIImageView!
+    @IBOutlet weak var frameImageViewTop: NSLayoutConstraint!
+    @IBOutlet weak var frameImageViewLeading: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +24,10 @@ class SynthSessionViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         setupUI()
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        setupForOrientation()
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,6 +39,19 @@ class SynthSessionViewController: UIViewController {
         dismissButton.layer.cornerRadius = dismissButton.frame.width / 2
         dismissButton.layer.borderWidth = 0.25
         dismissButton.layer.borderColor = UIColor.gray.cgColor
+        setupForOrientation()
+    }
+    
+    private func setupForOrientation() {
+        deviceOrientation = UIDevice.getDeviceOrientation()
+        if deviceOrientation == .iPhoneLandscape {
+            frameImageViewLeading.constant = view.frame.width / 2
+            frameImageViewTop.constant = 0
+        } else {
+            frameImageViewLeading.constant = 0
+            frameImageViewTop.constant = view.frame.height / 2
+        }
+        view.layoutSubviews()
     }
     
     @IBAction func dismiss(_ sender: UIButton) {

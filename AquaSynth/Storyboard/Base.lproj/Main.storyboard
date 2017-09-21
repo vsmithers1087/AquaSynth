@@ -24,7 +24,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dNE-cq-886">
                                 <rect key="frame" x="137.5" y="283.5" width="100" height="100"/>
-                                <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.42005441257844434" green="0.40418085075727267" blue="0.81904346446700504" alpha="0.7131046660958904" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="EpK-Rn-7OF"/>
                                     <constraint firstAttribute="width" constant="100" id="sHP-1G-kF1"/>
@@ -38,7 +38,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AquaSynth" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gcP-0f-hXJ">
-                                <rect key="frame" x="103.5" y="108.5" width="169" height="50"/>
+                                <rect key="frame" x="103" y="108.5" width="169" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="a2b-aQ-DfM"/>
                                 </constraints>
@@ -140,16 +140,27 @@
                                     <action selector="dismiss:" destination="Uww-FD-Ddw" eventType="touchUpInside" id="vH5-2u-557"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5gc-yV-rDL">
+                                <rect key="frame" x="0.0" y="367" width="375" height="300"/>
+                                <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="J90-fB-28K" firstAttribute="leading" secondItem="uI2-Z5-5mP" secondAttribute="leading" constant="20" id="8V8-6t-ERZ"/>
+                            <constraint firstItem="5gc-yV-rDL" firstAttribute="leading" secondItem="uI2-Z5-5mP" secondAttribute="leading" id="Igf-5S-6vq"/>
+                            <constraint firstItem="5gc-yV-rDL" firstAttribute="top" secondItem="uI2-Z5-5mP" secondAttribute="top" constant="347" id="MqD-pA-T8d"/>
                             <constraint firstItem="J90-fB-28K" firstAttribute="top" secondItem="N3R-HD-DqN" secondAttribute="top" constant="30" id="X5Z-L0-8Yu"/>
+                            <constraint firstItem="uI2-Z5-5mP" firstAttribute="trailing" secondItem="5gc-yV-rDL" secondAttribute="trailing" id="kca-bk-Pnm"/>
+                            <constraint firstItem="uI2-Z5-5mP" firstAttribute="bottom" secondItem="5gc-yV-rDL" secondAttribute="bottom" id="z8s-N0-CbT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uI2-Z5-5mP"/>
                     </view>
                     <connections>
                         <outlet property="dismissButton" destination="J90-fB-28K" id="Rdh-8S-K6u"/>
+                        <outlet property="frameImageView" destination="5gc-yV-rDL" id="SqI-3e-10U"/>
+                        <outlet property="frameImageViewLeading" destination="Igf-5S-6vq" id="TEi-6R-PMx"/>
+                        <outlet property="frameImageViewTop" destination="MqD-pA-T8d" id="fhC-6d-UZD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZJK-Qe-B11" userLabel="First Responder" sceneMemberID="firstResponder"/>

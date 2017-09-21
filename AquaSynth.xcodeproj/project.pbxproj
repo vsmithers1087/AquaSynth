@@ -17,6 +17,7 @@
 		0B7405761F71E9F500BE2D20 /* AsynthPlayground.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0B74056E1F71E9F500BE2D20 /* AsynthPlayground.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0B7B052A1F7358010088DFAB /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0B7B05291F7358010088DFAB /* Info.plist */; };
 		0B836F0C1F735F09009FF459 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B836F0B1F735F09009FF459 /* Assets.xcassets */; };
+		0B836F0F1F7469BB009FF459 /* UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B836F0E1F7469BB009FF459 /* UIDevice.swift */; };
 		0B92C09C1F72952E00A7A151 /* SynthSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B92C09B1F72952E00A7A151 /* SynthSessionViewController.swift */; };
 		0B92C09E1F72953A00A7A151 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B92C09D1F72953A00A7A151 /* InfoViewController.swift */; };
 		0BFD433A1F735B1A007A90D7 /* WaveFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFD43341F735B19007A90D7 /* WaveFunctions.swift */; };
@@ -80,6 +81,7 @@
 		0B7405711F71E9F500BE2D20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B7B05291F7358010088DFAB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B836F0B1F735F09009FF459 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0B836F0E1F7469BB009FF459 /* UIDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDevice.swift; sourceTree = "<group>"; };
 		0B92C09B1F72952E00A7A151 /* SynthSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynthSessionViewController.swift; sourceTree = "<group>"; };
 		0B92C09D1F72953A00A7A151 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		0BFD43341F735B19007A90D7 /* WaveFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveFunctions.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				0B7405611F71E83900BE2D20 /* Model */,
 				0B74055E1F71E7DE00BE2D20 /* Controller */,
 				0B74055F1F71E7ED00BE2D20 /* Storyboard */,
+				0B836F101F7469C2009FF459 /* Extension */,
 			);
 			path = AquaSynth;
 			sourceTree = "<group>";
@@ -206,6 +209,14 @@
 				0B7405711F71E9F500BE2D20 /* Info.plist */,
 			);
 			path = AsynthPlayground;
+			sourceTree = "<group>";
+		};
+		0B836F101F7469C2009FF459 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				0B836F0E1F7469BB009FF459 /* UIDevice.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		0BFD43401F735B27007A90D7 /* Protocol */ = {
@@ -395,6 +406,7 @@
 				0BFD433C1F735B1A007A90D7 /* NotePlayable.swift in Sources */,
 				0BFD433E1F735B1A007A90D7 /* Effect.swift in Sources */,
 				0BFD433D1F735B1A007A90D7 /* Note.swift in Sources */,
+				0B836F0F1F7469BB009FF459 /* UIDevice.swift in Sources */,
 				0B7405401F71E71700BE2D20 /* HomeViewController.swift in Sources */,
 				0B92C09E1F72953A00A7A151 /* InfoViewController.swift in Sources */,
 				0BFD433A1F735B1A007A90D7 /* WaveFunctions.swift in Sources */,
