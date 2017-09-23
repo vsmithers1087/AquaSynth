@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 public enum DeviceTypeOrientation {
     case iPhoneLandscape
@@ -31,5 +32,20 @@ extension UIDevice {
             return DeviceTypeOrientation.iPadPortrait
         }
         return DeviceTypeOrientation.iPadLandscape
+    }
+    
+    class func mapOrientationForAVCaptureOrientation() -> AVCaptureVideoOrientation? {
+        
+        switch UIDevice.current.orientation {
+        case .landscapeLeft:
+            return .landscapeRight
+        case .landscapeRight:
+            return .landscapeLeft
+        case .portrait:
+            return .portrait
+        case .portraitUpsideDown:
+            return .portraitUpsideDown
+        default: return nil
+        }
     }
 }
