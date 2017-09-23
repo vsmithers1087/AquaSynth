@@ -8,9 +8,12 @@
 
 import UIKit
 
-class SynthSessionViewController: UIViewController {
+class SynthSessionViewController: UIViewController, FrameExtractable {
     
     var deviceOrientation = DeviceTypeOrientation.none
+    var framesCount = 0
+    
+    let frameExtractor = FrameExtractor()
     
     @IBOutlet weak var dismissButton: UIButton!
     @IBOutlet weak var frameImageView: UIImageView!
@@ -21,6 +24,7 @@ class SynthSessionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        frameExtractor.delegate = self
     }
     
     override func viewDidLayoutSubviews() {
@@ -62,6 +66,21 @@ class SynthSessionViewController: UIViewController {
     
     @IBAction func dismiss(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    func capturedFrame(image: UIImage) {
+        frameImageView.image = image
+        framesCount += 1
+        let predictionQueue = DispatchQueue(label: "predictionQueue")
+        predictionQueue.async {
+//            if let prediction = self.predictionService.predict(image: image) {
+//                guard self.framesCount > 5 else { return }
+//                DispatchQueue.main.async {
+//                    self.label.text = prediction.label
+//                    self.textView.text = "\(prediction.prob)"
+//                }
+//            }
+        }
     }
     
     /*

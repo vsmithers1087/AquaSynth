@@ -9,5 +9,5 @@
 import UIKit
 
 protocol FrameExtractable: class {
-    func captured(image: UIImage)
+    func capturedFrame(image: UIImage)
 }

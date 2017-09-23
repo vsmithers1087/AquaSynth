@@ -77,7 +77,7 @@ class FrameExtractor: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
     func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, from connection: AVCaptureConnection!) {
         guard let image = UIImage.imageFromSampleBuffer(sampleBuffer: sampleBuffer, filter: EdgeFilter.filterCIConvolution9Vertical) else { fatalError("Could not convert image to sample buffer") }
         DispatchQueue.main.async { [unowned self] in
-            self.delegate?.captured(image: image)
+            self.delegate?.capturedFrame(image: image)
         }
     }
 }
