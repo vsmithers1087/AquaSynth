@@ -50,7 +50,7 @@ class SynthSessionViewController: UIViewController {
             frameImageViewLeading.constant = view.frame.width / 2
             frameImageViewTop.constant = 0
             frequencyResultWidth.constant = view.frame.width / 2
-            frequencyResultHeight.constant = view.frame.height - 80
+            frequencyResultHeight.constant = view.frame.height - 100
         } else {
             frameImageViewLeading.constant = 0
             frameImageViewTop.constant = view.frame.height / 2

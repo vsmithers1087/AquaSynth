@@ -23,6 +23,7 @@
 		0B8665AF1F746E61002953B7 /* Synth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8665AD1F746E61002953B7 /* Synth.swift */; };
 		0B8665B11F746E6E002953B7 /* Effect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8665AC1F746E61002953B7 /* Effect.swift */; };
 		0B8665B21F746E6E002953B7 /* Synth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8665AD1F746E61002953B7 /* Synth.swift */; };
+		0B8665B41F76BE49002953B7 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8665B31F76BE49002953B7 /* UIImage.swift */; };
 		0B92C09C1F72952E00A7A151 /* SynthSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B92C09B1F72952E00A7A151 /* SynthSessionViewController.swift */; };
 		0B92C09E1F72953A00A7A151 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B92C09D1F72953A00A7A151 /* InfoViewController.swift */; };
 		0BFD433A1F735B1A007A90D7 /* WaveFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFD43341F735B19007A90D7 /* WaveFunctions.swift */; };
@@ -86,6 +87,7 @@
 		0B836F111F746BFC009FF459 /* FrequencyResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequencyResultView.swift; sourceTree = "<group>"; };
 		0B8665AC1F746E61002953B7 /* Effect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Effect.swift; sourceTree = "<group>"; };
 		0B8665AD1F746E61002953B7 /* Synth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Synth.swift; sourceTree = "<group>"; };
+		0B8665B31F76BE49002953B7 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		0B92C09B1F72952E00A7A151 /* SynthSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynthSessionViewController.swift; sourceTree = "<group>"; };
 		0B92C09D1F72953A00A7A151 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		0BFD43341F735B19007A90D7 /* WaveFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveFunctions.swift; sourceTree = "<group>"; };
@@ -183,8 +185,8 @@
 			isa = PBXGroup;
 			children = (
 				0B74053F1F71E71700BE2D20 /* HomeViewController.swift */,
-				0B92C09B1F72952E00A7A151 /* SynthSessionViewController.swift */,
 				0B92C09D1F72953A00A7A151 /* InfoViewController.swift */,
+				0B92C09B1F72952E00A7A151 /* SynthSessionViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -218,6 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				0B836F0E1F7469BB009FF459 /* UIDevice.swift */,
+				0B8665B31F76BE49002953B7 /* UIImage.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -423,6 +426,7 @@
 				0B92C09E1F72953A00A7A151 /* InfoViewController.swift in Sources */,
 				0BFD433A1F735B1A007A90D7 /* WaveFunctions.swift in Sources */,
 				0B74053E1F71E71700BE2D20 /* AppDelegate.swift in Sources */,
+				0B8665B41F76BE49002953B7 /* UIImage.swift in Sources */,
 				0B8665AE1F746E61002953B7 /* Effect.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
