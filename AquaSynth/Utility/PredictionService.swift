@@ -9,8 +9,6 @@
 import UIKit
 import CoreML
 
-public typealias LabeLInfo = (label: String, prob: [String: Double])
-
 public class PredictionService: NSObject {
     
     let model: MLModel
@@ -23,7 +21,7 @@ public class PredictionService: NSObject {
         self.dimension = dimension
     }
     
-    open func predict(image: UIImage) -> LabeLInfo? {
+    open func predict(image: UIImage) -> AsynthResult? {
 
         guard let buffer  = UIImage.toPixelBuffer(image: image, dimension: dimension)  else { fatalError("Could not convert image to pixel buffer") }
         
