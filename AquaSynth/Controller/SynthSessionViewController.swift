@@ -10,10 +10,9 @@ import UIKit
 
 class SynthSessionViewController: UIViewController, FrameExtractable {
     
+    var frameExtractor: FrameExtractor!
     var deviceOrientation = DeviceTypeOrientation.none
     var framesCount = 0
-    
-    let frameExtractor = FrameExtractor()
     
     @IBOutlet weak var dismissButton: UIButton!
     @IBOutlet weak var frameImageView: UIImageView!
@@ -24,7 +23,7 @@ class SynthSessionViewController: UIViewController, FrameExtractable {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        frameExtractor.delegate = self
+        setup()
     }
     
     override func viewDidLayoutSubviews() {
@@ -39,6 +38,11 @@ class SynthSessionViewController: UIViewController, FrameExtractable {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    private func setup() {
+        frameExtractor = FrameExtractor()
+        frameExtractor.delegate = self
     }
     
     private func setupUI() {
@@ -61,6 +65,7 @@ class SynthSessionViewController: UIViewController, FrameExtractable {
             frequencyResultWidth.constant = view.frame.width
             frequencyResultHeight.constant = view.frame.height / 2
         }
+        frameExtractor.updateVideoOrientationForRotation()
         view.layoutSubviews()
     }
     

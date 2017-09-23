@@ -25,6 +25,7 @@ class FrameExtractor: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
         captureSessionQueue.async { [unowned self] in
             self.configureSession()
             self.captureSession.startRunning()
+            print("Start running")
         }
     }
     
@@ -33,10 +34,13 @@ class FrameExtractor: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
         switch AVCaptureDevice.authorizationStatus(for: AVMediaType.video) {
         case .authorized:
             permissionGranted = true
+            print("authoried")
         case .notDetermined:
             requestPermission()
+            print("not determined")
         default:
             permissionGranted = false
+            print("permission granted")
         }
     }
     
@@ -62,7 +66,9 @@ class FrameExtractor: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
         guard let connection = videoOutput.connection(with: AVFoundation.AVMediaType.video) else { return }
         guard connection.isVideoOrientationSupported else { return }
         guard connection.isVideoMirroringSupported else { return }
-        connection.videoOrientation = UIDevice.mapOrientationForAVCaptureOrientation()!
+        if let orientation = UIDevice.mapOrientationForAVCaptureOrientation() {
+            connection.videoOrientation = orientation
+        }
         connection.isVideoMirrored = position == .front
     }
     
@@ -72,12 +78,22 @@ class FrameExtractor: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
                 ($0 as AnyObject).position == position
             }.first
     }
-    
-    // MARK: AVCaptureVideoDataOutputSampleBufferDelegate
-    func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, from connection: AVCaptureConnection!) {
+ 
+    func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         guard let image = UIImage.imageFromSampleBuffer(sampleBuffer: sampleBuffer, filter: EdgeFilter.filterCIConvolution9Vertical) else { fatalError("Could not convert image to sample buffer") }
         DispatchQueue.main.async { [unowned self] in
             self.delegate?.capturedFrame(image: image)
+        }
+    }
+ 
+    func updateVideoOrientationForRotation() {
+        if let orientation = UIDevice.mapOrientationForAVCaptureOrientation() {
+            captureSession.outputs.forEach({ (output) in
+                if output is AVCaptureVideoDataOutput {
+                    guard let connection = output.connection(with: AVFoundation.AVMediaType.video) else { return }
+                    connection.videoOrientation = orientation
+                }
+            })
         }
     }
 }

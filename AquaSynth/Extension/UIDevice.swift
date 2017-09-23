@@ -40,7 +40,7 @@ extension UIDevice {
         case .landscapeLeft:
             return .landscapeRight
         case .landscapeRight:
-            return .landscapeLeft
+            return .landscapeRight
         case .portrait:
             return .portrait
         case .portraitUpsideDown:
