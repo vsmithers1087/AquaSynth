@@ -23,37 +23,39 @@ public class ResonanceSoundMap {
         self.synth = Synth(sounds: [Sound(wave: wave, volume: 1)], sampleRate: 44100)
     }
     
-    public func addResult(_ result: AsynthResult) {
+    public func addResult(_ result: AsynthResult) -> String {
         asynthResults.append(result)
+        var returnVal: String?
         if asynthResults.count % predictionsPerNote == 0 {
-            mapResultsToSound()
+            returnVal = mapResultsToSound()
             asynthResults.removeAll()
         }
+        return returnVal ?? result.label.rawValue
     }
     
-    public func mapResultsToSound() {
+    public func mapResultsToSound() -> String {
         var frequency = 0
-
         for (label, score) in asynthResults {
             switch label {
-            case "still":
+            case AsynthResultLabel.still:
                 let freqMod = 100 * score
                 frequency += Int(freqMod)
-            case "disturbed":
+            case AsynthResultLabel.disturbed:
                 let freqMod = 200 * score
                 frequency += Int(freqMod)
-            case "not bowl":
+            case AsynthResultLabel.noBowl:
                 let freqMod = 10 * score
                 frequency += Int(freqMod)
-            default: break
+            case .none:break
             }
         }
         
         //synth.freqMod = triangle
         //synth.freqModAmount = 0.5
         synth.play(frequency)
-        sleep(1)
-        synth.stop()
+        return "Frequency: \(frequency) Hertz"
+        //sleep(1)
+        //synth.stop()
         // if all no bowl
         // if all still
         // if all disturbed
@@ -65,10 +67,8 @@ public class ResonanceSoundMap {
             //probability taken into account
     }
     
-    public func soundForSessionStart() {
-        
-    }
-    
+    public func soundForSessionStart() {}
+ 
     func stopSession() {
         asynthResults.removeAll()
         isRunning = false

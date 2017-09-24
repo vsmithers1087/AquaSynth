@@ -34,7 +34,7 @@ class HomeViewController: UIViewController {
     private func setupUI() {
         playButton.layer.cornerRadius = playButton.frame.width / 2
         playButton.layer.borderWidth = 3.0
-        playButton.layer.borderColor = UIColor.purple.cgColor
+        playButton.layer.borderColor = UIColor.orange.cgColor
         
         infoButton.layer.cornerRadius = infoButton.frame.width / 2
         infoButton.layer.borderWidth = 1.5

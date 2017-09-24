@@ -14,6 +14,7 @@
 		0B0716241F76DCB000731457 /* AsynthResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0716231F76DCB000731457 /* AsynthResult.swift */; };
 		0B0716251F76DCC400731457 /* AsynthResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0716231F76DCB000731457 /* AsynthResult.swift */; };
 		0B0716261F76DCCE00731457 /* ResonanceSoundMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0716211F76D4FD00731457 /* ResonanceSoundMap.swift */; };
+		0B1813201F77F95600E079F6 /* Audiowide.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B18131F1F77F94800E079F6 /* Audiowide.ttf */; };
 		0B74053E1F71E71700BE2D20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B74053D1F71E71700BE2D20 /* AppDelegate.swift */; };
 		0B7405401F71E71700BE2D20 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B74053F1F71E71700BE2D20 /* HomeViewController.swift */; };
 		0B7405431F71E71700BE2D20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B7405411F71E71700BE2D20 /* Main.storyboard */; };
@@ -83,6 +84,7 @@
 		0B07161D1F76C5E200731457 /* PredictionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionService.swift; sourceTree = "<group>"; };
 		0B0716211F76D4FD00731457 /* ResonanceSoundMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResonanceSoundMap.swift; sourceTree = "<group>"; };
 		0B0716231F76DCB000731457 /* AsynthResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsynthResult.swift; sourceTree = "<group>"; };
+		0B18131F1F77F94800E079F6 /* Audiowide.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Audiowide.ttf; path = Fonts/Audiowide.ttf; sourceTree = "<group>"; };
 		0B74053A1F71E71600BE2D20 /* AquaSynth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AquaSynth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B74053D1F71E71700BE2D20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0B74053F1F71E71700BE2D20 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 		0B74053C1F71E71600BE2D20 /* AquaSynth */ = {
 			isa = PBXGroup;
 			children = (
+				0B18131F1F77F94800E079F6 /* Audiowide.ttf */,
 				0B836F0B1F735F09009FF459 /* Assets.xcassets */,
 				0B7B05291F7358010088DFAB /* Info.plist */,
 				0B8665B01F746E66002953B7 /* Synth */,
@@ -415,6 +418,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B1813201F77F95600E079F6 /* Audiowide.ttf in Resources */,
 				0B7405481F71E71700BE2D20 /* LaunchScreen.storyboard in Resources */,
 				0B7405431F71E71700BE2D20 /* Main.storyboard in Resources */,
 				0B836F0C1F735F09009FF459 /* Assets.xcassets in Resources */,

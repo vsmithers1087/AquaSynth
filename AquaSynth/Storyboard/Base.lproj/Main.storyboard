@@ -27,7 +27,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dNE-cq-886">
                                 <rect key="frame" x="137.5" y="283.5" width="100" height="100"/>
-                                <color key="backgroundColor" red="0.42005441257844434" green="0.40418085075727267" blue="0.81904346446700504" alpha="0.7131046660958904" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.42005441259999998" green="0.40418085079999999" blue="0.81904346449999998" alpha="0.71310466610000001" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="EpK-Rn-7OF"/>
                                     <constraint firstAttribute="width" constant="100" id="sHP-1G-kF1"/>
@@ -40,8 +40,17 @@
                                     <segue destination="Uww-FD-Ddw" kind="presentation" modalPresentationStyle="fullScreen" id="JxC-Yn-ugt"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AquaSynth" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nse-ZS-PQk">
+                                <rect key="frame" x="107" y="83.5" width="162" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="w6W-pT-tM8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Audiowide-Regular" family="Audiowide" pointSize="33"/>
+                                <color key="textColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AquaSynth" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gcP-0f-hXJ">
-                                <rect key="frame" x="109" y="83.5" width="157.5" height="50"/>
+                                <rect key="frame" x="107" y="83.5" width="162" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="a2b-aQ-DfM"/>
                                 </constraints>
@@ -65,11 +74,16 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="Nse-ZS-PQk" firstAttribute="bottom" secondItem="gcP-0f-hXJ" secondAttribute="bottom" id="5Fm-xW-dHB"/>
                             <constraint firstItem="bAh-is-DYw" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-20" id="CaU-Yu-x4Y"/>
                             <constraint firstItem="gcP-0f-hXJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DUT-Cf-QrM"/>
+                            <constraint firstItem="Nse-ZS-PQk" firstAttribute="centerY" secondItem="gcP-0f-hXJ" secondAttribute="centerY" id="DUb-Vg-K7i"/>
+                            <constraint firstItem="Nse-ZS-PQk" firstAttribute="trailing" secondItem="gcP-0f-hXJ" secondAttribute="trailing" id="Pvi-ka-Bcc"/>
                             <constraint firstItem="bAh-is-DYw" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="30" id="QHf-dw-RHk"/>
                             <constraint firstItem="dNE-cq-886" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="YBu-YJ-xqO"/>
+                            <constraint firstItem="Nse-ZS-PQk" firstAttribute="leading" secondItem="gcP-0f-hXJ" secondAttribute="leading" id="c9n-bV-joU"/>
                             <constraint firstItem="dNE-cq-886" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cmf-Ez-h5d"/>
+                            <constraint firstItem="Nse-ZS-PQk" firstAttribute="top" secondItem="gcP-0f-hXJ" secondAttribute="top" id="pTd-Ed-U8C"/>
                             <constraint firstItem="dNE-cq-886" firstAttribute="top" secondItem="gcP-0f-hXJ" secondAttribute="bottom" constant="150" id="v7D-vG-sQh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -99,8 +113,9 @@
                                     <constraint firstAttribute="width" constant="30" id="6WQ-jx-35b"/>
                                     <constraint firstAttribute="height" constant="30" id="MFi-g9-xEL"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="Audiowide-Regular" family="Audiowide" pointSize="19"/>
                                 <state key="normal" title="X">
-                                    <color key="titleColor" red="0.2134724855" green="0.81707257030000002" blue="0.81949323419999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="dismiss:" destination="ZT9-Mn-Wat" eventType="touchUpInside" id="HXw-bu-udy"/>
@@ -137,8 +152,9 @@
                                     <constraint firstAttribute="height" constant="30" id="FPY-oV-LdX"/>
                                     <constraint firstAttribute="width" constant="30" id="zzh-wN-mNT"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="Audiowide-Regular" family="Audiowide" pointSize="19"/>
                                 <state key="normal" title="X">
-                                    <color key="titleColor" red="0.2134724855" green="0.81707257030000002" blue="0.81949323419999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="dismiss:" destination="Uww-FD-Ddw" eventType="touchUpInside" id="vH5-2u-557"/>

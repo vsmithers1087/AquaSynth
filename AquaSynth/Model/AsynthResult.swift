@@ -8,4 +8,11 @@
 
 import Foundation
 
-public typealias AsynthResult = (label: String, probability: Double)
+public enum AsynthResultLabel: String {
+    case noBowl = "No Bowl"
+    case still = "Still"
+    case disturbed = "Disturbed"
+    case none = "N/A"
+}
+
+public typealias AsynthResult = (label: AsynthResultLabel, probability: Double)
