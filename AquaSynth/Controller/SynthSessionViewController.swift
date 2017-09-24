@@ -13,13 +13,14 @@ class SynthSessionViewController: UIViewController, FrameExtractable {
     var frameExtractor: FrameExtractor!
     var deviceOrientation = DeviceTypeOrientation.none
     var framesCount = 0
-    
+
     @IBOutlet weak var dismissButton: UIButton!
     @IBOutlet weak var frameImageView: UIImageView!
+    @IBOutlet weak var frequencyResultView: FrequencyResultView!
     @IBOutlet weak var frameImageViewTop: NSLayoutConstraint!
     @IBOutlet weak var frameImageViewLeading: NSLayoutConstraint!
-    @IBOutlet weak var frequencyResultHeight: NSLayoutConstraint!
-    @IBOutlet weak var frequencyResultWidth: NSLayoutConstraint!
+    @IBOutlet weak var frequencyResultViewBottom: NSLayoutConstraint!
+    @IBOutlet weak var frequencyResultViewTrailing: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +38,6 @@ class SynthSessionViewController: UIViewController, FrameExtractable {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     private func setup() {
@@ -49,21 +49,25 @@ class SynthSessionViewController: UIViewController, FrameExtractable {
         dismissButton.layer.cornerRadius = dismissButton.frame.width / 2
         dismissButton.layer.borderWidth = 0.25
         dismissButton.layer.borderColor = UIColor.gray.cgColor
+        frameImageView.layer.borderWidth = 3.0
+        frameImageView.layer.borderColor = UIColor.orange.cgColor
+        frequencyResultView.layer.borderWidth = 3.0
+        frequencyResultView.layer.borderColor = UIColor.orange.cgColor
         setupForOrientation()
     }
     
     private func setupForOrientation() {
         deviceOrientation = UIDevice.getDeviceOrientation()
         if deviceOrientation == .iPhoneLandscape {
-            frameImageViewLeading.constant = view.frame.width / 2
-            frameImageViewTop.constant = 0
-            frequencyResultWidth.constant = view.frame.width / 2
-            frequencyResultHeight.constant = view.frame.height - 100
+            frameImageViewLeading.constant = (view.frame.width / 2) + 8
+            frameImageViewTop.constant = 60
+            frequencyResultViewTrailing.constant = (view.frame.width / 2) + 8
+            frequencyResultViewBottom.constant = 40
         } else {
-            frameImageViewLeading.constant = 0
-            frameImageViewTop.constant = view.frame.height / 2
-            frequencyResultWidth.constant = view.frame.width
-            frequencyResultHeight.constant = view.frame.height / 2
+            frameImageViewLeading.constant = 20
+            frameImageViewTop.constant = (view.frame.height / 2)
+            frequencyResultViewTrailing.constant = 20
+            frequencyResultViewBottom.constant = (view.frame.height / 2)
         }
         frameExtractor.updateVideoOrientationForRotation()
         view.layoutSubviews()

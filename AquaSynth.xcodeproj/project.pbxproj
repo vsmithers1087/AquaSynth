@@ -165,9 +165,6 @@
 		0B74053C1F71E71600BE2D20 /* AquaSynth */ = {
 			isa = PBXGroup;
 			children = (
-				0B18131F1F77F94800E079F6 /* Audiowide.ttf */,
-				0B836F0B1F735F09009FF459 /* Assets.xcassets */,
-				0B7B05291F7358010088DFAB /* Info.plist */,
 				0B8665B01F746E66002953B7 /* Synth */,
 				0BFD43421F735B4B007A90D7 /* Sound */,
 				0B74055D1F71E7D400BE2D20 /* Global */,
@@ -178,6 +175,9 @@
 				0BFD43401F735B27007A90D7 /* Protocol */,
 				0B836F101F7469C2009FF459 /* Extension */,
 				0B8665B71F76C04A002953B7 /* Utility */,
+				0B18131F1F77F94800E079F6 /* Audiowide.ttf */,
+				0B836F0B1F735F09009FF459 /* Assets.xcassets */,
+				0B7B05291F7358010088DFAB /* Info.plist */,
 			);
 			path = AquaSynth;
 			sourceTree = "<group>";
