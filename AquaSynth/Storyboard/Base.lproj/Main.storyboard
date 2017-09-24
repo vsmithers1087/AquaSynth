@@ -9,11 +9,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Audiowide.ttf">
+            <string>Audiowide-Regular</string>
+        </array>
         <array key="Bodoni72.ttc">
             <string>BodoniSvtyTwoITCTT-Bold</string>
-        </array>
-        <array key="Damascus.ttc">
-            <string>DamascusSemiBold</string>
         </array>
     </customFonts>
     <scenes>
@@ -41,11 +41,11 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AquaSynth" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gcP-0f-hXJ">
-                                <rect key="frame" x="103" y="83.5" width="169" height="50"/>
+                                <rect key="frame" x="109" y="83.5" width="157.5" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="a2b-aQ-DfM"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="DamascusSemiBold" family="Damascus" pointSize="32"/>
+                                <fontDescription key="fontDescription" name="Audiowide-Regular" family="Audiowide" pointSize="32"/>
                                 <color key="textColor" red="0.2134724855" green="0.81707257030000002" blue="0.81949323419999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>

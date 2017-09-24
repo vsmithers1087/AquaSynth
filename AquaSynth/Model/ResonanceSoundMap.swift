@@ -12,15 +12,15 @@ public class ResonanceSoundMap {
     
     public var predictionsPerNote: Int
     public var wave: (Float) -> Float
+    private var synth: Synth
     private var asynthResults = [AsynthResult]()
     private var frequencies = [Int]()
-    private var synth: Synth
     private var isRunning = false
     
     public init(predictionsPerNote: Int, wave: @escaping (Float) -> Float) {
         self.predictionsPerNote = predictionsPerNote
         self.wave = wave
-        self.synth = Synth(sounds: [Sound(wave: wave, volume: 1)], sampleRate: 8000)
+        self.synth = Synth(sounds: [Sound(wave: wave, volume: 1)], sampleRate: 44100)
     }
     
     public func addResult(_ result: AsynthResult) {
@@ -48,7 +48,12 @@ public class ResonanceSoundMap {
             default: break
             }
         }
-        synth.play(Note.B(3))
+        
+        //synth.freqMod = triangle
+        //synth.freqModAmount = 0.5
+        synth.play(frequency)
+        sleep(1)
+        synth.stop()
         // if all no bowl
         // if all still
         // if all disturbed
