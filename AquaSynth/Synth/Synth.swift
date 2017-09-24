@@ -86,7 +86,7 @@ public class Synth {
         graph = newGraph!
         
         var outputDescription = AudioComponentDescription(componentType: kAudioUnitType_Output,
-                                                          componentSubType: kAudioUnitSubType_GenericOutput,
+                                                          componentSubType: OSType(kAudioUnitSubType_RemoteIO),
                                                           componentManufacturer: kAudioUnitManufacturer_Apple,
                                                           componentFlags: 0, componentFlagsMask: 0)
         
