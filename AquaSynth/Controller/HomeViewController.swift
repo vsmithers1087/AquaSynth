@@ -12,6 +12,7 @@ class HomeViewController: UIViewController {
 
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var infoButton: UIButton!
+    @IBOutlet weak var aquaSynthLabelBottom: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,10 +23,13 @@ class HomeViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
 
-
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         setupUI()
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        aquaSynthLabelBottom.constant = view.frame.height / 4
     }
     
     private func setupUI() {
@@ -36,6 +40,7 @@ class HomeViewController: UIViewController {
         infoButton.layer.cornerRadius = infoButton.frame.width / 2
         infoButton.layer.borderWidth = 1.5
         infoButton.layer.borderColor = UIColor.orange.cgColor
+        aquaSynthLabelBottom.constant = view.frame.height / 6
     }
     
 }

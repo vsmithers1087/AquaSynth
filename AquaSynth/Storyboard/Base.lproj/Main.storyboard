@@ -41,7 +41,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AquaSynth" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gcP-0f-hXJ">
-                                <rect key="frame" x="103" y="108.5" width="169" height="50"/>
+                                <rect key="frame" x="103" y="83.5" width="169" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="a2b-aQ-DfM"/>
                                 </constraints>
@@ -69,12 +69,13 @@
                             <constraint firstItem="gcP-0f-hXJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DUT-Cf-QrM"/>
                             <constraint firstItem="bAh-is-DYw" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="30" id="QHf-dw-RHk"/>
                             <constraint firstItem="dNE-cq-886" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="YBu-YJ-xqO"/>
-                            <constraint firstItem="gcP-0f-hXJ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-200" id="ajo-fC-ONg"/>
                             <constraint firstItem="dNE-cq-886" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cmf-Ez-h5d"/>
+                            <constraint firstItem="dNE-cq-886" firstAttribute="top" secondItem="gcP-0f-hXJ" secondAttribute="bottom" constant="150" id="v7D-vG-sQh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="aquaSynthLabelBottom" destination="v7D-vG-sQh" id="gzY-M2-PDW"/>
                         <outlet property="infoButton" destination="bAh-is-DYw" id="c7i-EJ-ofM"/>
                         <outlet property="playButton" destination="dNE-cq-886" id="6Re-QE-mcO"/>
                     </connections>
