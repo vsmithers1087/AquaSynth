@@ -59,14 +59,14 @@ class SynthSessionViewController: UIViewController, FrameExtractable {
     private func setupForOrientation() {
         deviceOrientation = UIDevice.getDeviceOrientation()
         if deviceOrientation == .iPhoneLandscape {
-            frameImageViewLeading.constant = (view.frame.width / 2) + 8
+            frameImageViewLeading.constant = (view.frame.width / 2) + 4
             frameImageViewTop.constant = 60
-            frequencyResultViewTrailing.constant = (view.frame.width / 2) + 8
+            frequencyResultViewTrailing.constant = (view.frame.width / 2) + 4
             frequencyResultViewBottom.constant = 40
         } else {
-            frameImageViewLeading.constant = 20
+            frameImageViewLeading.constant = 8
             frameImageViewTop.constant = (view.frame.height / 2)
-            frequencyResultViewTrailing.constant = 20
+            frequencyResultViewTrailing.constant = 8
             frequencyResultViewBottom.constant = (view.frame.height / 2)
         }
         frameExtractor.updateVideoOrientationForRotation()

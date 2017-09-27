@@ -22,3 +22,7 @@ public func triangle(_ t: Float) -> Float {
     let b = pow(-1.0, floor(t + 0.5))
     return 2 * a * b
 }
+
+public func noise(_ t: Float) -> Float {
+    return Float(1.0 - Float(arc4random()) / Float(UINT32_MAX / 2))
+}
