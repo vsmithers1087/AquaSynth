@@ -11,7 +11,7 @@ import AVFoundation
 
 extension UIImage {
     
-    open static func toPixelBuffer(image: UIImage, dimension: Int ) -> CVPixelBuffer? {
+    open func toPixelBuffer(image: UIImage, dimension: Int ) -> CVPixelBuffer? {
         UIGraphicsBeginImageContextWithOptions(CGSize(width: dimension, height: dimension), true, 1.0)
         image.draw(in: CGRect(x: 0, y: 0, width: dimension, height: dimension))
         let newImage = UIGraphicsGetImageFromCurrentImageContext()!

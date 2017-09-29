@@ -198,6 +198,7 @@
                         <outlet property="frameImageView" destination="5gc-yV-rDL" id="SqI-3e-10U"/>
                         <outlet property="frameImageViewLeading" destination="Igf-5S-6vq" id="TEi-6R-PMx"/>
                         <outlet property="frameImageViewTop" destination="MqD-pA-T8d" id="fhC-6d-UZD"/>
+                        <outlet property="frequencyLabel" destination="QCa-2a-seR" id="kg2-1S-kdR"/>
                         <outlet property="frequencyResultView" destination="SmY-oh-Ewv" id="BWw-Cu-Ntz"/>
                         <outlet property="frequencyResultViewBottom" destination="oTR-bi-O04" id="pCd-xJ-D6X"/>
                         <outlet property="frequencyResultViewTrailing" destination="Kf5-ag-33C" id="jnI-Wg-iiZ"/>

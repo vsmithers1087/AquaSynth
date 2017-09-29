@@ -12,8 +12,11 @@ class SynthSessionViewController: UIViewController, FrameExtractable {
     
     var frameExtractor: FrameExtractor!
     var deviceOrientation = DeviceTypeOrientation.none
+    let predictionService = AsynthPredictionService(dimension: 227)
+    let resonanceSoundMap = ResonanceSoundMap(predictionsPerNote: 1, wave: triangle)
     var framesCount = 0
-
+    
+    @IBOutlet weak var frequencyLabel: UILabel!
     @IBOutlet weak var dismissButton: UIButton!
     @IBOutlet weak var frameImageView: UIImageView!
     @IBOutlet weak var frequencyResultView: FrequencyResultView!
@@ -35,7 +38,7 @@ class SynthSessionViewController: UIViewController, FrameExtractable {
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         setupForOrientation()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -82,24 +85,13 @@ class SynthSessionViewController: UIViewController, FrameExtractable {
         framesCount += 1
         let predictionQueue = DispatchQueue(label: "predictionQueue")
         predictionQueue.async {
-//            if let prediction = self.predictionService.predict(image: image) {
-//                guard self.framesCount > 5 else { return }
-//                DispatchQueue.main.async {
-//                    self.label.text = prediction.label
-//                    self.textView.text = "\(prediction.prob)"
-//                }
-//            }
+            if let prediction = self.predictionService.predict(image: image) {
+                guard self.framesCount > 5 else { return }
+                DispatchQueue.main.async {
+                    let asynthResult = AsynthResult(className: prediction.label.rawValue, probability: prediction.probability)
+                    self.frequencyLabel.text = self.resonanceSoundMap.playForResult(asynthResult)
+                }
+            }
         }
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

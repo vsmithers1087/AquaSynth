@@ -15,6 +15,7 @@
 		0B0716251F76DCC400731457 /* AsynthResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0716231F76DCB000731457 /* AsynthResult.swift */; };
 		0B0716261F76DCCE00731457 /* ResonanceSoundMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0716211F76D4FD00731457 /* ResonanceSoundMap.swift */; };
 		0B1813201F77F95600E079F6 /* Audiowide.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B18131F1F77F94800E079F6 /* Audiowide.ttf */; };
+		0B459DD71F7E708400795472 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8665B31F76BE49002953B7 /* UIImage.swift */; };
 		0B74053E1F71E71700BE2D20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B74053D1F71E71700BE2D20 /* AppDelegate.swift */; };
 		0B7405401F71E71700BE2D20 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B74053F1F71E71700BE2D20 /* HomeViewController.swift */; };
 		0B7405431F71E71700BE2D20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B7405411F71E71700BE2D20 /* Main.storyboard */; };
@@ -487,6 +488,7 @@
 				0BFD43461F735B63007A90D7 /* Note.swift in Sources */,
 				0BFD43491F735B67007A90D7 /* NotePlayable.swift in Sources */,
 				0BFD43481F735B63007A90D7 /* WaveFunctions.swift in Sources */,
+				0B459DD71F7E708400795472 /* UIImage.swift in Sources */,
 				0BFD43471F735B63007A90D7 /* Sound.swift in Sources */,
 				0B0716261F76DCCE00731457 /* ResonanceSoundMap.swift in Sources */,
 			);
