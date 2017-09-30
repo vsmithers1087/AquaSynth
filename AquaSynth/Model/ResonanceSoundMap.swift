@@ -24,20 +24,21 @@ public class ResonanceSoundMap {
     
     public func playForResult(_ result: AsynthResult) -> String {
         var frequency = 0
+        print(result.label)
         switch result.label {
         case AsynthResultLabel.still:
             frequency = Int(result.probability * Double(100))
             setSynthForStill(frequency: frequency)
+            return "Frequency Still: \(frequency) Hertz"
         case AsynthResultLabel.disturbed:
-            frequency = Int(result.probability * Double(400))
+            frequency = Int(result.probability * Double(800))
             setSynthForDisturbed(frequency: frequency)
-        case AsynthResultLabel.noBowl:
+            return "Frequency Disturbed: \(frequency) Hertz"
+        case AsynthResultLabel.noBowl, .none:
             frequency = 23
             setSynthForNoBowl(frequency: frequency)
-            return "No Bowl In Sight..."
-        case AsynthResultLabel.none: break
+            return "No water in sight..."
         }
-        return "Frequency: \(frequency) Hertz"
     }
     
     private func setSynthForStill(frequency: Int) {

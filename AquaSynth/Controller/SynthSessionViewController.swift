@@ -85,11 +85,13 @@ class SynthSessionViewController: UIViewController, FrameExtractable {
         framesCount += 1
         let predictionQueue = DispatchQueue(label: "predictionQueue")
         predictionQueue.async {
-            if let prediction = self.predictionService.predict(image: image) {
+            if let result = self.predictionService.predict(image: image) {
                 guard self.framesCount > 5 else { return }
                 DispatchQueue.main.async {
-                    let asynthResult = AsynthResult(className: prediction.label.rawValue, probability: prediction.probability)
-                    self.frequencyLabel.text = self.resonanceSoundMap.playForResult(asynthResult)
+                    print(result.label.rawValue)
+                    if self.framesCount % 25 == 0 {
+                        self.frequencyLabel.text = self.resonanceSoundMap.playForResult(result)
+                    }
                 }
             }
         }

@@ -22,12 +22,13 @@ public struct AsynthResult {
     public var probability: Double
     
     public init(className: String, probability: Double) {
+        print(className)
         switch className {
-        case "No Bowl":
+        case "xA":
             self.label = .noBowl
-        case "Still":
+        case "still":
             self.label = .still
-        case "Disturbed":
+        case "disturbedA":
             self.label = .disturbed
         default:
             self.label = .none
