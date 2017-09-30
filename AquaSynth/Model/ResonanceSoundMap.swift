@@ -34,6 +34,7 @@ public class ResonanceSoundMap {
         case AsynthResultLabel.noBowl:
             frequency = 23
             setSynthForNoBowl(frequency: frequency)
+            return "No Bowl In Sight..."
         case AsynthResultLabel.none: break
         }
         return "Frequency: \(frequency) Hertz"

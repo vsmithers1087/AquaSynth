@@ -118,11 +118,35 @@
                                     <action selector="dismiss:" destination="ZT9-Mn-Wat" eventType="touchUpInside" id="HXw-bu-udy"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AquaSynth" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fUe-NQ-bCI">
+                                <rect key="frame" x="20" y="80" width="158" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Ahp-Aq-1Ww"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Audiowide-Regular" family="Audiowide" pointSize="25"/>
+                                <color key="textColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cVb-Om-7Rs">
+                                <rect key="frame" x="20" y="130" width="335" height="75"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="xcz-XI-kSI"/>
+                                </constraints>
+                                <string key="text">AquaSynth is an iOS synthesizer that maps resonance patterns in a bowl of water to audible frequencies. All materials to get started are listed below. </string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="fUe-NQ-bCI" firstAttribute="top" secondItem="6EJ-uU-9gD" secondAttribute="bottom" constant="20" id="0Vp-4p-bI9"/>
                             <constraint firstItem="6EJ-uU-9gD" firstAttribute="top" secondItem="j4B-Mx-b9f" secondAttribute="top" constant="30" id="1jP-Wv-um2"/>
+                            <constraint firstItem="fUe-NQ-bCI" firstAttribute="leading" secondItem="6EJ-uU-9gD" secondAttribute="leading" id="714-cW-kWF"/>
                             <constraint firstItem="6EJ-uU-9gD" firstAttribute="leading" secondItem="qlA-es-I3Q" secondAttribute="leading" constant="20" id="cAb-Ty-vOT"/>
+                            <constraint firstItem="qlA-es-I3Q" firstAttribute="trailing" secondItem="cVb-Om-7Rs" secondAttribute="trailing" constant="20" id="dj4-9R-Sd8"/>
+                            <constraint firstItem="cVb-Om-7Rs" firstAttribute="top" secondItem="fUe-NQ-bCI" secondAttribute="bottom" id="ipn-Bf-vmI"/>
+                            <constraint firstItem="cVb-Om-7Rs" firstAttribute="leading" secondItem="fUe-NQ-bCI" secondAttribute="leading" id="leO-hy-wuq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qlA-es-I3Q"/>
                     </view>
@@ -178,7 +202,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="SmY-oh-Ewv" firstAttribute="top" secondItem="uI2-Z5-5mP" secondAttribute="top" constant="60" id="4ye-Q8-wjw"/>
                             <constraint firstItem="J90-fB-28K" firstAttribute="leading" secondItem="uI2-Z5-5mP" secondAttribute="leading" constant="20" id="8V8-6t-ERZ"/>
