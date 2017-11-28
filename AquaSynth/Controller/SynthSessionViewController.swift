@@ -13,7 +13,7 @@ class SynthSessionViewController: UIViewController, FrameExtractable {
     var frameExtractor: FrameExtractor!
     var deviceOrientation = DeviceTypeOrientation.none
     let predictionService = AsynthPredictionService(dimension: 227)
-    let resonanceSoundMap = ResonanceSoundMap(predictionsPerNote: 1, wave: triangle)
+    //let resonanceSoundMap = ResonanceSoundMap(predictionsPerNote: 1, wave: triangle)
     var framesCount = 0
     
     @IBOutlet weak var frequencyLabel: UILabel!
@@ -90,7 +90,7 @@ class SynthSessionViewController: UIViewController, FrameExtractable {
                 DispatchQueue.main.async {
                     print(result.label.rawValue)
                     if self.framesCount % 25 == 0 {
-                        self.frequencyLabel.text = self.resonanceSoundMap.playForResult(result)
+                        //self.frequencyLabel.text = self.resonanceSoundMap.playForResult(result)
                     }
                 }
             }

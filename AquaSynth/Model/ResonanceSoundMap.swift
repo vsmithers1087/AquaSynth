@@ -12,14 +12,14 @@ public class ResonanceSoundMap {
     
     public var predictionsPerNote: Int
     public var wave: (Float) -> Float
-    private var synth: Synth
+    //private var synth: Synth
     private var asynthResults = [AsynthResult]()
     private var frequencies = [Int]()
     
     public init(predictionsPerNote: Int, wave: @escaping (Float) -> Float) {
         self.predictionsPerNote = predictionsPerNote
         self.wave = wave
-        synth = Synth(sounds: [Sound(wave: wave, volume: 1)])
+        //synth = Synth(sounds: [Sound(wave: wave, volume: 1)])
     }
     
     public func playForResult(_ result: AsynthResult) -> String {
@@ -42,27 +42,27 @@ public class ResonanceSoundMap {
     }
     
     private func setSynthForStill(frequency: Int) {
-        synth.freqMod = sin
-        synth.envelope.attack = 0.5
-        synth.envelope.release = 0.3
-        synth.envelope.sustain = 0.7
-        synth.effects = [Effect.delay(delayTime: 0.3, wetDryMix: 0.6, feedback: 0.9)]
-        synth.play(frequency)
+//        synth.freqMod = sin
+//        synth.envelope.attack = 0.5
+//        synth.envelope.release = 0.3
+//        synth.envelope.sustain = 0.7
+//        synth.effects = [Effect.delay(delayTime: 0.3, wetDryMix: 0.6, feedback: 0.9)]
+//        synth.play(frequency)
     }
     
     private func setSynthForDisturbed(frequency: Int) {
-        synth.freqMod = saw
-        synth.envelope.attack = 0.9
-        synth.envelope.release = 0.5
-        synth.envelope.sustain = 0.8
-        synth.effects = [Effect.delay(delayTime: 0.3, wetDryMix: 0.9, feedback: 0.5)]
-        synth.play(frequency)
+//        synth.freqMod = saw
+//        synth.envelope.attack = 0.9
+//        synth.envelope.release = 0.5
+//        synth.envelope.sustain = 0.8
+//        synth.effects = [Effect.delay(delayTime: 0.3, wetDryMix: 0.9, feedback: 0.5)]
+//        synth.play(frequency)
     }
     
     private func setSynthForNoBowl(frequency: Int) {
-        synth.freqMod = noise
-        synth.envelope.attack = 0.5
-        synth.envelope.release = 0.5
-        synth.play(frequency)
+//        synth.freqMod = noise
+//        synth.envelope.attack = 0.5
+//        synth.envelope.release = 0.5
+//        synth.play(frequency)
     }
 }
