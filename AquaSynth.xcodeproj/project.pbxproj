@@ -17,6 +17,7 @@
 		0B1813201F77F95600E079F6 /* Audiowide.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B18131F1F77F94800E079F6 /* Audiowide.ttf */; };
 		0B459DD71F7E708400795472 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8665B31F76BE49002953B7 /* UIImage.swift */; };
 		0B459DDB1F80175C00795472 /* PredictionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B07161D1F76C5E200731457 /* PredictionService.swift */; };
+		0B53EED41FCFACCF0001A645 /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B53EED21FCFACCF0001A645 /* AudioKit.framework */; };
 		0B74053E1F71E71700BE2D20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B74053D1F71E71700BE2D20 /* AppDelegate.swift */; };
 		0B7405401F71E71700BE2D20 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B74053F1F71E71700BE2D20 /* HomeViewController.swift */; };
 		0B7405431F71E71700BE2D20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B7405411F71E71700BE2D20 /* Main.storyboard */; };
@@ -36,7 +37,6 @@
 		0BFD433C1F735B1A007A90D7 /* NotePlayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFD43361F735B1A007A90D7 /* NotePlayable.swift */; };
 		0BFD43491F735B67007A90D7 /* NotePlayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFD43361F735B1A007A90D7 /* NotePlayable.swift */; };
 		0BFD434C1F735BCA007A90D7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BFD434B1F735BCA007A90D7 /* AudioToolbox.framework */; };
-		0BFD434D1F735BF4007A90D7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BFD434B1F735BCA007A90D7 /* AudioToolbox.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +77,8 @@
 		0B0716211F76D4FD00731457 /* ResonanceSoundMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResonanceSoundMap.swift; sourceTree = "<group>"; };
 		0B0716231F76DCB000731457 /* AsynthResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsynthResult.swift; sourceTree = "<group>"; };
 		0B18131F1F77F94800E079F6 /* Audiowide.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Audiowide.ttf; path = Fonts/Audiowide.ttf; sourceTree = "<group>"; };
+		0B53EED21FCFACCF0001A645 /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioKit.framework; path = Frameworks/AudioKit.framework; sourceTree = "<group>"; };
+		0B53EED31FCFACCF0001A645 /* PaperOnboarding.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PaperOnboarding.framework; path = Frameworks/PaperOnboarding.framework; sourceTree = "<group>"; };
 		0B74053A1F71E71600BE2D20 /* AquaSynth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AquaSynth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B74053D1F71E71700BE2D20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0B74053F1F71E71700BE2D20 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -105,7 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0BFD434D1F735BF4007A90D7 /* AudioToolbox.framework in Frameworks */,
+				0B53EED41FCFACCF0001A645 /* AudioKit.framework in Frameworks */,
 				0B7405751F71E9F500BE2D20 /* AsynthPlayground.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,6 +262,8 @@
 		0BFD434A1F735BCA007A90D7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0B53EED21FCFACCF0001A645 /* AudioKit.framework */,
+				0B53EED31FCFACCF0001A645 /* PaperOnboarding.framework */,
 				0BFD434B1F735BCA007A90D7 /* AudioToolbox.framework */,
 			);
 			name = Frameworks;
@@ -598,6 +602,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z9GGFL7AD3;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = AquaSynth/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = VincentSmithers.AquaSynth;
@@ -613,6 +621,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z9GGFL7AD3;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = AquaSynth/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = VincentSmithers.AquaSynth;
