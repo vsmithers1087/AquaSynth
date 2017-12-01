@@ -1,0 +1,11 @@
+framework module Onboarding {
+  umbrella header "Onboarding.h"
+
+  export *
+  module * { export * }
+}
+
+module Onboarding.Swift {
+    header "Onboarding-Swift.h"
+    requires objc
+}

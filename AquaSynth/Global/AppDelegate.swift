@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import AudioKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
