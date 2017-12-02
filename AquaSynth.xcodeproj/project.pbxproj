@@ -12,21 +12,12 @@
 		0B07161E1F76C5E200731457 /* PredictionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B07161D1F76C5E200731457 /* PredictionService.swift */; };
 		0B0716221F76D4FD00731457 /* ResonanceSoundMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0716211F76D4FD00731457 /* ResonanceSoundMap.swift */; };
 		0B0716241F76DCB000731457 /* AsynthResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0716231F76DCB000731457 /* AsynthResult.swift */; };
-		0B0716251F76DCC400731457 /* AsynthResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0716231F76DCB000731457 /* AsynthResult.swift */; };
-		0B0716261F76DCCE00731457 /* ResonanceSoundMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0716211F76D4FD00731457 /* ResonanceSoundMap.swift */; };
 		0B1813201F77F95600E079F6 /* Audiowide.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B18131F1F77F94800E079F6 /* Audiowide.ttf */; };
-		0B459DD71F7E708400795472 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8665B31F76BE49002953B7 /* UIImage.swift */; };
-		0B459DDB1F80175C00795472 /* PredictionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B07161D1F76C5E200731457 /* PredictionService.swift */; };
-		0B53EED41FCFACCF0001A645 /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B53EED21FCFACCF0001A645 /* AudioKit.framework */; };
-		0B53EF0E1FD0F2130001A645 /* Onboarding.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B53EF0C1FD0F0C90001A645 /* Onboarding.framework */; };
 		0B74053E1F71E71700BE2D20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B74053D1F71E71700BE2D20 /* AppDelegate.swift */; };
 		0B7405401F71E71700BE2D20 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B74053F1F71E71700BE2D20 /* HomeViewController.swift */; };
 		0B7405431F71E71700BE2D20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B7405411F71E71700BE2D20 /* Main.storyboard */; };
 		0B7405481F71E71700BE2D20 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B7405461F71E71700BE2D20 /* LaunchScreen.storyboard */; };
 		0B7405531F71E71700BE2D20 /* AquaSynthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7405521F71E71700BE2D20 /* AquaSynthTests.swift */; };
-		0B7405721F71E9F500BE2D20 /* AsynthPlayground.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B7405701F71E9F500BE2D20 /* AsynthPlayground.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0B7405751F71E9F500BE2D20 /* AsynthPlayground.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B74056E1F71E9F500BE2D20 /* AsynthPlayground.framework */; };
-		0B7405761F71E9F500BE2D20 /* AsynthPlayground.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0B74056E1F71E9F500BE2D20 /* AsynthPlayground.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0B7B052A1F7358010088DFAB /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0B7B05291F7358010088DFAB /* Info.plist */; };
 		0B836F0C1F735F09009FF459 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B836F0B1F735F09009FF459 /* Assets.xcassets */; };
 		0B836F0F1F7469BB009FF459 /* UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B836F0E1F7469BB009FF459 /* UIDevice.swift */; };
@@ -35,9 +26,10 @@
 		0B8665B61F76C043002953B7 /* FrameExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8665B51F76C043002953B7 /* FrameExtractor.swift */; };
 		0B92C09C1F72952E00A7A151 /* SynthSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B92C09B1F72952E00A7A151 /* SynthSessionViewController.swift */; };
 		0B92C09E1F72953A00A7A151 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B92C09D1F72953A00A7A151 /* InfoViewController.swift */; };
-		0BFD433C1F735B1A007A90D7 /* NotePlayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFD43361F735B1A007A90D7 /* NotePlayable.swift */; };
-		0BFD43491F735B67007A90D7 /* NotePlayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFD43361F735B1A007A90D7 /* NotePlayable.swift */; };
-		0BFD434C1F735BCA007A90D7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BFD434B1F735BCA007A90D7 /* AudioToolbox.framework */; };
+		0BE1AD151FD306BB0099D6F4 /* Onboarding.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B53EF0C1FD0F0C90001A645 /* Onboarding.framework */; };
+		0BE1AD161FD306BB0099D6F4 /* Onboarding.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0B53EF0C1FD0F0C90001A645 /* Onboarding.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0BE1AD171FD306BB0099D6F4 /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B53EED21FCFACCF0001A645 /* AudioKit.framework */; };
+		0BE1AD181FD306BB0099D6F4 /* AudioKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0B53EED21FCFACCF0001A645 /* AudioKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,13 +40,6 @@
 			remoteGlobalIDString = 0B7405391F71E71600BE2D20;
 			remoteInfo = AquaSynth;
 		};
-		0B7405731F71E9F500BE2D20 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0B7405321F71E71600BE2D20 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0B74056D1F71E9F500BE2D20;
-			remoteInfo = AsynthPlayground;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -64,7 +49,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				0B7405761F71E9F500BE2D20 /* AsynthPlayground.framework in Embed Frameworks */,
+				0BE1AD181FD306BB0099D6F4 /* AudioKit.framework in Embed Frameworks */,
+				0BE1AD161FD306BB0099D6F4 /* Onboarding.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -89,9 +75,6 @@
 		0B74054E1F71E71700BE2D20 /* AquaSynthTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AquaSynthTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B7405521F71E71700BE2D20 /* AquaSynthTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AquaSynthTests.swift; sourceTree = "<group>"; };
 		0B7405541F71E71700BE2D20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0B74056E1F71E9F500BE2D20 /* AsynthPlayground.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AsynthPlayground.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0B7405701F71E9F500BE2D20 /* AsynthPlayground.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AsynthPlayground.h; sourceTree = "<group>"; };
-		0B7405711F71E9F500BE2D20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B7B05291F7358010088DFAB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B836F0B1F735F09009FF459 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0B836F0E1F7469BB009FF459 /* UIDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDevice.swift; sourceTree = "<group>"; };
@@ -100,7 +83,6 @@
 		0B8665B51F76C043002953B7 /* FrameExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameExtractor.swift; sourceTree = "<group>"; };
 		0B92C09B1F72952E00A7A151 /* SynthSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynthSessionViewController.swift; sourceTree = "<group>"; };
 		0B92C09D1F72953A00A7A151 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
-		0BFD43361F735B1A007A90D7 /* NotePlayable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotePlayable.swift; sourceTree = "<group>"; };
 		0BFD434B1F735BCA007A90D7 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -109,9 +91,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B53EF0E1FD0F2130001A645 /* Onboarding.framework in Frameworks */,
-				0B53EED41FCFACCF0001A645 /* AudioKit.framework in Frameworks */,
-				0B7405751F71E9F500BE2D20 /* AsynthPlayground.framework in Frameworks */,
+				0BE1AD171FD306BB0099D6F4 /* AudioKit.framework in Frameworks */,
+				0BE1AD151FD306BB0099D6F4 /* Onboarding.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,14 +100,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0B74056A1F71E9F500BE2D20 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0BFD434C1F735BCA007A90D7 /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,7 +111,6 @@
 			children = (
 				0B74053C1F71E71600BE2D20 /* AquaSynth */,
 				0B7405511F71E71700BE2D20 /* AquaSynthTests */,
-				0B74056F1F71E9F500BE2D20 /* AsynthPlayground */,
 				0B74053B1F71E71600BE2D20 /* Products */,
 				0BFD434A1F735BCA007A90D7 /* Frameworks */,
 			);
@@ -149,7 +121,6 @@
 			children = (
 				0B74053A1F71E71600BE2D20 /* AquaSynth.app */,
 				0B74054E1F71E71700BE2D20 /* AquaSynthTests.xctest */,
-				0B74056E1F71E9F500BE2D20 /* AsynthPlayground.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -218,15 +189,6 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		0B74056F1F71E9F500BE2D20 /* AsynthPlayground */ = {
-			isa = PBXGroup;
-			children = (
-				0B7405701F71E9F500BE2D20 /* AsynthPlayground.h */,
-				0B7405711F71E9F500BE2D20 /* Info.plist */,
-			);
-			path = AsynthPlayground;
-			sourceTree = "<group>";
-		};
 		0B836F101F7469C2009FF459 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -256,7 +218,6 @@
 		0BFD43401F735B27007A90D7 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
-				0BFD43361F735B1A007A90D7 /* NotePlayable.swift */,
 				0B07161B1F76C3A900731457 /* FrameExtractable.swift */,
 			);
 			path = Protocol;
@@ -275,17 +236,6 @@
 		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		0B74056B1F71E9F500BE2D20 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0B7405721F71E9F500BE2D20 /* AsynthPlayground.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
 		0B7405391F71E71600BE2D20 /* AquaSynth */ = {
 			isa = PBXNativeTarget;
@@ -299,7 +249,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				0B7405741F71E9F500BE2D20 /* PBXTargetDependency */,
 			);
 			name = AquaSynth;
 			productName = AquaSynth;
@@ -324,24 +273,6 @@
 			productReference = 0B74054E1F71E71700BE2D20 /* AquaSynthTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		0B74056D1F71E9F500BE2D20 /* AsynthPlayground */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 0B7405771F71E9F500BE2D20 /* Build configuration list for PBXNativeTarget "AsynthPlayground" */;
-			buildPhases = (
-				0B7405691F71E9F500BE2D20 /* Sources */,
-				0B74056A1F71E9F500BE2D20 /* Frameworks */,
-				0B74056B1F71E9F500BE2D20 /* Headers */,
-				0B74056C1F71E9F500BE2D20 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = AsynthPlayground;
-			productName = AsynthPlayground;
-			productReference = 0B74056E1F71E9F500BE2D20 /* AsynthPlayground.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -361,10 +292,6 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = 0B7405391F71E71600BE2D20;
 					};
-					0B74056D1F71E9F500BE2D20 = {
-						CreatedOnToolsVersion = 9.0;
-						ProvisioningStyle = Automatic;
-					};
 				};
 			};
 			buildConfigurationList = 0B7405351F71E71600BE2D20 /* Build configuration list for PBXProject "AquaSynth" */;
@@ -382,7 +309,6 @@
 			targets = (
 				0B7405391F71E71600BE2D20 /* AquaSynth */,
 				0B74054D1F71E71700BE2D20 /* AquaSynthTests */,
-				0B74056D1F71E9F500BE2D20 /* AsynthPlayground */,
 			);
 		};
 /* End PBXProject section */
@@ -407,13 +333,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0B74056C1F71E9F500BE2D20 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -425,7 +344,6 @@
 				0B836F121F746BFC009FF459 /* FrequencyResultView.swift in Sources */,
 				0B92C09C1F72952E00A7A151 /* SynthSessionViewController.swift in Sources */,
 				0B0716241F76DCB000731457 /* AsynthResult.swift in Sources */,
-				0BFD433C1F735B1A007A90D7 /* NotePlayable.swift in Sources */,
 				0B836F0F1F7469BB009FF459 /* UIDevice.swift in Sources */,
 				0B7405401F71E71700BE2D20 /* HomeViewController.swift in Sources */,
 				0B92C09E1F72953A00A7A151 /* InfoViewController.swift in Sources */,
@@ -446,18 +364,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0B7405691F71E9F500BE2D20 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0B0716251F76DCC400731457 /* AsynthResult.swift in Sources */,
-				0BFD43491F735B67007A90D7 /* NotePlayable.swift in Sources */,
-				0B459DDB1F80175C00795472 /* PredictionService.swift in Sources */,
-				0B459DD71F7E708400795472 /* UIImage.swift in Sources */,
-				0B0716261F76DCCE00731457 /* ResonanceSoundMap.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -465,11 +371,6 @@
 			isa = PBXTargetDependency;
 			target = 0B7405391F71E71600BE2D20 /* AquaSynth */;
 			targetProxy = 0B74054F1F71E71700BE2D20 /* PBXContainerItemProxy */;
-		};
-		0B7405741F71E9F500BE2D20 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 0B74056D1F71E9F500BE2D20 /* AsynthPlayground */;
-			targetProxy = 0B7405731F71E9F500BE2D20 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -674,54 +575,6 @@
 			};
 			name = Release;
 		};
-		0B7405781F71E9F500BE2D20 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = Z9GGFL7AD3;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = AsynthPlayground/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = VincentSmithers.AsynthPlayground;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		0B7405791F71E9F500BE2D20 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = Z9GGFL7AD3;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = AsynthPlayground/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = VincentSmithers.AsynthPlayground;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -748,15 +601,6 @@
 			buildConfigurations = (
 				0B74055B1F71E71700BE2D20 /* Debug */,
 				0B74055C1F71E71700BE2D20 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		0B7405771F71E9F500BE2D20 /* Build configuration list for PBXNativeTarget "AsynthPlayground" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0B7405781F71E9F500BE2D20 /* Debug */,
-				0B7405791F71E9F500BE2D20 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

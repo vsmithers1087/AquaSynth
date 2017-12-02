@@ -7,18 +7,17 @@
 //
 
 import UIKit
+import AudioKit
 
 public class ResonanceSoundMap {
     
     public var predictionsPerNote: Int
-    public var wave: (Float) -> Float
     //private var synth: Synth
     private var asynthResults = [AsynthResult]()
     private var frequencies = [Int]()
     
-    public init(predictionsPerNote: Int, wave: @escaping (Float) -> Float) {
+    public init(predictionsPerNote: Int) {
         self.predictionsPerNote = predictionsPerNote
-        self.wave = wave
         //synth = Synth(sounds: [Sound(wave: wave, volume: 1)])
     }
     
