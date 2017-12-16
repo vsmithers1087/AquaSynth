@@ -24,6 +24,7 @@
 		0B836F121F746BFC009FF459 /* FrequencyResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B836F111F746BFC009FF459 /* FrequencyResultView.swift */; };
 		0B8665B41F76BE49002953B7 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8665B31F76BE49002953B7 /* UIImage.swift */; };
 		0B8665B61F76C043002953B7 /* FrameExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8665B51F76C043002953B7 /* FrameExtractor.swift */; };
+		0B8BAA3A1FE5769200DD6581 /* WavBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8BAA391FE5769200DD6581 /* WavBase.swift */; };
 		0B92C09C1F72952E00A7A151 /* SynthSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B92C09B1F72952E00A7A151 /* SynthSessionViewController.swift */; };
 		0B92C09E1F72953A00A7A151 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B92C09D1F72953A00A7A151 /* InfoViewController.swift */; };
 		0BE1AD151FD306BB0099D6F4 /* Onboarding.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B53EF0C1FD0F0C90001A645 /* Onboarding.framework */; };
@@ -81,6 +82,7 @@
 		0B836F111F746BFC009FF459 /* FrequencyResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequencyResultView.swift; sourceTree = "<group>"; };
 		0B8665B31F76BE49002953B7 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		0B8665B51F76C043002953B7 /* FrameExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameExtractor.swift; sourceTree = "<group>"; };
+		0B8BAA391FE5769200DD6581 /* WavBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WavBase.swift; sourceTree = "<group>"; };
 		0B92C09B1F72952E00A7A151 /* SynthSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynthSessionViewController.swift; sourceTree = "<group>"; };
 		0B92C09D1F72953A00A7A151 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		0BFD434B1F735BCA007A90D7 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -185,6 +187,7 @@
 				0B0716211F76D4FD00731457 /* ResonanceSoundMap.swift */,
 				0B07161D1F76C5E200731457 /* PredictionService.swift */,
 				0B0716231F76DCB000731457 /* AsynthResult.swift */,
+				0B8BAA391FE5769200DD6581 /* WavBase.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -351,6 +354,7 @@
 				0B07161C1F76C3A900731457 /* FrameExtractable.swift in Sources */,
 				0B07161A1F76C19400731457 /* EdgeFilter.swift in Sources */,
 				0B74053E1F71E71700BE2D20 /* AppDelegate.swift in Sources */,
+				0B8BAA3A1FE5769200DD6581 /* WavBase.swift in Sources */,
 				0B8665B41F76BE49002953B7 /* UIImage.swift in Sources */,
 				0B0716221F76D4FD00731457 /* ResonanceSoundMap.swift in Sources */,
 			);

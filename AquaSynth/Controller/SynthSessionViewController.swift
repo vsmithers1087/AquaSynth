@@ -81,7 +81,7 @@ class SynthSessionViewController: UIViewController, FrameExtractable {
     }
     
     func capturedFrame(image: UIImage) {
-        frameImageView.image = image
+        frameImageView.image = applyFinishingFilter(image: image)
         framesCount += 1
         let predictionQueue = DispatchQueue(label: "predictionQueue")
         predictionQueue.async {
@@ -95,5 +95,15 @@ class SynthSessionViewController: UIViewController, FrameExtractable {
                 }
             }
         }
+    }
+    
+    private func applyFinishingFilter(image: UIImage) -> UIImage {
+        let rVector = CIVector(x: 15 / 255, y: 15 / 255, z: 15 / 255)
+        let gVector = CIVector(x: 153 / 255, y: 153 / 255, z: 153 / 255)
+        let bVector = CIVector(x: 204 / 255, y: 204 / 255, z: 204 / 255)
+        let matrixParameter = ["inputRVector": rVector, "inputGVector": gVector, "inputBVector": bVector]
+        let ciImage = CIImage(image: image)!
+        let filteredImage = ciImage.applyingFilter("CIColorMatrix", parameters: matrixParameter)
+        return UIImage(ciImage: filteredImage)
     }
 }

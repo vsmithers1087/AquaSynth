@@ -9,59 +9,52 @@
 import UIKit
 import AudioKit
 
-public class ResonanceSoundMap {
+class ResonanceSoundMap {
     
-    public var predictionsPerNote: Int
-    //private var synth: Synth
+    //public var predictionsPerNote: Int
     private var asynthResults = [AsynthResult]()
     private var frequencies = [Int]()
+    let bells = AKTubularBells()
+    let string = AKPluckedString()
+    var delay: AKDelay
+    var reverb: AKReverb
+    private var mixer: AKMixer
+    private var hornWave = WavBase(filename: "horn.wav")
+    private var cricket = WavBase(filename: "cricket.wav")
     
-    public init(predictionsPerNote: Int) {
-        self.predictionsPerNote = predictionsPerNote
-        //synth = Synth(sounds: [Sound(wave: wave, volume: 1)])
+    init() {
+        hornWave.player.volume = 0.4
+        mixer = AKMixer(bells, string, cricket.player, hornWave.player)
+        delay = AKDelay(mixer)
+        reverb = AKReverb(delay)
+        AudioKit.output = reverb
+        AudioKit.start()
     }
     
-    public func playForResult(_ result: AsynthResult) -> String {
-        var frequency = 0
-        print(result.label)
-        switch result.label {
-        case AsynthResultLabel.still:
-            frequency = Int(result.probability * Double(100))
-            setSynthForStill(frequency: frequency)
-            return "Frequency Still: \(frequency) Hertz"
-        case AsynthResultLabel.disturbed:
-            frequency = Int(result.probability * Double(800))
-            setSynthForDisturbed(frequency: frequency)
-            return "Frequency Disturbed: \(frequency) Hertz"
-        case AsynthResultLabel.noBowl, .none:
-            frequency = 23
-            setSynthForNoBowl(frequency: frequency)
-            return "No water in sight..."
+    func playForFrequency(_ prediction: Double, level: AsynthResultLabel) {
+        var triggerFreq: Double = 0
+        switch level {
+        case .noBowl:
+            triggerFreq = 20
+            delay.time = 0
+            reverb.dryWetMix = 0
+            cricket.player.play()
+            bells.trigger(frequency: triggerFreq.midiNoteToFrequency())
+        case .still:
+            triggerFreq = 43 + prediction / 5
+            delay.time = 2
+            reverb.dryWetMix = 0.3
+            bells.trigger(frequency: triggerFreq.midiNoteToFrequency())
+            string.trigger(frequency: triggerFreq.midiNoteToFrequency())
+        case .disturbed:
+            triggerFreq = 70 + prediction / 5
+            delay.time = 3
+            reverb.dryWetMix = 0.6
+            bells.trigger(frequency: triggerFreq.midiNoteToFrequency())
+            string.trigger(frequency: (triggerFreq - 20).midiNoteToFrequency())
+            hornWave.player.play()
+        default:
+            break
         }
-    }
-    
-    private func setSynthForStill(frequency: Int) {
-//        synth.freqMod = sin
-//        synth.envelope.attack = 0.5
-//        synth.envelope.release = 0.3
-//        synth.envelope.sustain = 0.7
-//        synth.effects = [Effect.delay(delayTime: 0.3, wetDryMix: 0.6, feedback: 0.9)]
-//        synth.play(frequency)
-    }
-    
-    private func setSynthForDisturbed(frequency: Int) {
-//        synth.freqMod = saw
-//        synth.envelope.attack = 0.9
-//        synth.envelope.release = 0.5
-//        synth.envelope.sustain = 0.8
-//        synth.effects = [Effect.delay(delayTime: 0.3, wetDryMix: 0.9, feedback: 0.5)]
-//        synth.play(frequency)
-    }
-    
-    private func setSynthForNoBowl(frequency: Int) {
-//        synth.freqMod = noise
-//        synth.envelope.attack = 0.5
-//        synth.envelope.release = 0.5
-//        synth.play(frequency)
     }
 }
