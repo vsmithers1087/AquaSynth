@@ -90,8 +90,7 @@ class SynthSessionViewController: UIViewController, FrameExtractable {
                 DispatchQueue.main.async {
                     if self.framesCount % 25 == 0 {
                         self.resonanceSoundMap.playForFrequency(result.probability, level: result.label)
-                        print("Label: \(result.label.rawValue)")
-                        print("Probability: \(result.probability)")
+                        self.frequencyLabel.text = "\(result.label.rawValue) <> \(Int(result.probability))"
                     }
                 }
             }

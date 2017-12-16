@@ -25,7 +25,6 @@ class FrameExtractor: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
         captureSessionQueue.async { [unowned self] in
             self.configureSession()
             self.captureSession.startRunning()
-            print("Start running")
         }
     }
     

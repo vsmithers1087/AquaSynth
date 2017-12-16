@@ -22,7 +22,6 @@ public struct AsynthResult {
     public var probability: Double
     
     public init(className: String, probability: Double) {
-        print(className)
         switch className {
         case "xA":
             self.label = .noBowl
