@@ -26,6 +26,8 @@
 		0B8665B61F76C043002953B7 /* FrameExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8665B51F76C043002953B7 /* FrameExtractor.swift */; };
 		0B8BAA3A1FE5769200DD6581 /* WavBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8BAA391FE5769200DD6581 /* WavBase.swift */; };
 		0B8BAA3C1FE578F900DD6581 /* Asynth.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 0B8BAA3B1FE578F800DD6581 /* Asynth.mlmodel */; };
+		0B8BAA3E1FE57CF200DD6581 /* cricket.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0B8BAA3D1FE57CF200DD6581 /* cricket.wav */; };
+		0B8BAA401FE57D1700DD6581 /* horn.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0B8BAA3F1FE57D1700DD6581 /* horn.wav */; };
 		0B92C09C1F72952E00A7A151 /* SynthSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B92C09B1F72952E00A7A151 /* SynthSessionViewController.swift */; };
 		0B92C09E1F72953A00A7A151 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B92C09D1F72953A00A7A151 /* InfoViewController.swift */; };
 		0BE1AD151FD306BB0099D6F4 /* Onboarding.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B53EF0C1FD0F0C90001A645 /* Onboarding.framework */; };
@@ -85,6 +87,8 @@
 		0B8665B51F76C043002953B7 /* FrameExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameExtractor.swift; sourceTree = "<group>"; };
 		0B8BAA391FE5769200DD6581 /* WavBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WavBase.swift; sourceTree = "<group>"; };
 		0B8BAA3B1FE578F800DD6581 /* Asynth.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = Asynth.mlmodel; path = ../../AudioKitPlaygrounds/AudioKitPlaygrounds/Asynth.mlmodel; sourceTree = "<group>"; };
+		0B8BAA3D1FE57CF200DD6581 /* cricket.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = cricket.wav; path = ../../cricket.wav; sourceTree = "<group>"; };
+		0B8BAA3F1FE57D1700DD6581 /* horn.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = horn.wav; path = ../../Oneshotsample/horn.wav; sourceTree = "<group>"; };
 		0B92C09B1F72952E00A7A151 /* SynthSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynthSessionViewController.swift; sourceTree = "<group>"; };
 		0B92C09D1F72953A00A7A151 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		0BFD434B1F735BCA007A90D7 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -141,6 +145,8 @@
 				0B836F101F7469C2009FF459 /* Extension */,
 				0B8665B71F76C04A002953B7 /* Utility */,
 				0B18131F1F77F94800E079F6 /* Audiowide.ttf */,
+				0B8BAA3F1FE57D1700DD6581 /* horn.wav */,
+				0B8BAA3D1FE57CF200DD6581 /* cricket.wav */,
 				0B8BAA3B1FE578F800DD6581 /* Asynth.mlmodel */,
 				0B836F0B1F735F09009FF459 /* Assets.xcassets */,
 				0B7B05291F7358010088DFAB /* Info.plist */,
@@ -324,8 +330,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B8BAA401FE57D1700DD6581 /* horn.wav in Resources */,
 				0B1813201F77F95600E079F6 /* Audiowide.ttf in Resources */,
 				0B7405481F71E71700BE2D20 /* LaunchScreen.storyboard in Resources */,
+				0B8BAA3E1FE57CF200DD6581 /* cricket.wav in Resources */,
 				0B7405431F71E71700BE2D20 /* Main.storyboard in Resources */,
 				0B836F0C1F735F09009FF459 /* Assets.xcassets in Resources */,
 				0B7B052A1F7358010088DFAB /* Info.plist in Resources */,
