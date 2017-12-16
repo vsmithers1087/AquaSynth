@@ -91,6 +91,9 @@ class SynthSessionViewController: UIViewController, FrameExtractable {
                     if self.framesCount % 25 == 0 {
                         self.resonanceSoundMap.playForFrequency(result.probability, level: result.label)
                         self.frequencyLabel.text = "\(result.label.rawValue) <> \(Int(result.probability))"
+                        if result.label.rawValue == "No Bowl" {
+                            self.frequencyLabel.text = "Bowl out of sight or too close."
+                        }
                     }
                 }
             }

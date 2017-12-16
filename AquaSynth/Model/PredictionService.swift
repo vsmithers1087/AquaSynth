@@ -15,6 +15,9 @@ public class AsynthPredictionService: NSObject {
     let dimension: Int
     var currentLabel = "N/A"
     var currentScore: Double = 0
+    var currentStill: [String: Double] = ["still": 0]
+    var currentDisturbed:[String: Double] = ["disturbedA": 0]
+    var currentXa: [String: Double] = ["xA": 0]
     
     public init(dimension: Int) {
         self.dimension = dimension
@@ -25,40 +28,45 @@ public class AsynthPredictionService: NSObject {
         guard let buffer  = image.toPixelBuffer(image: image, dimension: dimension) else { fatalError("Could not convert image to pixel buffer") }
         
         if let prediction = try? model.prediction(data: buffer) {
-            var currentStill: Double = 0
-            var currentDisturbed: Double = 0
-            var currentXa: Double = 0
             
             prediction.prob.forEach({ (label, score) in
-                var realNum = score * Double(100)
+                let realNum = score * Double(100)
                 switch label {
                 case "still":
-                    print("STILL \(realNum)")
-                    currentStill = realNum
-                    //realNum += 9
+                    currentStill["still"] = realNum > 1.0 || realNum < 0.001 ? 100 : realNum
+                    //print("STILL \(currentStill["still"] ?? 0)")
                 case "disturbedA":
-                    print("disturbed \(realNum)")
-                    currentDisturbed = realNum
+                    currentDisturbed["disturbedA"] = realNum > 1.0 || realNum < 0.001 ? 100 : realNum * 10
+                   // print("disturbed \(currentDisturbed["disturbedA"] ?? 0)")
                 case "xA":
-                    print("xA \(realNum)")
-                    currentXa = realNum
+                    currentXa["xA"] = realNum > 1.0 || realNum < 0.001 ? 100 : realNum
+                    //print("xA \(currentXa["xA"] ?? 0)")
                 default: break
                 }
-                
-                if realNum > currentScore && (realNum  > 0  && realNum < 100){
-                    let allGreaterThanZero = currentStill > 0 && currentDisturbed > 0 && currentXa > 0
-                    let onlyXaGreaterThanZero = currentStill < 0 && currentDisturbed < 0 && currentXa > 0
-                    
-                    currentScore = realNum
-                    currentLabel = label
-                    result = AsynthResult(className: label, probability: currentScore)
-                    if allGreaterThanZero {
-                        let minVal = [currentStill, currentDisturbed, currentXa].min()
-                        
-                    }
+            })
+            
+            var currentLow: Double = 101
+            let predictions = [currentStill, currentDisturbed, currentXa]
+            predictions.forEach({ (val) in
+                if val.values.first! < currentLow {
+                    currentLow = val.values.first!
+                    currentLabel = val.keys.first!
+                    currentScore = currentLow
                 }
             })
+            
+            if currentLow == 100  {
+                result = AsynthResult(className: "xA", probability: 19)
+            } else if currentLow < 0.0015 {
+                result = AsynthResult(className: "disturbedA", probability: currentLow * 11)
+            } else {
+                result = AsynthResult(className: currentLabel, probability: currentScore * 30000)
+            }
+            
             currentScore = 0
+            currentStill = ["still": 0]
+            currentDisturbed = ["disturbedA": 0]
+            currentXa = ["xA": 0]
             return result
         }
         return nil
