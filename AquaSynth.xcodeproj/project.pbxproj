@@ -15,6 +15,8 @@
 		0B1813201F77F95600E079F6 /* Audiowide.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B18131F1F77F94800E079F6 /* Audiowide.ttf */; };
 		0B2218AE1FE708F600503C97 /* horn.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0B2218AC1FE708F600503C97 /* horn.wav */; };
 		0B2218B01FE7091C00503C97 /* Asynth.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 0B2218AF1FE7091B00503C97 /* Asynth.mlmodel */; };
+		0B2218B21FE8A60D00503C97 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B2218B11FE8A60D00503C97 /* Onboarding.storyboard */; };
+		0B2218B41FE8A64A00503C97 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2218B31FE8A64A00503C97 /* OnboardingViewController.swift */; };
 		0B74053E1F71E71700BE2D20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B74053D1F71E71700BE2D20 /* AppDelegate.swift */; };
 		0B7405401F71E71700BE2D20 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B74053F1F71E71700BE2D20 /* HomeViewController.swift */; };
 		0B7405431F71E71700BE2D20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B7405411F71E71700BE2D20 /* Main.storyboard */; };
@@ -70,6 +72,8 @@
 		0B18131F1F77F94800E079F6 /* Audiowide.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Audiowide.ttf; path = Fonts/Audiowide.ttf; sourceTree = "<group>"; };
 		0B2218AC1FE708F600503C97 /* horn.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = horn.wav; path = ../../horn.wav; sourceTree = "<group>"; };
 		0B2218AF1FE7091B00503C97 /* Asynth.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = Asynth.mlmodel; path = ../../Misc17/Asynth.mlmodel; sourceTree = "<group>"; };
+		0B2218B11FE8A60D00503C97 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
+		0B2218B31FE8A64A00503C97 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		0B53EED21FCFACCF0001A645 /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioKit.framework; path = Frameworks/AudioKit.framework; sourceTree = "<group>"; };
 		0B53EED31FCFACCF0001A645 /* PaperOnboarding.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PaperOnboarding.framework; path = Frameworks/PaperOnboarding.framework; sourceTree = "<group>"; };
 		0B53EF0C1FD0F0C90001A645 /* Onboarding.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Onboarding.framework; path = Frameworks/Onboarding.framework; sourceTree = "<group>"; };
@@ -177,6 +181,7 @@
 				0B74053F1F71E71700BE2D20 /* HomeViewController.swift */,
 				0B92C09D1F72953A00A7A151 /* InfoViewController.swift */,
 				0B92C09B1F72952E00A7A151 /* SynthSessionViewController.swift */,
+				0B2218B31FE8A64A00503C97 /* OnboardingViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -186,6 +191,7 @@
 			children = (
 				0B7405411F71E71700BE2D20 /* Main.storyboard */,
 				0B7405461F71E71700BE2D20 /* LaunchScreen.storyboard */,
+				0B2218B11FE8A60D00503C97 /* Onboarding.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -335,6 +341,7 @@
 				0B8BAA3E1FE57CF200DD6581 /* cricket.wav in Resources */,
 				0B7405431F71E71700BE2D20 /* Main.storyboard in Resources */,
 				0B2218AE1FE708F600503C97 /* horn.wav in Resources */,
+				0B2218B21FE8A60D00503C97 /* Onboarding.storyboard in Resources */,
 				0B836F0C1F735F09009FF459 /* Assets.xcassets in Resources */,
 				0B7B052A1F7358010088DFAB /* Info.plist in Resources */,
 			);
@@ -365,6 +372,7 @@
 				0B8665B61F76C043002953B7 /* FrameExtractor.swift in Sources */,
 				0B07161C1F76C3A900731457 /* FrameExtractable.swift in Sources */,
 				0B07161A1F76C19400731457 /* EdgeFilter.swift in Sources */,
+				0B2218B41FE8A64A00503C97 /* OnboardingViewController.swift in Sources */,
 				0B74053E1F71E71700BE2D20 /* AppDelegate.swift in Sources */,
 				0B8BAA3A1FE5769200DD6581 /* WavBase.swift in Sources */,
 				0B8665B41F76BE49002953B7 /* UIImage.swift in Sources */,
