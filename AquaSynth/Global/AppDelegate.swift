@@ -18,6 +18,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         setOnboardingViewController()
         return true
     }
+    
+    func setHomeViewController() {
+        let homeViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+        window?.rootViewController = homeViewController
+    }
 
     private func setOnboardingViewController() {
         let onBoardingViewController = UIStoryboard(name: "Onboarding", bundle: nil).instantiateViewController(withIdentifier: "OnboardingViewController") as! OnboardingViewController
