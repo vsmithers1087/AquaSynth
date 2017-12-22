@@ -26,7 +26,7 @@ class OnboardingViewController: UIViewController {
     private func setupPaperOnboardingView() {
         let onboarding = PaperOnboarding(itemsCount: 4)
         onboarding.dataSource = self
-        onboarding.delegate = self
+        //onboarding.delegate = self
         onboarding.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(onboarding)
         
@@ -71,6 +71,14 @@ class OnboardingViewController: UIViewController {
 }
 
 extension OnboardingViewController: PaperOnboardingDelegate {
+
+    func onboardingWillTransitonToIndex(_ index: Int) {
+        
+    }
+    
+    func onboardingConfigurationItem(_ item: OnboardingContentViewItem, index: Int) {
+        
+    }
     
     func onboardingDidTransitonToIndex(_ index: Int) {
         if index == 3 {
@@ -78,12 +86,6 @@ extension OnboardingViewController: PaperOnboardingDelegate {
         } else {
             finishButton.isHidden = true
         }
-    }
-    
-    func onboardingConfigurationItem(_ item: OnboardingContentViewItem, index: Int) {
-        //    item.titleLabel?.backgroundColor = .redColor()
-        //    item.descriptionLabel?.backgroundColor = .redColor()
-        //    item.imageView = ...
     }
 }
 
@@ -94,28 +96,28 @@ extension OnboardingViewController: PaperOnboardingDataSource {
         let descriptionFont = UIFont(name: "Audiowide", size: 14.0) ?? UIFont.systemFont(ofSize: 14.0)
         
         return [
-            (UIImage(named: "IconBlack")!,
+            (PlayerView(frame: CGRect.zero, resource: "preview1"),
              "AquaSynth",
              "A synthesizer that uses machine learning predictions as midi input. \n It is designed to be setup to read resonance patterns in a bowl of water",
              UIImage(named: "iconBackground")!,
              UIColor(red:0.40, green:0.56, blue:0.71, alpha:1.00),
              UIColor.white, UIColor.white, titleFont,descriptionFont),
 
-            (UIImage(named: "IconBlack")!,
+            (PlayerView(frame: CGRect.zero, resource: "preview1"),
              "An Empty Scene",
              "No bowl of water will return only crickets 🦗🦗🦗.",
              UIImage(named: "iconBackground")!,
              UIColor(red:0.40, green:0.69, blue:0.71, alpha:1.00),
              UIColor.white, UIColor.white, titleFont,descriptionFont),
 
-            (UIImage(named: "IconBlack")!,
+            (PlayerView(frame: CGRect.zero, resource: "preview1"),
              "Still Water",
              "Emits frequencies based on the calmness of the water",
              UIImage(named: "iconBackground")!,
              UIColor(red:0.61, green:0.56, blue:0.74, alpha:1.00),
              UIColor.white, UIColor.white, titleFont,descriptionFont),
             
-            (UIImage(named: "IconBlack")!,
+            (PlayerView(frame: CGRect.zero, resource: "preview1"),
              "Rippling Water",
              "Emits frequiences depending of the level of agitation, and waves created in the water 🌊🌊🌊",
              UIImage(named: "iconBackground")!,
