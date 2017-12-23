@@ -9,9 +9,10 @@
 import UIKit
 import Onboarding
 
-class OnboardingViewController: UIViewController {
+class OnboardingViewController: UIViewController, PaperOnboardingDelegate {
     
     var finishButton: UIButton!
+    var onboarding: PaperOnboarding!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,21 +25,14 @@ class OnboardingViewController: UIViewController {
     }
 
     private func setupPaperOnboardingView() {
-        let onboarding = PaperOnboarding(itemsCount: 4)
+        onboarding = PaperOnboarding(itemsCount: 4)
         onboarding.dataSource = self
-        //onboarding.delegate = self
+        onboarding.delegate = self
         onboarding.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(onboarding)
-        
         // Add constraints
         for attribute: NSLayoutAttribute in [.left, .right, .top, .bottom] {
-            let constraint = NSLayoutConstraint(item: onboarding,
-                                                attribute: attribute,
-                                                relatedBy: .equal,
-                                                toItem: view,
-                                                attribute: attribute,
-                                                multiplier: 1,
-                                                constant: 0)
+            let constraint = NSLayoutConstraint(item: onboarding, attribute: attribute, relatedBy: .equal, toItem: view, attribute: attribute, multiplier: 1, constant: 0)
             view.addConstraint(constraint)
         }
     }
@@ -70,10 +64,11 @@ class OnboardingViewController: UIViewController {
     }
 }
 
-extension OnboardingViewController: PaperOnboardingDelegate {
+extension OnboardingViewController {
 
     func onboardingWillTransitonToIndex(_ index: Int) {
-        
+        let item = onboarding.onboardingItemAtIndex(index)
+        item?.playerView.pause()
     }
     
     func onboardingConfigurationItem(_ item: OnboardingContentViewItem, index: Int) {
@@ -81,6 +76,8 @@ extension OnboardingViewController: PaperOnboardingDelegate {
     }
     
     func onboardingDidTransitonToIndex(_ index: Int) {
+        let item = onboarding.onboardingItemAtIndex(index)
+        item?.playerView.play()
         if index == 3 {
             animateButton()
         } else {

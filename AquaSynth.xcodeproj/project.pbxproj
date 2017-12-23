@@ -12,6 +12,8 @@
 		0B07161E1F76C5E200731457 /* PredictionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B07161D1F76C5E200731457 /* PredictionService.swift */; };
 		0B0716221F76D4FD00731457 /* ResonanceSoundMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0716211F76D4FD00731457 /* ResonanceSoundMap.swift */; };
 		0B0716241F76DCB000731457 /* AsynthResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0716231F76DCB000731457 /* AsynthResult.swift */; };
+		0B09A4081FEECF9C00D18EF7 /* Onboarding.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B09A4061FEECF8F00D18EF7 /* Onboarding.framework */; };
+		0B09A4091FEECF9C00D18EF7 /* Onboarding.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0B09A4061FEECF8F00D18EF7 /* Onboarding.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0B1813201F77F95600E079F6 /* Audiowide.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B18131F1F77F94800E079F6 /* Audiowide.ttf */; };
 		0B2218B21FE8A60D00503C97 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B2218B11FE8A60D00503C97 /* Onboarding.storyboard */; };
 		0B2218B41FE8A64A00503C97 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2218B31FE8A64A00503C97 /* OnboardingViewController.swift */; };
@@ -35,8 +37,6 @@
 		0BF9382F1FED75B700CD756C /* cricket.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0BF9382D1FED75B700CD756C /* cricket.wav */; };
 		0BF938311FED75C500CD756C /* Asynth.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 0BF938301FED75C500CD756C /* Asynth.mlmodel */; };
 		0BF938331FED772F00CD756C /* preview1.mov in Resources */ = {isa = PBXBuildFile; fileRef = 0BF938321FED772F00CD756C /* preview1.mov */; };
-		0BF9384A1FEDB64700CD756C /* Onboarding.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BF938491FEDB64700CD756C /* Onboarding.framework */; };
-		0BF9384B1FEDB65300CD756C /* Onboarding.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0BF938491FEDB64700CD756C /* Onboarding.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +57,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				0BE1AD181FD306BB0099D6F4 /* AudioKit.framework in Embed Frameworks */,
-				0BF9384B1FEDB65300CD756C /* Onboarding.framework in Embed Frameworks */,
+				0B09A4091FEECF9C00D18EF7 /* Onboarding.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -70,6 +70,7 @@
 		0B07161D1F76C5E200731457 /* PredictionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionService.swift; sourceTree = "<group>"; };
 		0B0716211F76D4FD00731457 /* ResonanceSoundMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResonanceSoundMap.swift; sourceTree = "<group>"; };
 		0B0716231F76DCB000731457 /* AsynthResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsynthResult.swift; sourceTree = "<group>"; };
+		0B09A4061FEECF8F00D18EF7 /* Onboarding.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Onboarding.framework; path = Frameworks/Onboarding.framework; sourceTree = "<group>"; };
 		0B18131F1F77F94800E079F6 /* Audiowide.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Audiowide.ttf; path = Fonts/Audiowide.ttf; sourceTree = "<group>"; };
 		0B2218B11FE8A60D00503C97 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		0B2218B31FE8A64A00503C97 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
@@ -95,7 +96,6 @@
 		0BF9382D1FED75B700CD756C /* cricket.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = cricket.wav; path = MiscMedia/cricket.wav; sourceTree = SOURCE_ROOT; };
 		0BF938301FED75C500CD756C /* Asynth.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = Asynth.mlmodel; path = ../../Misc17/MLModel/Asynth.mlmodel; sourceTree = "<group>"; };
 		0BF938321FED772F00CD756C /* preview1.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = preview1.mov; path = MiscMedia/preview1.mov; sourceTree = SOURCE_ROOT; };
-		0BF938491FEDB64700CD756C /* Onboarding.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Onboarding.framework; path = Frameworks/Onboarding.framework; sourceTree = "<group>"; };
 		0BFD434B1F735BCA007A90D7 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -105,7 +105,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0BE1AD171FD306BB0099D6F4 /* AudioKit.framework in Frameworks */,
-				0BF9384A1FEDB64700CD756C /* Onboarding.framework in Frameworks */,
+				0B09A4081FEECF9C00D18EF7 /* Onboarding.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,7 +246,7 @@
 		0BFD434A1F735BCA007A90D7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0BF938491FEDB64700CD756C /* Onboarding.framework */,
+				0B09A4061FEECF8F00D18EF7 /* Onboarding.framework */,
 				0B53EED21FCFACCF0001A645 /* AudioKit.framework */,
 				0BFD434B1F735BCA007A90D7 /* AudioToolbox.framework */,
 			);
