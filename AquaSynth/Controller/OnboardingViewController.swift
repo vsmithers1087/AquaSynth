@@ -93,14 +93,14 @@ extension OnboardingViewController: PaperOnboardingDataSource {
         let descriptionFont = UIFont(name: "Audiowide", size: 14.0) ?? UIFont.systemFont(ofSize: 14.0)
         
         return [
-            (PlayerView(frame: CGRect.zero, resource: "preview1"),
+            (PlayerView(frame: CGRect.zero, resource: "noBackground"),
              "AquaSynth",
              "A synthesizer that uses machine learning predictions as midi input. \n It is designed to be setup to read resonance patterns in a bowl of water",
              UIImage(named: "iconBackground")!,
              UIColor(red:0.40, green:0.56, blue:0.71, alpha:1.00),
              UIColor.white, UIColor.white, titleFont,descriptionFont),
 
-            (PlayerView(frame: CGRect.zero, resource: "preview1"),
+            (PlayerView(frame: CGRect.zero, resource: "noBackground"),
              "An Empty Scene",
              "No bowl of water will return only crickets 🦗🦗🦗.",
              UIImage(named: "iconBackground")!,
