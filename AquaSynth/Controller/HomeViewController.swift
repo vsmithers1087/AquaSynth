@@ -10,12 +10,14 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
-    @IBOutlet weak var infoButton: UIButton!
     var arrowButton: ArrowButton!
+    @IBOutlet weak var infoButton: UIButton!
+    @IBOutlet weak var backgroundWhite: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupArrowButton()
+        animateImageView()
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,6 +44,12 @@ class HomeViewController: UIViewController {
         arrowButton.center.x = view.center.x
         arrowButton.center.y = view.center.y
         arrowButton.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
+    }
+    
+    private func animateImageView() {
+        UIView.animate(withDuration: 20) {
+            self.backgroundWhite.center.x += 100
+        }
     }
     
     @objc func buttonTapped(_ sender: ArrowButton) {

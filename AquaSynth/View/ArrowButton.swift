@@ -21,13 +21,19 @@ class ArrowButton: UIButton {
     }
     
     func beginArrowAnimation() {
-        let point1 = CGPoint(x: 40, y: 33)
-        let point2 = CGPoint(x: 40, y: frame.height - 33)
-        let point3 = CGPoint(x: frame.width - 33, y: frame.height / 2)
+        let point1 = CGPoint(x: 40, y:35)
+        let point2 = CGPoint(x: 40, y: (frame.height / 2 - 5))
+        let point3 = CGPoint(x: 45, y: (frame.height / 2))
+        let point4 = CGPoint(x: 40, y: (frame.height / 2 + 5))
+        let point5 = CGPoint(x: 40, y: frame.height - 35)
+        let point6 = CGPoint(x: frame.width - 35, y: frame.height / 2)
         let path = UIBezierPath()
         path.move(to: point1)
         path.addLine(to: point2)
         path.addLine(to: point3)
+        path.addLine(to: point4)
+        path.addLine(to: point5)
+        path.addLine(to: point6)
         path.close()
         
         let shapeLayer = CAShapeLayer()
