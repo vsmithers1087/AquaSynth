@@ -1,17 +1,19 @@
-//: Playground - noun: a place where people can play
+//
+//  ArrowButton.swift
+//  AquaSynth
+//
+//  Created by Vincent Smithers on 12/23/17.
+//  Copyright © 2017 Vincent Smithers. All rights reserved.
+//
 
 import UIKit
-
-import PlaygroundSupport
-PlaygroundPage.current.needsIndefiniteExecution = true
-let containerView = UIView(frame: CGRect(x: 0, y: 0, width: 600, height: 600))
-PlaygroundPage.current.liveView = containerView
 
 class ArrowButton: UIButton {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-       setBackgroundImage(UIImage(named: "background"), for: .normal)
+        setBackgroundImage(UIImage(named: "iconBackground"), for: .normal)
+        beginArrowAnimation()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -38,7 +40,7 @@ class ArrowButton: UIButton {
         
         shapeLayer.strokeStart = 0
         let strokeAnimation = CABasicAnimation(keyPath: "strokeEnd")
-        strokeAnimation.duration = 3
+        strokeAnimation.duration = 2.3
         strokeAnimation.fromValue = 0
         strokeAnimation.toValue = 1
         strokeAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
@@ -47,8 +49,4 @@ class ArrowButton: UIButton {
         layer.addSublayer(shapeLayer)
     }
 }
-
-let arrowButton = ArrowButton(frame: CGRect(x: 200, y: 200, width: 100, height: 100))
-arrowButton.beginArrowAnimation()
-containerView.addSubview(arrowButton)
 

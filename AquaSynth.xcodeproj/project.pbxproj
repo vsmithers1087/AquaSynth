@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B04F2871FEF2B1000A143B5 /* ArrowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B04F2861FEF2B1000A143B5 /* ArrowButton.swift */; };
 		0B07161A1F76C19400731457 /* EdgeFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0716191F76C19400731457 /* EdgeFilter.swift */; };
 		0B07161C1F76C3A900731457 /* FrameExtractable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B07161B1F76C3A900731457 /* FrameExtractable.swift */; };
 		0B07161E1F76C5E200731457 /* PredictionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B07161D1F76C5E200731457 /* PredictionService.swift */; };
@@ -66,6 +67,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0B04F2861FEF2B1000A143B5 /* ArrowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrowButton.swift; sourceTree = "<group>"; };
 		0B0716191F76C19400731457 /* EdgeFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgeFilter.swift; sourceTree = "<group>"; };
 		0B07161B1F76C3A900731457 /* FrameExtractable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameExtractable.swift; sourceTree = "<group>"; };
 		0B07161D1F76C5E200731457 /* PredictionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionService.swift; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				0B836F111F746BFC009FF459 /* FrequencyResultView.swift */,
+				0B04F2861FEF2B1000A143B5 /* ArrowButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -369,6 +372,7 @@
 			files = (
 				0B07161E1F76C5E200731457 /* PredictionService.swift in Sources */,
 				0B836F121F746BFC009FF459 /* FrequencyResultView.swift in Sources */,
+				0B04F2871FEF2B1000A143B5 /* ArrowButton.swift in Sources */,
 				0B92C09C1F72952E00A7A151 /* SynthSessionViewController.swift in Sources */,
 				0B0716241F76DCB000731457 /* AsynthResult.swift in Sources */,
 				0B836F0F1F7469BB009FF459 /* UIDevice.swift in Sources */,

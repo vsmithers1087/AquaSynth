@@ -10,12 +10,12 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
-    @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var infoButton: UIButton!
-    @IBOutlet weak var aquaSynthLabelBottom: NSLayoutConstraint!
+    var arrowButton: ArrowButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupArrowButton()
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,19 +28,24 @@ class HomeViewController: UIViewController {
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        aquaSynthLabelBottom.constant = view.frame.height / 4
     }
     
     private func setupUI() {
-        playButton.layer.cornerRadius = playButton.frame.width / 2
-        playButton.layer.borderWidth = 3.0
-        playButton.layer.borderColor = UIColor.orange.cgColor
-        
         infoButton.layer.cornerRadius = infoButton.frame.width / 2
         infoButton.layer.borderWidth = 1.5
         infoButton.layer.borderColor = UIColor.orange.cgColor
-        aquaSynthLabelBottom.constant = view.frame.height / 6
     }
     
+    private func setupArrowButton() {
+        arrowButton = ArrowButton(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+        view .addSubview(arrowButton)
+        arrowButton.center.x = view.center.x
+        arrowButton.center.y = view.center.y
+        arrowButton.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
+    }
+    
+    @objc func buttonTapped(_ sender: ArrowButton) {
+        performSegue(withIdentifier: "synthSession", sender: self)
+    }
 }
 
