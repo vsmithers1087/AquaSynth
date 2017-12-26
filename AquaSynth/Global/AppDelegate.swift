@@ -14,6 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        setOnboardingViewController()
         return true
     }
     
@@ -23,8 +24,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func setOnboardingViewController() {
+        
+        guard !UserDefaults.standard.bool(forKey: "OnboardingViewed") else {
+            setHomeViewController()
+            return
+        }
+        
         let onBoardingViewController = UIStoryboard(name: "Onboarding", bundle: nil).instantiateViewController(withIdentifier: "OnboardingViewController") as! OnboardingViewController
         window?.rootViewController = onBoardingViewController
+        UserDefaults.standard.set(true, forKey: "OnboardingViewed")
     }
+    
 }
 

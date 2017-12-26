@@ -57,6 +57,7 @@ class InfoViewController: UIViewController {
     }
     
     @IBAction func introTap(_ sender: UIButton) {
+        UserDefaults.standard.set(false, forKey: "OnboardingViewed")
         let appDelgate = UIApplication.shared.delegate as? AppDelegate
         appDelgate?.setOnboardingViewController()
     }
