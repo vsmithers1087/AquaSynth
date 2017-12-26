@@ -34,6 +34,7 @@
 		0B8F9EC41FEED894004D0BB6 /* preview1.mov in Resources */ = {isa = PBXBuildFile; fileRef = 0B8F9EC31FEED894004D0BB6 /* preview1.mov */; };
 		0B92C09C1F72952E00A7A151 /* SynthSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B92C09B1F72952E00A7A151 /* SynthSessionViewController.swift */; };
 		0B92C09E1F72953A00A7A151 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B92C09D1F72953A00A7A151 /* InfoViewController.swift */; };
+		0BA058611FF2DDDB0017D8D9 /* InfoWebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA058601FF2DDDB0017D8D9 /* InfoWebViewViewController.swift */; };
 		0BE1AD171FD306BB0099D6F4 /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B53EED21FCFACCF0001A645 /* AudioKit.framework */; };
 		0BE1AD181FD306BB0099D6F4 /* AudioKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0B53EED21FCFACCF0001A645 /* AudioKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0BF9382E1FED75B700CD756C /* horn.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0BF9382C1FED75B700CD756C /* horn.wav */; };
@@ -97,6 +98,7 @@
 		0B8F9EC31FEED894004D0BB6 /* preview1.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = preview1.mov; path = MiscMedia/preview1.mov; sourceTree = SOURCE_ROOT; };
 		0B92C09B1F72952E00A7A151 /* SynthSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynthSessionViewController.swift; sourceTree = "<group>"; };
 		0B92C09D1F72953A00A7A151 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		0BA058601FF2DDDB0017D8D9 /* InfoWebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoWebViewViewController.swift; sourceTree = "<group>"; };
 		0BF9382C1FED75B700CD756C /* horn.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = horn.wav; path = MiscMedia/horn.wav; sourceTree = SOURCE_ROOT; };
 		0BF9382D1FED75B700CD756C /* cricket.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = cricket.wav; path = MiscMedia/cricket.wav; sourceTree = SOURCE_ROOT; };
 		0BF938301FED75C500CD756C /* Asynth.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = Asynth.mlmodel; path = ../../Misc17/MLModel/Asynth.mlmodel; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 				0B92C09D1F72953A00A7A151 /* InfoViewController.swift */,
 				0B92C09B1F72952E00A7A151 /* SynthSessionViewController.swift */,
 				0B2218B31FE8A64A00503C97 /* OnboardingViewController.swift */,
+				0BA058601FF2DDDB0017D8D9 /* InfoWebViewViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -384,6 +387,7 @@
 				0B2218B41FE8A64A00503C97 /* OnboardingViewController.swift in Sources */,
 				0B74053E1F71E71700BE2D20 /* AppDelegate.swift in Sources */,
 				0B8BAA3A1FE5769200DD6581 /* WavBase.swift in Sources */,
+				0BA058611FF2DDDB0017D8D9 /* InfoWebViewViewController.swift in Sources */,
 				0BF938311FED75C500CD756C /* Asynth.mlmodel in Sources */,
 				0B8665B41F76BE49002953B7 /* UIImage.swift in Sources */,
 				0B0716221F76D4FD00731457 /* ResonanceSoundMap.swift in Sources */,

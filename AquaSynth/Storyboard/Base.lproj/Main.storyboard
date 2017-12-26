@@ -36,7 +36,7 @@
                                     <color key="titleColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="ZT9-Mn-Wat" kind="presentation" id="lTg-TJ-mZz"/>
+                                    <segue destination="ZT9-Mn-Wat" kind="show" id="lTg-TJ-mZz"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -123,6 +123,9 @@
                                                 <state key="normal" title="Tripod">
                                                     <color key="titleColor" red="0.2134724855" green="0.81707257030000002" blue="0.81949323419999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="tripodTap:" destination="ZT9-Mn-Wat" eventType="touchUpInside" id="eBq-dG-C8I"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.85999999999999999" alpha="0.15191566780821908" colorSpace="calibratedWhite"/>
@@ -155,6 +158,9 @@
                                                 <state key="normal" title="Bowl">
                                                     <color key="titleColor" red="0.2134724855" green="0.81707257030000002" blue="0.81949323419999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="bowlTap:" destination="ZT9-Mn-Wat" eventType="touchUpInside" id="70o-kI-ii5"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.85999999999999999" alpha="0.15191566780821908" colorSpace="calibratedWhite"/>
@@ -212,6 +218,9 @@
                                                 <state key="normal" title="Intro">
                                                     <color key="titleColor" red="0.2134724855" green="0.81707257030000002" blue="0.81949323419999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="introTap:" destination="ZT9-Mn-Wat" eventType="touchUpInside" id="W2w-YL-qt4"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.85999999999999999" alpha="0.15191566780821908" colorSpace="calibratedWhite"/>
@@ -244,6 +253,9 @@
                                                 <state key="normal" title="Video Walkthrough">
                                                     <color key="titleColor" red="0.2134724855" green="0.81707257030000002" blue="0.81949323419999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="walkThroughTap:" destination="ZT9-Mn-Wat" eventType="touchUpInside" id="izL-3q-ZDb"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.85999999999999999" alpha="0.15191566780821908" colorSpace="calibratedWhite"/>
@@ -288,11 +300,52 @@
                     </view>
                     <connections>
                         <outlet property="dismissButton" destination="6EJ-uU-9gD" id="ndf-Gq-0DZ"/>
+                        <segue destination="ESX-nm-yaS" kind="show" identifier="infoWebView" animates="NO" id="JAx-PP-4IC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KgH-kQ-5xz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-335" y="-748"/>
+        </scene>
+        <!--Info Web View View Controller-->
+        <scene sceneID="C1f-k4-iql">
+            <objects>
+                <viewController id="ESX-nm-yaS" customClass="InfoWebViewViewController" customModule="AquaSynth" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Nj7-kY-rKj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uvb-kC-d1c">
+                                <rect key="frame" x="20" y="30" width="30" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="HsM-De-aX2"/>
+                                    <constraint firstAttribute="width" constant="30" id="tJD-hV-tlg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Audiowide-Regular" family="Audiowide" pointSize="19"/>
+                                <state key="normal" title="X">
+                                    <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismiss:" destination="ESX-nm-yaS" eventType="touchUpInside" id="JQE-6w-RtS"/>
+                                    <action selector="dismiss:" destination="ZT9-Mn-Wat" eventType="touchUpInside" id="ZMn-BT-uOv"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="uvb-kC-d1c" firstAttribute="top" secondItem="Bml-I2-c8y" secondAttribute="top" constant="10" id="IUc-WK-NTe"/>
+                            <constraint firstItem="uvb-kC-d1c" firstAttribute="leading" secondItem="Bml-I2-c8y" secondAttribute="leading" constant="20" id="kZO-QZ-NTP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Bml-I2-c8y"/>
+                    </view>
+                    <connections>
+                        <outlet property="dismissButton" destination="uvb-kC-d1c" id="JYw-eD-q0D"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uOt-Fr-5V1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="554" y="-742"/>
         </scene>
         <!--Synth Session View Controller-->
         <scene sceneID="icz-p9-A7P">

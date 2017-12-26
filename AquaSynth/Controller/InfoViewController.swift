@@ -9,12 +9,12 @@
 import UIKit
 
 class InfoViewController: UIViewController {
+    
+    var currentUrlString = ""
     @IBOutlet weak var dismissButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
     override func viewDidLayoutSubviews() {
@@ -37,14 +37,35 @@ class InfoViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    /*
+
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if let infoWebViewViewController = segue.destination as? InfoWebViewViewController {
+            infoWebViewViewController.urlString = currentUrlString
+        }
     }
-    */
-
+    
+    @IBAction func tripodTap(_ sender: UIButton) {
+        currentUrlString = "https://www.amazon.com/Tripod-Kit-Universal-Adjustable-Microfiber/dp/B00EY2Q1AS"
+        presentWebView()
+    }
+    
+    @IBAction func bowlTap(_ sender: UIButton) {
+        currentUrlString = "https://www.target.com/p/hammered-stainless-steel-serving-bowl-threshold-153/-/A-14911508"
+        presentWebView()
+    }
+    
+    @IBAction func introTap(_ sender: UIButton) {
+        let appDelgate = UIApplication.shared.delegate as? AppDelegate
+        appDelgate?.setOnboardingViewController()
+    }
+    
+    @IBAction func walkThroughTap(_ sender: UIButton) {
+        presentWebView()
+    }
+    
+    private func presentWebView() {
+        performSegue(withIdentifier: "infoWebView", sender: self)
+    }
 }

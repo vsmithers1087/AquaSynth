@@ -13,9 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        setOnboardingViewController()
         return true
     }
     
@@ -24,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = homeViewController
     }
 
-    private func setOnboardingViewController() {
+    func setOnboardingViewController() {
         let onBoardingViewController = UIStoryboard(name: "Onboarding", bundle: nil).instantiateViewController(withIdentifier: "OnboardingViewController") as! OnboardingViewController
         window?.rootViewController = onBoardingViewController
     }
