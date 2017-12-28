@@ -44,7 +44,7 @@ class InfoWebViewViewController: UIViewController {
     }
     
     private func setupWebView() {
-        webView = WKWebView(frame: CGRect(x: 0, y: 60, width: view.frame.width, height: view.frame.height - 60))
+        webView = WKWebView(frame: CGRect(x: 0, y: 68, width: view.frame.width, height: view.frame.height - 68))
         webView.navigationDelegate = self
         let request = URLRequest(url: URL(string: urlString)!)
         webView.load(request)

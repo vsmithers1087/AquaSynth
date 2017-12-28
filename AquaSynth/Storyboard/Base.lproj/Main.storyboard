@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13770"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -397,14 +398,26 @@
                                         <color key="textColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconBackground" translatesAutoresizingMaskIntoConstraints="NO" id="ejD-Bp-6Ec">
+                                        <rect key="frame" x="46" y="0.0" width="267" height="267"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="ejD-Bp-6Ec" secondAttribute="height" multiplier="1:1" id="zc3-fV-A0j"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="ejD-Bp-6Ec" firstAttribute="centerX" secondItem="SmY-oh-Ewv" secondAttribute="centerX" id="2US-mE-pda"/>
                                     <constraint firstAttribute="bottom" secondItem="QCa-2a-seR" secondAttribute="bottom" constant="20" id="Inn-Wa-qHr"/>
+                                    <constraint firstItem="ejD-Bp-6Ec" firstAttribute="top" secondItem="SmY-oh-Ewv" secondAttribute="top" id="JU7-cZ-aaF"/>
+                                    <constraint firstAttribute="bottom" secondItem="ejD-Bp-6Ec" secondAttribute="bottom" id="bav-sp-39l"/>
                                     <constraint firstAttribute="trailing" secondItem="QCa-2a-seR" secondAttribute="trailing" constant="20" id="gxc-iB-6iC"/>
                                     <constraint firstItem="QCa-2a-seR" firstAttribute="top" secondItem="SmY-oh-Ewv" secondAttribute="top" constant="20" id="lik-d8-H5L"/>
                                     <constraint firstItem="QCa-2a-seR" firstAttribute="leading" secondItem="SmY-oh-Ewv" secondAttribute="leading" constant="20" id="sgr-cf-iM0"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="imageView" destination="ejD-Bp-6Ec" id="ESM-KU-C5m"/>
+                                    <outlet property="label" destination="QCa-2a-seR" id="x2I-ur-xJ7"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -431,7 +444,6 @@
                         <outlet property="frameImageView" destination="5gc-yV-rDL" id="SqI-3e-10U"/>
                         <outlet property="frameImageViewLeading" destination="Igf-5S-6vq" id="TEi-6R-PMx"/>
                         <outlet property="frameImageViewTop" destination="MqD-pA-T8d" id="fhC-6d-UZD"/>
-                        <outlet property="frequencyLabel" destination="QCa-2a-seR" id="kg2-1S-kdR"/>
                         <outlet property="frequencyResultView" destination="SmY-oh-Ewv" id="BWw-Cu-Ntz"/>
                         <outlet property="frequencyResultViewBottom" destination="oTR-bi-O04" id="pCd-xJ-D6X"/>
                         <outlet property="frequencyResultViewTrailing" destination="Kf5-ag-33C" id="jnI-Wg-iiZ"/>
@@ -439,10 +451,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZJK-Qe-B11" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="458.39999999999998" y="76.911544227886068"/>
+            <point key="canvasLocation" x="945" y="100"/>
         </scene>
     </scenes>
     <resources>
         <image name="backgroundWhite" width="1024" height="1024"/>
+        <image name="iconBackground" width="512" height="512"/>
     </resources>
 </document>

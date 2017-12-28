@@ -28,8 +28,10 @@ class HomeViewController: UIViewController {
         super.viewDidLayoutSubviews()
         setupUI()
     }
-    
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+
+    override func viewWillLayoutSubviews() {
+        arrowButton.center.x = view.center.x
+        arrowButton.center.y = view.center.y
     }
     
     private func setupUI() {
@@ -41,8 +43,6 @@ class HomeViewController: UIViewController {
     private func setupArrowButton() {
         arrowButton = ArrowButton(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
         view .addSubview(arrowButton)
-        arrowButton.center.x = view.center.x
-        arrowButton.center.y = view.center.y
         arrowButton.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
     }
     

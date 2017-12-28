@@ -16,7 +16,6 @@ class SynthSessionViewController: UIViewController, FrameExtractable {
     let resonanceSoundMap = ResonanceSoundMap()
     var framesCount = 0
     
-    @IBOutlet weak var frequencyLabel: UILabel!
     @IBOutlet weak var dismissButton: UIButton!
     @IBOutlet weak var frameImageView: UIImageView!
     @IBOutlet weak var frequencyResultView: FrequencyResultView!
@@ -53,9 +52,9 @@ class SynthSessionViewController: UIViewController, FrameExtractable {
         dismissButton.layer.borderWidth = 0.25
         dismissButton.layer.borderColor = UIColor.gray.cgColor
         frameImageView.layer.borderWidth = 3.0
-        frameImageView.layer.borderColor = UIColor.orange.cgColor
+        frameImageView.layer.borderColor = UIColor.cyan.cgColor
         frequencyResultView.layer.borderWidth = 3.0
-        frequencyResultView.layer.borderColor = UIColor.orange.cgColor
+        frequencyResultView.layer.borderColor = UIColor.cyan.cgColor
         setupForOrientation()
     }
     
@@ -89,10 +88,14 @@ class SynthSessionViewController: UIViewController, FrameExtractable {
                 guard self.framesCount > 5 else { return }
                 DispatchQueue.main.async {
                     if self.framesCount % 25 == 0 {
+                        self.frequencyResultView.imageView.isHidden = false
+                        self.frequencyResultView.label.isHidden = true
                         self.resonanceSoundMap.playForFrequency(result.probability, level: result.label)
-                        self.frequencyLabel.text = "\(result.label.rawValue) <> \(Int(result.probability))"
+                        self.frequencyResultView.iconWaveAnimation.mapPointsFor(level: 10.0)
                         if result.label.rawValue == "No Bowl" {
-                            self.frequencyLabel.text = "Bowl out of sight or too close."
+                            self.frequencyResultView.label.text = "Bowl out of sight or too close."
+                            self.frequencyResultView.imageView.isHidden = true
+                            self.frequencyResultView.label.isHidden = false
                         }
                     }
                 }

@@ -10,12 +10,11 @@ import UIKit
 
 class FrequencyResultView: UIView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var label: UILabel!
+    var iconWaveAnimation: IconWaveAnimation!
+    
     override func draw(_ rect: CGRect) {
-        // Drawing code
+        iconWaveAnimation = IconWaveAnimation(imageView: imageView)
     }
-    */
-
 }
