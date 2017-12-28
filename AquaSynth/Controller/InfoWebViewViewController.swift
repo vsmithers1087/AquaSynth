@@ -14,10 +14,12 @@ class InfoWebViewViewController: UIViewController {
     var webView: WKWebView!
     var urlString = ""
     @IBOutlet weak var dismissButton: UIButton!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupWebView()
+        setupActivityIndicator()
     }
     
     override func viewDidLayoutSubviews() {
@@ -29,6 +31,12 @@ class InfoWebViewViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+    private func setupActivityIndicator() {
+        activityIndicator.layer.cornerRadius = 8.0
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.startAnimating()
+    }
+    
     private func setupUI() {
         dismissButton.layer.cornerRadius = dismissButton.frame.width / 2
         dismissButton.layer.borderWidth = 0.25
@@ -36,8 +44,8 @@ class InfoWebViewViewController: UIViewController {
     }
     
     private func setupWebView() {
-        webView = WKWebView(frame: CGRect(x: 0, y: 80, width: view.frame.width, height: view.frame.height - 80))
-        view.addSubview(webView)
+        webView = WKWebView(frame: CGRect(x: 0, y: 60, width: view.frame.width, height: view.frame.height - 60))
+        webView.navigationDelegate = self
         let request = URLRequest(url: URL(string: urlString)!)
         webView.load(request)
     }
@@ -47,6 +55,9 @@ class InfoWebViewViewController: UIViewController {
     }
 }
 
-extension InfoWebViewViewController {
-    
+extension InfoWebViewViewController: WKNavigationDelegate {
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        view.addSubview(webView)
+        activityIndicator.stopAnimating()
+    }
 }

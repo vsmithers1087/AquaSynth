@@ -188,9 +188,9 @@
 			isa = PBXGroup;
 			children = (
 				0B74053F1F71E71700BE2D20 /* HomeViewController.swift */,
-				0B92C09D1F72953A00A7A151 /* InfoViewController.swift */,
 				0B92C09B1F72952E00A7A151 /* SynthSessionViewController.swift */,
 				0B2218B31FE8A64A00503C97 /* OnboardingViewController.swift */,
+				0B92C09D1F72953A00A7A151 /* InfoViewController.swift */,
 				0BA058601FF2DDDB0017D8D9 /* InfoWebViewViewController.swift */,
 			);
 			path = Controller;

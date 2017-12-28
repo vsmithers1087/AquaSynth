@@ -10,13 +10,6 @@ imageView.image = UIImage(named: "background.png")
 containerView.addSubview(imageView)
 PlaygroundPage.current.liveView = containerView
 
-
-func calculatePoints(frame: CGRect, level: Int) {
-    let verticalOffset = frame.height / 20
-    let stepHorizontal = frame.width / CGFloat(level)
-    
-}
-
 class IconWaveAnimation {
 
     var imageView: UIImageView
@@ -29,18 +22,29 @@ class IconWaveAnimation {
         self.imageView = imageView
     }
 
-    func animatePath(point1: CGPoint, point2: CGPoint, finished: @escaping () -> Void) {
+    func animatePath(points: [CGPoint], level: CGFloat) {
+        guard points.count > 0 else { return }
+        let median = points.count / 2
         imageView.layer.sublayers?.removeAll()
         let path = UIBezierPath()
-        path.move(to: CGPoint(x: 0 + offsetX, y: imageView.frame.height / 2))
-        path.addCurve(to: CGPoint(x: imageView.frame.height - offsetX, y: imageView.frame.height / 2), controlPoint1: point1, controlPoint2: point2)
+        path.move(to: points.first!)
+        for (index, point) in points.enumerated() {
+            if index > 1 && index < points.count - 1 {
+                let medianDifference = abs(median - abs(index - median))
+                let offsetY = index % 2 == 0 ? CGFloat(medianDifference * Int(level)) : -CGFloat(medianDifference * Int(level))
+                let controlPointOffsetX = index % 2 == 0 ? point.x - 60.0 : point.x - 20.0
+                let newPoint = CGPoint(x: point.x, y: point.y + offsetY)
+                let controlPoint = CGPoint(x: controlPointOffsetX, y: point.y - 20.0)
+                path.addQuadCurve(to: newPoint, controlPoint: controlPoint)
+            }
+        }
         
         let shapeLayer = CAShapeLayer()
         shapeLayer.frame = containerView.frame
         shapeLayer.path = path.cgPath
         shapeLayer.fillColor = UIColor.clear.cgColor
         shapeLayer.strokeColor = UIColor.white.cgColor
-        shapeLayer.lineWidth = 8.0
+        shapeLayer.lineWidth = 6.0
         shapeLayer.lineCap = kCALineCapRound
         
         shapeLayer.strokeStart = 0
@@ -52,37 +56,26 @@ class IconWaveAnimation {
         shapeLayer.add(strokeAnimation, forKey: "strokeAnim")
         imageView.layer.addSublayer(shapeLayer)
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + strokeAnimation.duration) {
-            finished()
         }
+    }
+    
+    func mapPointsFor(level: CGFloat) {
+        let pointCount = 13
+        let strideX = (imageView.frame.width - offsetX) / CGFloat(pointCount)
+        let verticalZero = imageView.frame.height / 2
+        var points = [CGPoint(x: offsetX, y: verticalZero)]
+        for point in 1...pointCount {
+            let x = CGFloat(point) * strideX
+            let y = point % 2 == 0 ? verticalZero + level : verticalZero - level
+            let endPoint = CGPoint(x: x, y: y)
+            points.append(endPoint)
+        }
+        print(points)
+        animatePath(points: points, level: level)
     }
 }
 
 let iconAnimation = IconWaveAnimation(imageView: imageView)
+iconAnimation.mapPointsFor(level: 10)
 
-func repeatAnimation(index: Int, x1: CGFloat, y1: CGFloat, x2: CGFloat, y2: CGFloat) {
-    var idx = index
-    iconAnimation.animatePath(point1: CGPoint(x: x1, y: y1), point2: CGPoint(x: x2, y: y2)) {
-        if index < 6 {
-            idx += 1
-            repeatAnimation(index: idx, x1: x1 + 20 , y1: y1 - 100, x2: x2 - 20, y2: y2 + 100)
-        }
-    }
-}
-
-repeatAnimation(index: 0, x1: 200, y1: 300, x2: 400, y2: 300)
-
-func mapPointsFor(view: UIView, level: Int) {
-    let pointCount = 15
-    let strideX = view.frame.width / CGFloat(pointCount)
-    let verticalOffset = view.frame.height * CGFloat(CGFloat(level) * 0.01)
-    var points = [CGPoint]()
-    for point in 0...pointCount {
-        let x = CGFloat(point) * strideX
-        let y = point % 2 == 0 ? verticalOffset : -(verticalOffset)
-        let endPoint = CGPoint(x: x, y: y)
-        points.append(endPoint)
-    }
-    print(points)
-}
-mapPointsFor(view: containerView, level: 40)
 

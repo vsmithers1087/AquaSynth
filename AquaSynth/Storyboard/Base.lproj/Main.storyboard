@@ -331,15 +331,26 @@
                                     <action selector="dismiss:" destination="ZT9-Mn-Wat" eventType="touchUpInside" id="ZMn-BT-uOv"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="WAO-fc-PBq">
+                                <rect key="frame" x="163" y="308.5" width="50" height="50"/>
+                                <color key="backgroundColor" red="0.2134724855" green="0.81707257030000002" blue="0.81949323419999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="LBK-X3-N1N"/>
+                                    <constraint firstAttribute="width" constant="50" id="P3f-x0-Rc3"/>
+                                </constraints>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="uvb-kC-d1c" firstAttribute="top" secondItem="Bml-I2-c8y" secondAttribute="top" constant="10" id="IUc-WK-NTe"/>
+                            <constraint firstItem="WAO-fc-PBq" firstAttribute="centerX" secondItem="Nj7-kY-rKj" secondAttribute="centerX" id="PAd-U8-mcB"/>
                             <constraint firstItem="uvb-kC-d1c" firstAttribute="leading" secondItem="Bml-I2-c8y" secondAttribute="leading" constant="20" id="kZO-QZ-NTP"/>
+                            <constraint firstItem="WAO-fc-PBq" firstAttribute="centerY" secondItem="Nj7-kY-rKj" secondAttribute="centerY" id="yxg-HA-6VG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Bml-I2-c8y"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="WAO-fc-PBq" id="pl6-AS-TiR"/>
                         <outlet property="dismissButton" destination="uvb-kC-d1c" id="JYw-eD-q0D"/>
                     </connections>
                 </viewController>
