@@ -32,6 +32,7 @@ class SynthSessionViewController: UIViewController, FrameExtractable {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         setupUI()
+        frequencyResultView.redraw()
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {

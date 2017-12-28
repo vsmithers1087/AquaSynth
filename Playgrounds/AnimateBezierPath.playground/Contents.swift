@@ -4,7 +4,7 @@ import UIKit
 import PlaygroundSupport
 PlaygroundPage.current.needsIndefiniteExecution = true
 let containerView = UIView(frame: CGRect(x: 0, y: 0, width: 600, height: 600))
-containerView.backgroundColor = UIColor.black
+containerView.backgroundColor = UIColor.red
 let imageView = UIImageView(frame: containerView.frame)
 imageView.image = UIImage(named: "background.png")
 containerView.addSubview(imageView)
