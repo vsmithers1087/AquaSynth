@@ -70,6 +70,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.75" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundWhite" translatesAutoresizingMaskIntoConstraints="NO" id="tHN-NH-I85">
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6EJ-uU-9gD">
                                 <rect key="frame" x="20" y="30" width="30" height="30"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -199,15 +202,14 @@
                                 <color key="textColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="The first iOS synthesizer that that uses patterns in water as MIDI input " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cVb-Om-7Rs">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="The first iOS synthesizer that reads patterns in water as MIDI input " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cVb-Om-7Rs">
                                 <rect key="frame" x="20" y="130" width="280" height="40"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="xcz-XI-kSI">
                                         <variation key="heightClass=compact-widthClass=compact" constant="40"/>
                                     </constraint>
                                 </constraints>
-                                <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.81715539383561642" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Audiowide-Regular" family="Audiowide" pointSize="13"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -309,10 +311,12 @@
                             <constraint firstItem="s0g-GR-6nC" firstAttribute="leading" secondItem="qlA-es-I3Q" secondAttribute="leading" id="JBb-tt-jPq"/>
                             <constraint firstItem="SKj-Xy-ubU" firstAttribute="top" secondItem="Ode-VI-rcK" secondAttribute="bottom" id="Qsc-pV-guQ"/>
                             <constraint firstAttribute="trailing" secondItem="SKj-Xy-ubU" secondAttribute="trailing" id="R45-7h-rDV"/>
+                            <constraint firstItem="tHN-NH-I85" firstAttribute="leading" secondItem="qlA-es-I3Q" secondAttribute="leading" id="TBh-E0-ks2"/>
                             <constraint firstAttribute="trailing" secondItem="s0g-GR-6nC" secondAttribute="trailing" id="V93-ba-GXm"/>
                             <constraint firstItem="Ode-VI-rcK" firstAttribute="top" secondItem="cVb-Om-7Rs" secondAttribute="bottom" constant="20" id="a7j-Yh-btt">
                                 <variation key="heightClass=compact-widthClass=compact" constant="8"/>
                             </constraint>
+                            <constraint firstItem="qlA-es-I3Q" firstAttribute="bottom" secondItem="tHN-NH-I85" secondAttribute="bottom" id="bCk-qy-qsP"/>
                             <constraint firstItem="6EJ-uU-9gD" firstAttribute="leading" secondItem="qlA-es-I3Q" secondAttribute="leading" constant="20" id="cAb-Ty-vOT"/>
                             <constraint firstItem="s0g-GR-6nC" firstAttribute="top" secondItem="7lg-za-Kia" secondAttribute="bottom" id="cD0-my-cdq"/>
                             <constraint firstItem="qlA-es-I3Q" firstAttribute="trailing" secondItem="cVb-Om-7Rs" secondAttribute="trailing" constant="20" id="dj4-9R-Sd8"/>
@@ -321,6 +325,8 @@
                             </constraint>
                             <constraint firstItem="cVb-Om-7Rs" firstAttribute="leading" secondItem="fUe-NQ-bCI" secondAttribute="leading" id="leO-hy-wuq"/>
                             <constraint firstItem="SKj-Xy-ubU" firstAttribute="leading" secondItem="qlA-es-I3Q" secondAttribute="leading" id="oEh-wN-IUa"/>
+                            <constraint firstItem="tHN-NH-I85" firstAttribute="top" secondItem="qlA-es-I3Q" secondAttribute="top" id="vtG-o2-myz"/>
+                            <constraint firstItem="qlA-es-I3Q" firstAttribute="trailing" secondItem="tHN-NH-I85" secondAttribute="trailing" id="y1S-pF-YpL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qlA-es-I3Q"/>
                     </view>
@@ -419,7 +425,7 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="QCa-2a-seR">
                                         <rect key="frame" x="20" y="20" width="264" height="128"/>
-                                        <fontDescription key="fontDescription" name="Audiowide-Regular" family="Audiowide" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="Audiowide-Regular" family="Audiowide" pointSize="15"/>
                                         <color key="textColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>

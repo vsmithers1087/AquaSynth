@@ -15,9 +15,12 @@ class FrequencyResultView: UIView {
     var iconWaveAnimation: IconWaveAnimation!
     
     override func draw(_ rect: CGRect) {
+        setBlurView()
+    }
+    
+    func setupIconWaveAnimation() {
         iconWaveAnimation = IconWaveAnimation(imageView: imageView)
         iconWaveAnimation.imageView.backgroundColor = UIColor.clear
-        setBlurView()
     }
     
     func redraw() {
@@ -39,6 +42,8 @@ class FrequencyResultView: UIView {
             blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
             addSubview(blurEffectView)
             bringSubview(toFront: imageView)
+            bringSubview(toFront: label)
+            label.isHidden = true
         }
     }
 }
