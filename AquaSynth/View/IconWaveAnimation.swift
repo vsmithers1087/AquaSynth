@@ -59,8 +59,8 @@ class IconWaveAnimation {
         let pointCount = 21
         let strideX = (imageView.frame.width - offsetX) / CGFloat(pointCount)
         let verticalZero = imageView.frame.height / 2
-        var points = [CGPoint(x: strideX * 4, y: verticalZero)]
-        for point in 4...pointCount - 1 {
+        var points = [CGPoint(x: offsetX, y: verticalZero)]
+        for point in 2...pointCount  {
             let x = CGFloat(point) * strideX
             let y = point % 2 == 0 ? verticalZero + (level * 0.5) : verticalZero - (level * 0.5)
             let endPoint = CGPoint(x: x, y: y)
