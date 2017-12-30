@@ -29,7 +29,7 @@ class IconWaveAnimation {
         for (index, point) in points.enumerated() {
             if index > 1 && index < points.count - 1 {
                 let medianDifference = abs(median - abs(index - median))
-                let offsetY = index % 2 == 0 ? CGFloat(medianDifference * Int(level * 1.25)) : -CGFloat(medianDifference * Int(level * 1))
+                let offsetY = index % 2 == 0 ? CGFloat(medianDifference * Int(level * 1.2)) : -CGFloat(medianDifference * Int(level * 1))
                 let newPoint = CGPoint(x: point.x, y: point.y + offsetY)
                 let controlPoint = CGPoint(x: newPoint.x - 4, y: newPoint.y + offsetY)
                 path.addQuadCurve(to: newPoint, controlPoint: controlPoint)
@@ -69,6 +69,7 @@ class IconWaveAnimation {
     
     func mapPointsFor(level: CGFloat) {
         let pointCount = 21
+        let endPointX = imageView.frame.width 
         let strideX = (imageView.frame.width - offsetX) / CGFloat(pointCount)
         let verticalZero = imageView.frame.height / 2
         var points = [CGPoint(x: offsetX, y: verticalZero)]
@@ -78,6 +79,7 @@ class IconWaveAnimation {
             let endPoint = CGPoint(x: x, y: y)
             points.append(endPoint)
         }
+        points.append(CGPoint(x: endPointX, y: verticalZero))
         animatePath(points: points, level: level)
     }
 }
