@@ -36,7 +36,7 @@ class IconWaveAnimation {
         }
         
         let shapeLayer = CAShapeLayer()
-        shapeLayer.frame = imageView.frame
+        shapeLayer.frame = imageView.bounds
         shapeLayer.path = path.cgPath
         shapeLayer.fillColor = UIColor.clear.cgColor
         shapeLayer.strokeColor = UIColor.white.cgColor
