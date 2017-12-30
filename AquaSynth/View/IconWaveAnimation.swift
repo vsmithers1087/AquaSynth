@@ -13,7 +13,7 @@ class IconWaveAnimation {
     var imageView: UIImageView
     
     var offsetX: CGFloat {
-        return imageView.frame.width * 0.1
+        return (imageView.frame.width * 0.13) + 13
     }
     
     init(imageView: UIImageView) {
@@ -29,9 +29,10 @@ class IconWaveAnimation {
         for (index, point) in points.enumerated() {
             if index > 1 && index < points.count - 1 {
                 let medianDifference = abs(median - abs(index - median))
-                let offsetY = index % 2 == 0 ? CGFloat(medianDifference * Int(level)) : -CGFloat(medianDifference * Int(level))
+                let offsetY = index % 2 == 0 ? CGFloat(medianDifference * Int(level * 1.25)) : -CGFloat(medianDifference * Int(level * 1))
                 let newPoint = CGPoint(x: point.x, y: point.y + offsetY)
-                path.addQuadCurve(to: newPoint, controlPoint: newPoint)
+                let controlPoint = CGPoint(x: newPoint.x - 4, y: newPoint.y + offsetY)
+                path.addQuadCurve(to: newPoint, controlPoint: controlPoint)
             }
         }
         
@@ -40,8 +41,19 @@ class IconWaveAnimation {
         shapeLayer.path = path.cgPath
         shapeLayer.fillColor = UIColor.clear.cgColor
         shapeLayer.strokeColor = UIColor.white.cgColor
-        shapeLayer.lineWidth = 3.0
+        shapeLayer.lineWidth = 4.0
         shapeLayer.lineCap = kCALineCapRound
+        
+        shapeLayer.lineWidth = 2.0
+        
+        let lineWidthAnimation = CABasicAnimation(keyPath: "lineWidth")
+        lineWidthAnimation.toValue = 5.0
+        lineWidthAnimation.duration = 0.75
+        lineWidthAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        lineWidthAnimation.autoreverses = true
+        lineWidthAnimation.repeatCount = 1
+        
+        shapeLayer.add(lineWidthAnimation, forKey: "lineWidthAnimation")
         
         shapeLayer.strokeStart = 0
         let strokeAnimation = CABasicAnimation(keyPath: "strokeEnd")
@@ -60,7 +72,7 @@ class IconWaveAnimation {
         let strideX = (imageView.frame.width - offsetX) / CGFloat(pointCount)
         let verticalZero = imageView.frame.height / 2
         var points = [CGPoint(x: offsetX, y: verticalZero)]
-        for point in 2...pointCount  {
+        for point in 4...pointCount  {
             let x = CGFloat(point) * strideX
             let y = point % 2 == 0 ? verticalZero + (level * 0.5) : verticalZero - (level * 0.5)
             let endPoint = CGPoint(x: x, y: y)

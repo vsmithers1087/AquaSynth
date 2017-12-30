@@ -23,6 +23,7 @@ class IconWaveAnimation {
     }
 
     func animatePath(points: [CGPoint], level: CGFloat) {
+        let verticalZero = imageView.frame.height / 2
         guard points.count > 0 else { return }
         let median = points.count / 2
         imageView.layer.sublayers?.removeAll()
@@ -32,9 +33,8 @@ class IconWaveAnimation {
             if index > 1 && index < points.count - 1 {
                 let medianDifference = abs(median - abs(index - median))
                 let offsetY = index % 2 == 0 ? CGFloat(medianDifference * Int(level)) : -CGFloat(medianDifference * Int(level))
-                let controlPointOffsetX = index % 2 == 0 ? point.x - 60.0 : point.x - 20.0
                 let newPoint = CGPoint(x: point.x, y: point.y + offsetY)
-                let controlPoint = CGPoint(x: controlPointOffsetX, y: point.y - 20.0)
+                let controlPoint = newPoint.y > verticalZero ? CGPoint(x: newPoint.x - 8, y: newPoint.y + 150) : CGPoint(x: newPoint.x - 20, y: newPoint.y - 150)
                 path.addQuadCurve(to: newPoint, controlPoint: controlPoint)
             }
         }
@@ -46,6 +46,27 @@ class IconWaveAnimation {
         shapeLayer.strokeColor = UIColor.white.cgColor
         shapeLayer.lineWidth = 6.0
         shapeLayer.lineCap = kCALineCapRound
+        
+        shapeLayer.lineDashPattern = [5]
+        
+        let lineDashPhaseAnimation = CABasicAnimation(keyPath: "lineDashPhase")
+        lineDashPhaseAnimation.byValue = 10.0
+        lineDashPhaseAnimation.duration = 1
+        lineDashPhaseAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+        lineDashPhaseAnimation.repeatCount = 1
+        
+        shapeLayer.add(lineDashPhaseAnimation, forKey: "lineDashPhaseAnimation")
+        
+        shapeLayer.lineWidth = 4.0
+        
+        let lineWidthAnimation = CABasicAnimation(keyPath: "lineWidth")
+        lineWidthAnimation.toValue = 8.0
+        lineWidthAnimation.duration = 1
+        lineWidthAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        lineWidthAnimation.autoreverses = true
+        lineWidthAnimation.repeatCount = 1
+        
+        shapeLayer.add(lineWidthAnimation, forKey: "lineWidthAnimation")
         
         shapeLayer.strokeStart = 0
         let strokeAnimation = CABasicAnimation(keyPath: "strokeEnd")
@@ -70,7 +91,7 @@ class IconWaveAnimation {
             let endPoint = CGPoint(x: x, y: y)
             points.append(endPoint)
         }
-        print(points)
+        //print(points)
         animatePath(points: points, level: level)
     }
 }
