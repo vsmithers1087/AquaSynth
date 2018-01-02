@@ -8,11 +8,13 @@
 
 import UIKit
 import Onboarding
+import AVFoundation
 
-class OnboardingViewController: UIViewController, PaperOnboardingDelegate {
-    
+class OnboardingViewController: UIViewController, PaperOnboardingDelegate, OnboardingContentViewDelegate{
+
     var finishButton: UIButton!
     var onboarding: PaperOnboarding!
+    var players = [AVPlayer]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,22 +68,46 @@ class OnboardingViewController: UIViewController, PaperOnboardingDelegate {
 
 extension OnboardingViewController {
 
-    func onboardingWillTransitonToIndex(_ index: Int) {
-        let item = onboarding.onboardingItemAtIndex(index)
-        item?.playerView.pause()
+    func onboardingItemAtIndex(_ index: Int) -> OnboardingItemInfo? {
+        return nil
     }
     
     func onboardingConfigurationItem(_ item: OnboardingContentViewItem, index: Int) {
-        
+        item.playerView?.layer.removeFromSuperlayer()
+        players.forEach({ $0.pause() })
+        if players.count < index - 1{
+            players[index].play()
+        } else if let url = Bundle.main.url(forResource: getFilename(index: index), withExtension: "mov"){
+            let player = AVPlayer(url: url)
+            let playerLayer = AVPlayerLayer(player: player)
+            playerLayer.frame = CGRect(x: 0, y: 0, width: 275, height: 275)
+            playerLayer.position = CGPoint(x: view.center.x, y: view.center.y - (view.frame.height / 3))
+            item.layer.addSublayer(playerLayer)
+            players.append(player)
+            player.play()
+        }
     }
     
     func onboardingDidTransitonToIndex(_ index: Int) {
-        let item = onboarding.onboardingItemAtIndex(index)
-        item?.playerView.play()
         if index == 3 {
             animateButton()
         } else {
             finishButton.isHidden = true
+        }
+    }
+    
+    func getFilename(index: Int) -> String {
+        switch index {
+        case 0:
+            return "noBackground"
+        case 1:
+            return "preview1"
+        case 2:
+            return "preview1"
+        case 3:
+            return "preview1"
+        default:
+            return  ""
         }
     }
 }
@@ -93,28 +119,28 @@ extension OnboardingViewController: PaperOnboardingDataSource {
         let descriptionFont = UIFont(name: "Audiowide", size: 14.0) ?? UIFont.systemFont(ofSize: 14.0)
         
         return [
-            (PlayerView(frame: CGRect.zero, resource: "noBackground"),
+            (PlayerView(frame: CGRect.zero, resource: ""),
              "AquaSynth",
              "A synthesizer that uses machine learning predictions as midi input. \n It is designed to be setup to read resonance patterns in a bowl of water",
              UIImage(named: "iconBackground")!,
              UIColor(red:0.40, green:0.56, blue:0.71, alpha:1.00),
              UIColor.white, UIColor.white, titleFont,descriptionFont),
 
-            (PlayerView(frame: CGRect.zero, resource: "noBackground"),
+            (PlayerView(frame: CGRect.zero, resource: ""),
              "An Empty Scene",
              "No bowl of water will return only crickets 🦗🦗🦗.",
              UIImage(named: "iconBackground")!,
              UIColor(red:0.40, green:0.69, blue:0.71, alpha:1.00),
              UIColor.white, UIColor.white, titleFont,descriptionFont),
 
-            (PlayerView(frame: CGRect.zero, resource: "preview1"),
+            (PlayerView(frame: CGRect.zero, resource: ""),
              "Still Water",
              "Emits frequencies based on the calmness of the water",
              UIImage(named: "iconBackground")!,
              UIColor(red:0.61, green:0.56, blue:0.74, alpha:1.00),
              UIColor.white, UIColor.white, titleFont,descriptionFont),
             
-            (PlayerView(frame: CGRect.zero, resource: "preview1"),
+            (PlayerView(frame: CGRect.zero, resource: ""),
              "Rippling Water",
              "Emits frequiences depending of the level of agitation, and waves created in the water 🌊🌊🌊",
              UIImage(named: "iconBackground")!,
