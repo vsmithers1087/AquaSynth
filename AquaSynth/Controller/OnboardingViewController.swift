@@ -15,13 +15,17 @@ class OnboardingViewController: UIViewController, PaperOnboardingDelegate, Onboa
     var finishButton: UIButton!
     var onboarding: PaperOnboarding!
     var players = [AVPlayer]()
+    var imageView: UIImageView!
+    var backgroundImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupPaperOnboardingView()
+        setupBackgroundImageView()
         setupFinishButton()
+        setupImageView()
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -32,37 +36,51 @@ class OnboardingViewController: UIViewController, PaperOnboardingDelegate, Onboa
         onboarding.delegate = self
         onboarding.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(onboarding)
-        // Add constraints
         for attribute: NSLayoutAttribute in [.left, .right, .top, .bottom] {
             let constraint = NSLayoutConstraint(item: onboarding, attribute: attribute, relatedBy: .equal, toItem: view, attribute: attribute, multiplier: 1, constant: 0)
             view.addConstraint(constraint)
         }
     }
     
+    private func setupImageView() {
+        imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.image = UIImage(named: "iconNoBackground")
+        imageView.contentMode = .scaleAspectFit
+        onboarding.addSubview(imageView)
+        let centerY = NSLayoutConstraint(item: imageView, attribute: .centerY, relatedBy: .equal, toItem: onboarding, attribute: .centerY, multiplier: 1, constant: -100)
+        let centerX = NSLayoutConstraint(item: imageView, attribute: .centerX, relatedBy: .equal, toItem: onboarding, attribute: .centerX, multiplier: 1, constant: 0)
+        centerY.isActive = true
+        centerX.isActive = true
+        view.addConstraints([centerY, centerX])
+    }
+    
+    private func setupBackgroundImageView() {
+        backgroundImageView = UIImageView(frame: view.bounds)
+        backgroundImageView.layer.opacity = 0.8
+        backgroundImageView.translatesAutoresizingMaskIntoConstraints = false
+        backgroundImageView.image = UIImage(named: "backgroundBlack")
+        backgroundImageView.contentMode = .scaleAspectFit
+        onboarding.insertSubview(backgroundImageView, at: 1)
+    }
+    
     private func setupFinishButton() {
         finishButton = UIButton(frame: CGRect(x: 0, y: 0, width: 70, height: 70))
-        finishButton.isHidden = true
         finishButton.addTarget(self, action: #selector(finishOnboarding(_:)), for: .touchUpInside)
-        finishButton.setImage(UIImage(named: "play"), for: .normal)
+        finishButton.setTitle("Skip", for: .normal)
         finishButton.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(finishButton)
-        let bottom = NSLayoutConstraint(item: finishButton, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1.0, constant: -30)
-        let centerX = NSLayoutConstraint(item: finishButton, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: -8)
-        bottom.isActive = true
-        centerX.isActive = true
-        view.addConstraints([bottom, centerX])
+        let top = NSLayoutConstraint(item: finishButton, attribute: .top, relatedBy: .equal, toItem: view, attribute: .topMargin, multiplier: 1.0, constant: 8)
+        let trailing = NSLayoutConstraint(item: finishButton, attribute: .trailing, relatedBy: .equal, toItem: view, attribute: .trailing, multiplier: 1, constant: -20)
+        top.isActive = true
+        trailing.isActive = true
+        view.addConstraints([top, trailing])
     }
     
     @objc func finishOnboarding(_ sender: UIButton) {
+        players.forEach({ $0.pause() })
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
         appDelegate?.setHomeViewController()
-    }
-    
-    func animateButton() {
-        finishButton.isHidden = false
-        UIView.animate(withDuration: 1.0) {
-            self.finishButton.center.x += 75.0
-        }
     }
 }
 
@@ -73,8 +91,15 @@ extension OnboardingViewController {
     }
     
     func onboardingConfigurationItem(_ item: OnboardingContentViewItem, index: Int) {
-        item.playerView?.layer.removeFromSuperlayer()
         players.forEach({ $0.pause() })
+        
+        guard index != 0 else {
+            imageView.isHidden = false
+            return
+        }
+        
+        imageView.isHidden =  true
+        item.playerView?.layer.removeFromSuperlayer()
         if players.count < index - 1{
             players[index].play()
         } else if let url = Bundle.main.url(forResource: getFilename(index: index), withExtension: "mov"){
@@ -88,18 +113,18 @@ extension OnboardingViewController {
         }
     }
     
-    func onboardingDidTransitonToIndex(_ index: Int) {
+    func onboardingWillTransitonToIndex(_ index: Int) {
         if index == 3 {
-            animateButton()
+            finishButton.setTitle("Finish", for: .normal)
         } else {
-            finishButton.isHidden = true
+            finishButton.setTitle("Skip", for: .normal)
         }
     }
     
     func getFilename(index: Int) -> String {
         switch index {
         case 0:
-            return "noBackground"
+            return ""
         case 1:
             return "preview1"
         case 2:
@@ -123,28 +148,28 @@ extension OnboardingViewController: PaperOnboardingDataSource {
              "AquaSynth",
              "A synthesizer that uses machine learning predictions as midi input. \n It is designed to be setup to read resonance patterns in a bowl of water",
              UIImage(named: "iconBackground")!,
-             UIColor(red:0.40, green:0.56, blue:0.71, alpha:1.00),
+             UIColor.purple,
              UIColor.white, UIColor.white, titleFont,descriptionFont),
 
             (PlayerView(frame: CGRect.zero, resource: ""),
              "An Empty Scene",
              "No bowl of water will return only crickets 🦗🦗🦗.",
              UIImage(named: "iconBackground")!,
-             UIColor(red:0.40, green:0.69, blue:0.71, alpha:1.00),
+             UIColor.purple,
              UIColor.white, UIColor.white, titleFont,descriptionFont),
 
             (PlayerView(frame: CGRect.zero, resource: ""),
              "Still Water",
              "Emits frequencies based on the calmness of the water",
              UIImage(named: "iconBackground")!,
-             UIColor(red:0.61, green:0.56, blue:0.74, alpha:1.00),
+             UIColor.purple,
              UIColor.white, UIColor.white, titleFont,descriptionFont),
             
             (PlayerView(frame: CGRect.zero, resource: ""),
              "Rippling Water",
              "Emits frequiences depending of the level of agitation, and waves created in the water 🌊🌊🌊",
              UIImage(named: "iconBackground")!,
-             UIColor(red:0.61, green:0.56, blue:0.74, alpha:1.00),
+             UIColor.purple,
              UIColor.white, UIColor.white, titleFont,descriptionFont)
 
             ][index]
@@ -154,8 +179,5 @@ extension OnboardingViewController: PaperOnboardingDataSource {
     func onboardingItemsCount() -> Int {
         return 4
     }
-    
-    func onboardingPageItemColor(at index: Int) -> UIColor {
-        return [UIColor.white, UIColor.red, UIColor.green, UIColor.orange][index]
-    }
+
 }
