@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AudioKit
 
 class SynthSessionViewController: UIViewController, FrameExtractable {
     
@@ -27,6 +28,11 @@ class SynthSessionViewController: UIViewController, FrameExtractable {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        AudioKit.stop()
     }
     
     override func viewDidLayoutSubviews() {

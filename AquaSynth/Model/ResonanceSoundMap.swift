@@ -43,8 +43,8 @@ class ResonanceSoundMap {
             triggerFreq = 43 + prediction / 5
             delay.time = 0
             reverb.dryWetMix = 0
-            leftOscillator.pitchBend = 0
-            rightOscillator.pitchBend = 0
+            leftOscillator.pitchBend = triggerFreq
+            rightOscillator.pitchBend = triggerFreq
             leftOscillator.play(noteNumber: 58, velocity: 80)
             rightOscillator.play(noteNumber: 59, velocity: 80)
             currentNoteNumber = UInt8(triggerFreq)
@@ -52,8 +52,8 @@ class ResonanceSoundMap {
             triggerFreq = 70 + prediction / 5
             delay.time = 3
             reverb.dryWetMix = 0.9
-            leftOscillator.pitchBend = 0.3
-            rightOscillator.pitchBend = 0.5
+            leftOscillator.pitchBend = triggerFreq
+            rightOscillator.pitchBend = triggerFreq
             bells.trigger(frequency: triggerFreq.midiNoteToFrequency())
             leftOscillator.play(noteNumber: 65, velocity: 80)
             rightOscillator.play(noteNumber: 66, velocity: 80)
