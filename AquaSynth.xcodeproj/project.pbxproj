@@ -276,6 +276,7 @@
 				0B7405371F71E71600BE2D20 /* Frameworks */,
 				0B7405381F71E71600BE2D20 /* Resources */,
 				0B74057A1F71E9F500BE2D20 /* Embed Frameworks */,
+				0BF2067B2002B05400889F53 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -370,6 +371,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0BF2067B2002B05400889F53 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$BUILT_PRODUCTS_DIR/$FRAMEWORKS_FOLDER_PATH/AudioKit.framework/fix-framework.sh\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0B7405361F71E71600BE2D20 /* Sources */ = {
