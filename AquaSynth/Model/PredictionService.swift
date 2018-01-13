@@ -33,11 +33,11 @@ public class AsynthPredictionService: NSObject {
                 let realNum = score * Double(100)
                 switch label {
                 case "still":
-                    currentStill["still"] = realNum > 1.0 || realNum < 0.001 ? 100 : realNum
-                    print("STILL \(currentStill["still"] ?? 0)")
+                    currentStill["still"] =  realNum * 10
+                    print("STILL \(currentStill["still"])")
                 case "disturbedA":
-                    currentDisturbed["disturbedA"] = realNum > 1.0 || realNum < 0.001 ? 100 : realNum * 10
-                    print("disturbed \(currentDisturbed["disturbedA"] ?? 0)")
+                    currentDisturbed["disturbedA"] =  realNum
+                    print("disturbed \(realNum)")
                 case "xA":
                     currentXa["xA"] = realNum > 1.0 || realNum < 0.001 ? 100 : realNum
                 default: break
@@ -54,21 +54,19 @@ public class AsynthPredictionService: NSObject {
                 }
             })
             
-            if currentLow == 100  {
+            if currentLow > 1  {
                 result = AsynthResult(className: "xA", probability: 19)
-            } else if currentLow < 0.0015 && currentDisturbed["disturbedA"] ?? 0.0 < 0.001 {
+            } else if currentDisturbed["disturbedA"] ?? 0.0 < 0.07 {
                 result = AsynthResult(className: "disturbedA", probability: currentScore * 3000)
             } else {
                 result = AsynthResult(className: currentLabel, probability: currentScore * 30000)
-                if currentLabel == "disturbedA" {
-                    result = AsynthResult(className: currentLabel, probability: currentScore * 3000)
-                }
             }
             
             currentScore = 0
             currentStill = ["still": 0]
             currentDisturbed = ["disturbedA": 0]
             currentXa = ["xA": 0]
+            print("Result:::: \(result?.label)")
             return result
         }
         return nil

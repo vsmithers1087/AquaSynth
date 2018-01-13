@@ -11,6 +11,7 @@ import UIKit
 class IconWaveAnimation {
     
     var imageView: UIImageView
+    var currentPeak: CGFloat = 0
     
     var offsetX: CGFloat {
         return (imageView.frame.width * 0.13) + 13
@@ -67,6 +68,24 @@ class IconWaveAnimation {
         }
     }
     
+    func animateForFrequency(_ prediction: Double, level: AsynthResult) {
+        switch level.label {
+        case .noBowl, .none:
+            break
+        case .still:
+            var stillPeak = 0.8 + CGFloat(prediction / 10000)
+            if stillPeak < currentPeak {
+                currentPeak -= 1.9
+                stillPeak = currentPeak
+            }
+            mapPointsFor(level: stillPeak)
+        case .disturbed:
+            currentPeak = 5.0 + CGFloat(prediction / 100)
+            mapPointsFor(level: currentPeak)
+        }
+    }
+    
+    //(_ prediction: Double, level: AsynthResultLabel)
     func mapPointsFor(level: CGFloat) {
         let pointCount = 21
         let endPointX = imageView.frame.width 

@@ -11,6 +11,7 @@ import AudioKit
 
 class ResonanceSoundMap {
     
+    var currentPeak: CGFloat = 0
     var currentNoteNumber: UInt8 = 0
 
     private var delay: AKDelay
@@ -39,17 +40,23 @@ class ResonanceSoundMap {
             leftOscillator.stop(noteNumber: currentNoteNumber)
             rightOscillator.stop(noteNumber: currentNoteNumber)
             currentNoteNumber = UInt8(triggerFreq)
+            triggerFreq = 0
         case .still:
-            triggerFreq = 43 + prediction / 5
+            triggerFreq = prediction / 1000.0
             delay.time = 0
             reverb.dryWetMix = 0
             leftOscillator.pitchBend = triggerFreq
             rightOscillator.pitchBend = triggerFreq
-            leftOscillator.play(noteNumber: 58, velocity: 80)
-            rightOscillator.play(noteNumber: 59, velocity: 80)
+            var newNoteNumber: CGFloat = 59.0
+            if newNoteNumber < currentPeak {
+                currentPeak -= 1
+                newNoteNumber = currentPeak
+            }
+            leftOscillator.play(noteNumber: UInt8(newNoteNumber - 1), velocity: 80)
+            rightOscillator.play(noteNumber: UInt8(newNoteNumber), velocity: 80)
             currentNoteNumber = UInt8(triggerFreq)
         case .disturbed:
-            triggerFreq = 70 + prediction / 5
+            triggerFreq = (70 + prediction / 5) / 10
             delay.time = 3
             reverb.dryWetMix = 0.9
             leftOscillator.pitchBend = triggerFreq
@@ -57,6 +64,7 @@ class ResonanceSoundMap {
             bells.trigger(frequency: triggerFreq.midiNoteToFrequency())
             leftOscillator.play(noteNumber: 65, velocity: 80)
             rightOscillator.play(noteNumber: 66, velocity: 80)
+            currentPeak = 66
             currentNoteNumber = UInt8(triggerFreq)
         default:
             break

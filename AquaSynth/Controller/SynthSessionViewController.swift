@@ -99,7 +99,7 @@ class SynthSessionViewController: UIViewController, FrameExtractable {
                         self.frequencyResultView.imageView.isHidden = false
                         self.frequencyResultView.label.isHidden = true
                         self.resonanceSoundMap.playForFrequency(result.probability, level: result.label)
-                        self.frequencyResultView.iconWaveAnimation.mapPointsFor(level: 4.0)
+                        self.frequencyResultView.iconWaveAnimation.animateForFrequency(result.probability, level: result)
                         if result.label.rawValue == "No Bowl" {
                             self.frequencyResultView.label.text = "Bowl out of sight or too close."
                             self.frequencyResultView.imageView.isHidden = true
