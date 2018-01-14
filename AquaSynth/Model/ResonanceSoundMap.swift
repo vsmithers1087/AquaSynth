@@ -61,7 +61,7 @@ class ResonanceSoundMap {
             reverb.dryWetMix = 0.9
             leftOscillator.pitchBend = triggerFreq
             rightOscillator.pitchBend = triggerFreq
-            bells.trigger(frequency: UInt8(80).midiNoteToFrequency())
+            bells.trigger(frequency: UInt8(93).midiNoteToFrequency())
             leftOscillator.play(noteNumber: 65, velocity: 80)
             rightOscillator.play(noteNumber: 66, velocity: 80)
             currentPeak = 66
