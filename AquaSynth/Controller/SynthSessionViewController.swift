@@ -13,7 +13,7 @@ class SynthSessionViewController: UIViewController, FrameExtractable {
     
     var frameExtractor: FrameExtractor!
     var deviceOrientation = DeviceTypeOrientation.none
-    let predictionService = AsynthPredictionService(dimension: 227)
+    var predictionService = AsynthPredictionService(dimension: 227)
     let resonanceSoundMap = ResonanceSoundMap()
     var framesCount = 0
     
@@ -89,13 +89,16 @@ class SynthSessionViewController: UIViewController, FrameExtractable {
     }
     
     func capturedFrame(image: UIImage) {
-        frameImageView.image = applyFinishingFilter(image: image)
+        if framesCount % 75 == 0 {
+            predictionService = AsynthPredictionService(dimension: 227)
+        }
         framesCount += 1
         let predictionQueue = DispatchQueue(label: "predictionQueue")
         predictionQueue.async {
             if let result = self.predictionService.predict(image: image) {
-                guard self.framesCount > 5 else { return }
+                guard self.framesCount > 10 else { return }
                 DispatchQueue.main.async {
+                    self.frameImageView.image = self.applyFinishingFilter(image: image)
                     if self.framesCount % 25 == 0 {
                         self.frequencyResultView.imageView.isHidden = false
                         self.frequencyResultView.label.isHidden = true
