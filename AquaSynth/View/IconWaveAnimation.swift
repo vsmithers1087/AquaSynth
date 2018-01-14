@@ -85,7 +85,6 @@ class IconWaveAnimation {
         }
     }
     
-    //(_ prediction: Double, level: AsynthResultLabel)
     func mapPointsFor(level: CGFloat) {
         let pointCount = 21
         let endPointX = imageView.frame.width 

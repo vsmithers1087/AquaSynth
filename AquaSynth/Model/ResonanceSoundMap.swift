@@ -49,19 +49,19 @@ class ResonanceSoundMap {
             rightOscillator.pitchBend = triggerFreq
             var newNoteNumber: CGFloat = 59.0
             if newNoteNumber < currentPeak {
-                currentPeak -= 1
+                currentPeak -= 3
                 newNoteNumber = currentPeak
             }
             leftOscillator.play(noteNumber: UInt8(newNoteNumber - 1), velocity: 80)
             rightOscillator.play(noteNumber: UInt8(newNoteNumber), velocity: 80)
-            currentNoteNumber = UInt8(triggerFreq)
+            currentNoteNumber = UInt8(newNoteNumber)
         case .disturbed:
             triggerFreq = (70 + prediction / 5) / 10
             delay.time = 3
             reverb.dryWetMix = 0.9
             leftOscillator.pitchBend = triggerFreq
             rightOscillator.pitchBend = triggerFreq
-            bells.trigger(frequency: triggerFreq.midiNoteToFrequency())
+            bells.trigger(frequency: UInt8(80).midiNoteToFrequency())
             leftOscillator.play(noteNumber: 65, velocity: 80)
             rightOscillator.play(noteNumber: 66, velocity: 80)
             currentPeak = 66

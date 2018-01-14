@@ -18,6 +18,8 @@ public class AsynthPredictionService: NSObject {
     var currentStill: [String: Double] = ["still": 0]
     var currentDisturbed:[String: Double] = ["disturbedA": 0]
     var currentXa: [String: Double] = ["xA": 0]
+    var disturbedPeak: Double = 0
+    var disturbedFluctuation: Double = 0
     
     public init(dimension: Int) {
         self.dimension = dimension
@@ -30,16 +32,18 @@ public class AsynthPredictionService: NSObject {
         if let prediction = try? model.prediction(data: buffer) {
             
             prediction.prob.forEach({ (label, score) in
-                let realNum = score * Double(100)
+                let realNum = score
                 switch label {
                 case "still":
-                    currentStill["still"] =  realNum * 10
-                    print("STILL \(currentStill["still"])")
+                    currentStill["still"] =  realNum
+                    //print("STILL \(currentStill["still"]!)")
                 case "disturbedA":
                     currentDisturbed["disturbedA"] =  realNum
-                    print("disturbed \(realNum)")
+                    //print("disturbed \(currentDisturbed["disturbedA"]!)")
+                    disturbedFluctuation = abs(disturbedPeak - realNum)
                 case "xA":
-                    currentXa["xA"] = realNum > 1.0 || realNum < 0.001 ? 100 : realNum
+                    currentXa["xA"] = realNum
+                    //print("NONE:: \(currentXa["xA"]!)")
                 default: break
                 }
             })
@@ -54,19 +58,19 @@ public class AsynthPredictionService: NSObject {
                 }
             })
             
-            if currentLow > 1  {
-                result = AsynthResult(className: "xA", probability: 19)
-            } else if currentDisturbed["disturbedA"] ?? 0.0 < 0.07 {
-                result = AsynthResult(className: "disturbedA", probability: currentScore * 3000)
+            if currentLow < 0.01 {
+                result = AsynthResult(className: "xA", probability: currentScore)
+            } else if disturbedFluctuation > 0.1 {
+                result = AsynthResult(className: "disturbedA", probability: currentScore * disturbedFluctuation)
             } else {
-                result = AsynthResult(className: currentLabel, probability: currentScore * 30000)
+                result = AsynthResult(className: currentLabel, probability: currentScore * 300)
             }
-            
-            currentScore = 0
+
+            disturbedPeak = currentDisturbed["disturbedA"] ?? 0
             currentStill = ["still": 0]
             currentDisturbed = ["disturbedA": 0]
             currentXa = ["xA": 0]
-            print("Result:::: \(result?.label)")
+            currentScore = 0
             return result
         }
         return nil
