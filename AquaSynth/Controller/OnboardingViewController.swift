@@ -9,6 +9,7 @@
 import UIKit
 import Onboarding
 import AVFoundation
+import AudioKit
 
 class OnboardingViewController: UIViewController, PaperOnboardingDelegate, OnboardingContentViewDelegate{
 
@@ -17,6 +18,7 @@ class OnboardingViewController: UIViewController, PaperOnboardingDelegate, Onboa
     var players = [AVPlayer]()
     var imageView: UIImageView!
     var backgroundImageView: UIImageView!
+    var soundMap: ResonanceSoundMap?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,13 +93,14 @@ extension OnboardingViewController {
     }
     
     func onboardingConfigurationItem(_ item: OnboardingContentViewItem, index: Int) {
+        AudioKit.stop()
         players.forEach({ $0.pause() })
         
         guard index != 0 else {
             imageView.isHidden = false
             return
         }
-        
+        playForIndex(index)
         imageView.isHidden =  true
         item.playerView?.layer.removeFromSuperlayer()
         if players.count < index - 1{
@@ -121,16 +124,32 @@ extension OnboardingViewController {
         }
     }
     
+    func playForIndex(_ index: Int) {
+        soundMap = ResonanceSoundMap()
+        switch index {
+        case 0:
+            break
+        case 1:
+            soundMap?.playForFrequency(1, level: .noBowl)
+        case 2:
+            soundMap?.playForFrequency(1, level: .still)
+        case 3:
+            soundMap?.playForFrequency(60, level: .disturbed)
+        default:
+            break
+        }
+    }
+    
     func getFilename(index: Int) -> String {
         switch index {
         case 0:
             return ""
         case 1:
-            return "preview1"
+            return "noBowl"
         case 2:
-            return "preview1"
+            return "still"
         case 3:
-            return "preview1"
+            return "disturbed"
         default:
             return  ""
         }

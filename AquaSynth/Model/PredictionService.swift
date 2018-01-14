@@ -36,14 +36,14 @@ public class AsynthPredictionService: NSObject {
                 switch label {
                 case "still":
                     currentStill["still"] =  realNum
-                    print("STILL \(currentStill["still"]!)")
+                   // print("STILL \(currentStill["still"]!)")
                 case "disturbedA":
                     currentDisturbed["disturbedA"] =  realNum
-                    print("disturbed \(currentDisturbed["disturbedA"]!)")
+                   // print("disturbed \(currentDisturbed["disturbedA"]!)")
                     disturbedFluctuation = abs(disturbedPeak - realNum)
                 case "xA":
                     currentXa["xA"] = realNum
-                    print("NONE:: \(currentXa["xA"]!)")
+                   // print("NONE:: \(currentXa["xA"]!)")
                 default: break
                 }
             })
@@ -61,9 +61,9 @@ public class AsynthPredictionService: NSObject {
             if currentLow < 0.001 || currentStill["still"] ?? 0 > 0.99 {
                 result = AsynthResult(className: "xA", probability: currentScore)
             } else if disturbedFluctuation > 0.1 {
-                result = AsynthResult(className: "disturbedA", probability: currentScore * disturbedFluctuation)
+                result = AsynthResult(className: "disturbedA", probability: currentScore)
             } else {
-                result = AsynthResult(className: currentLabel, probability: currentScore * 300)
+                result = AsynthResult(className: currentLabel, probability: currentScore)
             }
 
             disturbedPeak = currentDisturbed["disturbedA"] ?? 0

@@ -91,6 +91,8 @@ class SynthSessionViewController: UIViewController, FrameExtractable {
     func capturedFrame(image: UIImage) {
         if framesCount % 75 == 0 {
             predictionService = AsynthPredictionService(dimension: 227)
+            //AudioKit.stop()
+            //AudioKit.start()
         }
         framesCount += 1
         let predictionQueue = DispatchQueue(label: "predictionQueue")
