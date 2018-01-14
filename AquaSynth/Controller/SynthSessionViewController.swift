@@ -33,6 +33,7 @@ class SynthSessionViewController: UIViewController, FrameExtractable {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         AudioKit.stop()
+        frameExtractor.captureSession.stopRunning()
     }
     
     override func viewDidLayoutSubviews() {

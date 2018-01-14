@@ -36,10 +36,10 @@ public class AsynthPredictionService: NSObject {
                 switch label {
                 case "still":
                     currentStill["still"] =  realNum
-                    //print("STILL \(currentStill["still"]!)")
+                    print("STILL \(currentStill["still"]!)")
                 case "disturbedA":
                     currentDisturbed["disturbedA"] =  realNum
-                    //print("disturbed \(currentDisturbed["disturbedA"]!)")
+                    print("disturbed \(currentDisturbed["disturbedA"]!)")
                     disturbedFluctuation = abs(disturbedPeak - realNum)
                 case "xA":
                     currentXa["xA"] = realNum
