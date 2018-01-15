@@ -259,7 +259,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sjy-Pe-Kts">
                                                 <rect key="frame" x="20" y="0.0" width="270" height="50"/>
                                                 <fontDescription key="fontDescription" name="Audiowide-Regular" family="Audiowide" pointSize="15"/>
-                                                <state key="normal" title="Video Walkthrough">
+                                                <state key="normal" title="Demo Video">
                                                     <color key="titleColor" red="0.2134724855" green="0.81707257030000002" blue="0.81949323419999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
