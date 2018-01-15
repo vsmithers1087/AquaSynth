@@ -20,8 +20,8 @@
 		0B2218B21FE8A60D00503C97 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B2218B11FE8A60D00503C97 /* Onboarding.storyboard */; };
 		0B2218B41FE8A64A00503C97 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2218B31FE8A64A00503C97 /* OnboardingViewController.swift */; };
 		0B2874E1200BE05200651202 /* noBowl.mov in Resources */ = {isa = PBXBuildFile; fileRef = 0B2874DE200BE05100651202 /* noBowl.mov */; };
-		0B2874E9200C23F600651202 /* disturbed.mov in Resources */ = {isa = PBXBuildFile; fileRef = 0B2874E8200C23F600651202 /* disturbed.mov */; };
 		0B2874EB200C23FE00651202 /* still.mov in Resources */ = {isa = PBXBuildFile; fileRef = 0B2874EA200C23FE00651202 /* still.mov */; };
+		0B2874F1200D077600651202 /* disturbed.mov in Resources */ = {isa = PBXBuildFile; fileRef = 0B2874F0200D077600651202 /* disturbed.mov */; };
 		0B74053E1F71E71700BE2D20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B74053D1F71E71700BE2D20 /* AppDelegate.swift */; };
 		0B7405401F71E71700BE2D20 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B74053F1F71E71700BE2D20 /* HomeViewController.swift */; };
 		0B7405431F71E71700BE2D20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B7405411F71E71700BE2D20 /* Main.storyboard */; };
@@ -83,8 +83,8 @@
 		0B2218B11FE8A60D00503C97 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		0B2218B31FE8A64A00503C97 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		0B2874DE200BE05100651202 /* noBowl.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = noBowl.mov; path = MiscMedia/noBowl.mov; sourceTree = SOURCE_ROOT; };
-		0B2874E8200C23F600651202 /* disturbed.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = disturbed.mov; path = MiscMedia/disturbed.mov; sourceTree = SOURCE_ROOT; };
 		0B2874EA200C23FE00651202 /* still.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = still.mov; path = MiscMedia/still.mov; sourceTree = SOURCE_ROOT; };
+		0B2874F0200D077600651202 /* disturbed.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = disturbed.mov; path = MiscMedia/disturbed.mov; sourceTree = SOURCE_ROOT; };
 		0B53EED21FCFACCF0001A645 /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioKit.framework; path = Frameworks/AudioKit.framework; sourceTree = "<group>"; };
 		0B74053A1F71E71600BE2D20 /* AquaSynth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AquaSynth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B74053D1F71E71700BE2D20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -164,8 +164,8 @@
 				0B09A40A1FEED69700D18EF7 /* noBackground.mov */,
 				0B18131F1F77F94800E079F6 /* Audiowide.ttf */,
 				0BF9382D1FED75B700CD756C /* cricket.wav */,
-				0B2874E8200C23F600651202 /* disturbed.mov */,
 				0B2874EA200C23FE00651202 /* still.mov */,
+				0B2874F0200D077600651202 /* disturbed.mov */,
 				0B2874DE200BE05100651202 /* noBowl.mov */,
 				0BF938301FED75C500CD756C /* Asynth.mlmodel */,
 				0BF9382C1FED75B700CD756C /* horn.wav */,
@@ -359,12 +359,12 @@
 				0BF9382E1FED75B700CD756C /* horn.wav in Resources */,
 				0B2874EB200C23FE00651202 /* still.mov in Resources */,
 				0B1813201F77F95600E079F6 /* Audiowide.ttf in Resources */,
+				0B2874F1200D077600651202 /* disturbed.mov in Resources */,
 				0B7405481F71E71700BE2D20 /* LaunchScreen.storyboard in Resources */,
 				0B7405431F71E71700BE2D20 /* Main.storyboard in Resources */,
 				0BF9382F1FED75B700CD756C /* cricket.wav in Resources */,
 				0B2218B21FE8A60D00503C97 /* Onboarding.storyboard in Resources */,
 				0B836F0C1F735F09009FF459 /* Assets.xcassets in Resources */,
-				0B2874E9200C23F600651202 /* disturbed.mov in Resources */,
 				0B2874E1200BE05200651202 /* noBowl.mov in Resources */,
 				0B7B052A1F7358010088DFAB /* Info.plist in Resources */,
 				0B09A40B1FEED69700D18EF7 /* noBackground.mov in Resources */,

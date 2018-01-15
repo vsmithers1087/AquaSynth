@@ -18,7 +18,7 @@ class OnboardingViewController: UIViewController, PaperOnboardingDelegate, Onboa
     var players = [AVPlayer]()
     var imageView: UIImageView!
     var backgroundImageView: UIImageView!
-    var soundMap: ResonanceSoundMap?
+    var soundMap = ResonanceSoundMap()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +27,18 @@ class OnboardingViewController: UIViewController, PaperOnboardingDelegate, Onboa
         setupFinishButton()
         setupImageView()
         animateImageView()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        AudioKit.stop()
+        players.forEach { (player) in
+            NotificationCenter.default.removeObserver(self, name: Notification.Name.AVPlayerItemDidPlayToEndTime, object: player.currentItem)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -58,6 +70,29 @@ class OnboardingViewController: UIViewController, PaperOnboardingDelegate, Onboa
         view.addConstraints([centerY, centerX])
     }
     
+    private func setupBackgroundImageView() {
+        backgroundImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height - 50))
+        backgroundImageView.translatesAutoresizingMaskIntoConstraints = false
+        backgroundImageView.image = UIImage(named: "backgroundBlack")
+        backgroundImageView.contentMode = .scaleAspectFit
+        onboarding.insertSubview(backgroundImageView, at: 1)
+    }
+    
+    private func setupFinishButton() {
+        finishButton = UIButton(frame: CGRect(x: 0, y: 0, width: 70, height: 70))
+        finishButton.addTarget(self, action: #selector(finishOnboarding(_:)), for: .touchUpInside)
+        finishButton.setTitle("Skip", for: .normal)
+        finishButton.titleLabel?.font = UIFont(name: "Audiowide", size: 16.0) ?? UIFont.systemFont(ofSize: 12.0)
+        finishButton.setTitleColor(UIColor.white, for: .normal)
+        finishButton.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(finishButton)
+        let top = NSLayoutConstraint(item: finishButton, attribute: .top, relatedBy: .equal, toItem: view, attribute: .topMargin, multiplier: 1.0, constant: 8)
+        let trailing = NSLayoutConstraint(item: finishButton, attribute: .trailing, relatedBy: .equal, toItem: view, attribute: .trailing, multiplier: 1, constant: -20)
+        top.isActive = true
+        trailing.isActive = true
+        view.addConstraints([top, trailing])
+    }
+    
     private func animateImageView() {
         UIView.animate(withDuration: 15, animations: {
             self.backgroundImageView.center.x += 100
@@ -78,32 +113,14 @@ class OnboardingViewController: UIViewController, PaperOnboardingDelegate, Onboa
         }
     }
     
-    private func setupBackgroundImageView() {
-        backgroundImageView = UIImageView(frame: view.bounds)
-        backgroundImageView.layer.opacity = 0.8
-        backgroundImageView.translatesAutoresizingMaskIntoConstraints = false
-        backgroundImageView.image = UIImage(named: "backgroundBlack")
-        backgroundImageView.contentMode = .scaleAspectFit
-        onboarding.insertSubview(backgroundImageView, at: 1)
-    }
-    
-    private func setupFinishButton() {
-        finishButton = UIButton(frame: CGRect(x: 0, y: 0, width: 70, height: 70))
-        finishButton.addTarget(self, action: #selector(finishOnboarding(_:)), for: .touchUpInside)
-        finishButton.setTitle("Skip", for: .normal)
-        finishButton.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(finishButton)
-        let top = NSLayoutConstraint(item: finishButton, attribute: .top, relatedBy: .equal, toItem: view, attribute: .topMargin, multiplier: 1.0, constant: 8)
-        let trailing = NSLayoutConstraint(item: finishButton, attribute: .trailing, relatedBy: .equal, toItem: view, attribute: .trailing, multiplier: 1, constant: -20)
-        top.isActive = true
-        trailing.isActive = true
-        view.addConstraints([top, trailing])
-    }
-    
     @objc func finishOnboarding(_ sender: UIButton) {
         players.forEach({ $0.pause() })
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
         appDelegate?.setHomeViewController()
+    }
+    
+    @objc func playerItemDidReachEnd(notification: Notification) {
+        soundMap.mixer.volume = 0
     }
 }
 
@@ -114,9 +131,8 @@ extension OnboardingViewController {
     }
     
     func onboardingConfigurationItem(_ item: OnboardingContentViewItem, index: Int) {
-        AudioKit.stop()
         players.forEach({ $0.pause() })
-        
+        soundMap.mixer.volume = 1.0
         guard index != 0 else {
             imageView.isHidden = false
             return
@@ -134,6 +150,10 @@ extension OnboardingViewController {
             item.layer.addSublayer(playerLayer)
             players.append(player)
             player.play()
+            NotificationCenter.default.addObserver(self,
+                                                   selector: #selector(playerItemDidReachEnd(notification:)),
+                                                   name: Notification.Name.AVPlayerItemDidPlayToEndTime,
+                                                   object: player.currentItem)
         }
     }
     
@@ -146,16 +166,15 @@ extension OnboardingViewController {
     }
     
     func playForIndex(_ index: Int) {
-        soundMap = ResonanceSoundMap()
         switch index {
         case 0:
             break
         case 1:
-            soundMap?.playForFrequency(1, level: .noBowl)
+            soundMap.playForFrequency(1, level: .noBowl)
         case 2:
-            soundMap?.playForFrequency(1, level: .still)
+            soundMap.playForFrequency(10, level: .still)
         case 3:
-            soundMap?.playForFrequency(60, level: .disturbed)
+            soundMap.playForFrequency(11, level: .disturbed)
         default:
             break
         }
@@ -182,34 +201,34 @@ extension OnboardingViewController: PaperOnboardingDataSource {
     func onboardingItemAtIndex(_ index: Int) -> OnboardingItemInfo {
         let titleFont = UIFont(name: "Audiowide", size: 32.0) ?? UIFont.boldSystemFont(ofSize: 36.0)
         let descriptionFont = UIFont(name: "Audiowide", size: 14.0) ?? UIFont.systemFont(ofSize: 14.0)
-        
+        let backgroundColor = UIColor.blue
         return [
             (PlayerView(frame: CGRect.zero, resource: ""),
              "AquaSynth",
              "A synthesizer that uses machine learning predictions as midi input. \n It is designed to be setup to read resonance patterns in a bowl of water",
              UIImage(named: "iconBackground")!,
-             UIColor.purple,
+             backgroundColor,
              UIColor.white, UIColor.white, titleFont,descriptionFont),
 
             (PlayerView(frame: CGRect.zero, resource: ""),
              "An Empty Scene",
              "No bowl of water will return only crickets 🦗🦗🦗.",
              UIImage(named: "iconBackground")!,
-             UIColor.purple,
+             backgroundColor,
              UIColor.white, UIColor.white, titleFont,descriptionFont),
 
             (PlayerView(frame: CGRect.zero, resource: ""),
              "Still Water",
              "Emits frequencies based on the calmness of the water",
              UIImage(named: "iconBackground")!,
-             UIColor.purple,
+             backgroundColor,
              UIColor.white, UIColor.white, titleFont,descriptionFont),
             
             (PlayerView(frame: CGRect.zero, resource: ""),
              "Rippling Water",
-             "Emits frequiences depending of the level of agitation, and waves created in the water 🌊🌊🌊",
+             "Emits a higher frequency and bends pitch depending of the level of agitation, and waves created in the water 🌊 🌊 🌊",
              UIImage(named: "iconBackground")!,
-             UIColor.purple,
+             backgroundColor,
              UIColor.white, UIColor.white, titleFont,descriptionFont)
 
             ][index]
