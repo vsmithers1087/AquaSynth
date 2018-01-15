@@ -35,5 +35,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UserDefaults.standard.set(true, forKey: "OnboardingViewed")
     }
     
+    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+        if window?.rootViewController is OnboardingViewController {
+            return .portrait
+        } else {
+            return .all
+        }
+    }
+    
 }
 
