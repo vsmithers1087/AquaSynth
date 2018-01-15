@@ -66,6 +66,7 @@ class SynthSessionViewController: UIViewController, FrameExtractable {
         frameImageView.layer.borderColor = UIColor.cyan.cgColor
         frequencyResultView.layer.borderWidth = 3.0
         frequencyResultView.layer.borderColor = UIColor.cyan.cgColor
+        frequencyResultView.imageView.isHidden = true
         setupForOrientation()
     }
     

@@ -63,6 +63,7 @@ class InfoViewController: UIViewController {
     }
     
     @IBAction func walkThroughTap(_ sender: UIButton) {
+        currentUrlString = "https://www.youtube.com/watch?v=MirHg3VFljI&feature=youtu.be"
         presentWebView()
     }
     

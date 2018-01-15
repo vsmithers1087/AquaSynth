@@ -132,7 +132,6 @@ extension OnboardingViewController {
     
     func onboardingConfigurationItem(_ item: OnboardingContentViewItem, index: Int) {
         players.forEach({ $0.pause() })
-        soundMap.mixer.volume = 1.0
         guard index != 0 else {
             imageView.isHidden = false
             return
@@ -158,6 +157,7 @@ extension OnboardingViewController {
     }
     
     func onboardingWillTransitonToIndex(_ index: Int) {
+        soundMap.mixer.volume = 1.0
         if index == 3 {
             finishButton.setTitle("Finish", for: .normal)
         } else {
@@ -205,7 +205,7 @@ extension OnboardingViewController: PaperOnboardingDataSource {
         return [
             (PlayerView(frame: CGRect.zero, resource: ""),
              "AquaSynth",
-             "A synthesizer that uses machine learning predictions as midi input. \n It is designed to be setup to read resonance patterns in a bowl of water",
+             "A synthesizer that uses machine learning predictions as midi input. \n It is designed to be set up to read resonance patterns in a bowl of water",
              UIImage(named: "iconBackground")!,
              backgroundColor,
              UIColor.white, UIColor.white, titleFont,descriptionFont),
