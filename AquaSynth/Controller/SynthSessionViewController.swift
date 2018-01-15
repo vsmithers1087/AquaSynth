@@ -19,6 +19,7 @@ class SynthSessionViewController: UIViewController, FrameExtractable {
     
     @IBOutlet weak var dismissButton: UIButton!
     @IBOutlet weak var frameImageView: UIImageView!
+    @IBOutlet weak var backgroundWhite: UIImageView!
     @IBOutlet weak var frequencyResultView: FrequencyResultView!
     @IBOutlet weak var frameImageViewTop: NSLayoutConstraint!
     @IBOutlet weak var frameImageViewLeading: NSLayoutConstraint!
@@ -28,6 +29,7 @@ class SynthSessionViewController: UIViewController, FrameExtractable {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        animateImageView()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -84,6 +86,26 @@ class SynthSessionViewController: UIViewController, FrameExtractable {
         view.layoutSubviews()
     }
     
+    private func animateImageView() {
+        UIView.animate(withDuration: 15, animations: {
+            self.backgroundWhite.center.x += 100
+        }) { (finished) in
+            if finished {
+                self.animateBack()
+            }
+        }
+    }
+    
+    private func animateBack() {
+        UIView.animate(withDuration: 15, animations: {
+            self.backgroundWhite.center.x -= 100
+        }) { (finished) in
+            if finished {
+                self.animateImageView()
+            }
+        }
+    }
+    
     @IBAction func dismiss(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
@@ -91,9 +113,8 @@ class SynthSessionViewController: UIViewController, FrameExtractable {
     func capturedFrame(image: UIImage) {
         if framesCount % 75 == 0 {
             predictionService = AsynthPredictionService(dimension: 227)
-            //AudioKit.stop()
-            //AudioKit.start()
         }
+        
         framesCount += 1
         let predictionQueue = DispatchQueue(label: "predictionQueue")
         predictionQueue.async {

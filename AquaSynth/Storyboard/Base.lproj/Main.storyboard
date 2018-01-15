@@ -473,6 +473,7 @@
                         <viewLayoutGuide key="safeArea" id="uI2-Z5-5mP"/>
                     </view>
                     <connections>
+                        <outlet property="backgroundWhite" destination="mQE-Bf-QdS" id="94B-EH-Mpp"/>
                         <outlet property="dismissButton" destination="J90-fB-28K" id="Rdh-8S-K6u"/>
                         <outlet property="frameImageView" destination="5gc-yV-rDL" id="SqI-3e-10U"/>
                         <outlet property="frameImageViewLeading" destination="Igf-5S-6vq" id="TEi-6R-PMx"/>

@@ -26,6 +26,7 @@ class OnboardingViewController: UIViewController, PaperOnboardingDelegate, Onboa
         setupBackgroundImageView()
         setupFinishButton()
         setupImageView()
+        animateImageView()
     }
 
     override func didReceiveMemoryWarning() {
@@ -55,6 +56,26 @@ class OnboardingViewController: UIViewController, PaperOnboardingDelegate, Onboa
         centerY.isActive = true
         centerX.isActive = true
         view.addConstraints([centerY, centerX])
+    }
+    
+    private func animateImageView() {
+        UIView.animate(withDuration: 15, animations: {
+            self.backgroundImageView.center.x += 100
+        }) { (finished) in
+            if finished {
+                self.animateBack()
+            }
+        }
+    }
+    
+    private func animateBack() {
+        UIView.animate(withDuration: 15, animations: {
+            self.backgroundImageView.center.x -= 100
+        }) { (finished) in
+            if finished {
+                self.animateImageView()
+            }
+        }
     }
     
     private func setupBackgroundImageView() {

@@ -47,10 +47,25 @@ class HomeViewController: UIViewController {
     }
     
     private func animateImageView() {
-        UIView.animate(withDuration: 20) {
+        UIView.animate(withDuration: 15, animations: {
             self.backgroundWhite.center.x += 100
+        }) { (finished) in
+            if finished {
+                self.animateBack()
+            }
         }
     }
+    
+    private func animateBack() {
+        UIView.animate(withDuration: 15, animations: {
+            self.backgroundWhite.center.x -= 100
+        }) { (finished) in
+            if finished {
+                self.animateImageView()
+            }
+        }
+    }
+
     
     @objc func buttonTapped(_ sender: ArrowButton) {
         performSegue(withIdentifier: "synthSession", sender: self)
